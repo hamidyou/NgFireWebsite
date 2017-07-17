@@ -1,0 +1,37 @@
+<div class="w3-card-4" style="width: 50%; margin: auto">
+  <div class="w3-container w3-center w3-indigo">
+    <h2>User Registration</h2>
+  </div>
+
+  <form class="w3-container">
+    <br/>
+    <input class="w3-input w3-border" type="text" placeholder="First Name" id="firstName" required>
+    <br/>
+    <input class="w3-input w3-border" type="text" placeholder="Last Name" id="lastName" required>
+    <br/>
+    <input class="w3-input w3-border" type="text" placeholder="Google Id (Email you logged into the site with.)" id="googleId" required>
+    <br/>
+    <select class="w3-select w3-border" name="option" required>
+      <option value="" disabled selected>Select School</option>
+      <option *ngFor="let school of schools" value="school">{{school}}</option>
+    </select>
+    <br/>
+    <br/>
+    <select class="w3-select w3-border" name="option" required>
+      <option value="" disabled selected>Select Program</option>
+      <option *ngFor="let program of programs" value="program">{{program}}</option>
+    </select>
+    <br/>
+    <br/>
+    <select class="w3-select w3-border" name="option" required>
+      <option value="" disabled selected>Select Graduation Year</option>
+      <option *ngFor="let year of gradYears" value="year">{{year}}</option>
+    </select>
+    <br/>
+    <br/>
+    <button class="w3-btn w3-indigo" type="submit" (click)="register()">Register</button>
+    <br/>
+    <br/>
+  </form>
+</div>
+

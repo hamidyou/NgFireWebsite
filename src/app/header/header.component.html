@@ -1,0 +1,50 @@
+<div class="header w3-container w3-border-bottom w3-border-white w3-indigo w3-centered">
+  <div class="w3-half w3-container">
+    <h1>Self-Paced Online Music Theory</h1>
+    <div *ngIf="_AuthenticationService.user | async">
+      <button class="w3-center w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black" id="logoutbtn" (click)="logout()">Logout
+      </button>
+      <button class="w3-center w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black" id="register">User Registration</button>
+      <button class="w3-center w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black" id="user">User Information/Progress</button>
+    </div>
+    <div *ngIf="!(_AuthenticationService.user | async)">
+      <button class="w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black" id="loginbtn" (click)="login()">Login</button>
+    </div>
+  </div>
+  <div class="w3-half w3-container3 w3-margin-top">
+    <div class="w3-bar">
+      <a class="w3-bar-item w3-button w3-mobile w3-border w3-border-white w3-card-4" ng-href="">Home</a>
+      <div class="w3-dropdown-hover">
+        <div class="w3-button w3-mobile w3-border w3-border-white">Units <i class="fa fa-caret-down"></i></div>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-gray w3-text-black">
+          <a href="Units/Unit1/unit1landing.php" class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-border-black">Unit 1</a>
+          <a href="pages/Unit2/Unit2.php" class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-border-black">Unit 2</a>
+          <a href="pages/Unit3/Unit3.php" class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-border-black">Unit 3</a>
+          <a href="pages/Unit4/Unit4.php" class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-border-black">Unit 4</a>
+          <a href="pages/Unit5/Unit5.php" class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-border-black">Unit 5</a>
+          <a href="pages/Unit6/Unit6.php" class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-border-black">Unit 6</a>
+          <a href="pages/Unit7/Unit7.php" class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-border-black">Unit 7</a>
+          <a href="pages/Unit8/Unit8.php" class="w3-bar-item w3-button w3-mobile">Unit 8</a>
+        </div>
+      </div>
+      <div class="w3-bar-item w3-button w3-mobile w3-border w3-border-white"><a
+        href="https://sites.google.com/a/chagrinstudents.org/mr-hamid/home/ap-music-theory" target="_blank">AP Music Theory Syllabus</a>
+      </div>
+      <div class="w3-dropdown-hover">
+        <div class="w3-button w3-mobile w3-border w3-border-white">Resources <i class="fa fa-caret-down"></i></div>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-gray w3-text-black">
+          <a href="https://docs.google.com/document/d/1iKCDnEf0-77hCocSCGz0TJPxOlwc-keocNZJjYg2pPs/edit?usp=sharing"
+             target="_blank" class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-border-black">CFHS Choir & AP Requiremets</a>
+          <a href="https://www.musictheory.net/" target="_blank" class="w3-bar-item w3-button w3-mobile">MusicTheory.net</a>
+        </div>
+      </div>
+      <div class="w3-bar-item w3-button w3-mobile w3-border w3-border-white">
+        <a href="mailto: youssef.hamid@chagrinschools.org?Subject=AP%20Music%20Theory%20Prep%20Course%20Contact">
+          Contact
+        </a>
+      </div>
+    </div>
+    <h3 *ngIf="_AuthenticationService.user | async">You are currently logged in as: {{ (_AuthenticationService.user | async)?.email }}</h3>
+    <h3 *ngIf="!(_AuthenticationService.user | async)">You are not currently logged in. Please login with your GoogleId and then register if you would like to save your progress.</h3>
+  </div>
+</div>
