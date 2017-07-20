@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from '../authentication.service';
+import {AngularFireDatabase} from 'angularfire2/database';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ import {AuthenticationService} from '../authentication.service';
 
 export class HeaderComponent {
 
-  constructor (public _AuthenticationService: AuthenticationService) {}
+  constructor (public _AuthenticationService: AuthenticationService, public db: AngularFireDatabase) {}
 
   login() {
     this._AuthenticationService.login();

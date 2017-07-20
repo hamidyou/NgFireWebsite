@@ -1,10 +1,6 @@
-import { Component } from '@angular/core';
-
-import { RegisteredUser } from '../registered-user';
+import {Component, OnInit} from '@angular/core';
 import {AngularFireDatabase, FirebaseObjectObservable} from 'angularfire2/database';
 import {AuthenticationService} from '../authentication.service';
-import {detectBufferEncoding} from 'tslint/lib/utils';
-import {timeout} from 'rxjs/operator/timeout';
 
 @Component({
   selector: 'app-user-registration',
@@ -19,28 +15,46 @@ export class UserRegistrationComponent {
 
   gradYears = [2018, 2019, 2020, 2021, 2022, 2023];
 
-  currentUser: FirebaseObjectObservable<any>;
+  missingValues = false;
+
+  userExists = false;
+
+  users: FirebaseObjectObservable<any>;
 
   constructor(public db: AngularFireDatabase, public _AuthenticationService: AuthenticationService) {
-    this.currentUser = db.object('users/');
+    this.users = db.object('users/all');
   }
 
-  register(firstName, lastName, googleId, school, program, gradYear) {
-    this.db.object('users/' + school + '/' + program + '/' + lastName + firstName).set({
-      firstname: firstName,
-      lastname: lastName,
-      googleId: googleId,
-      school: school,
-      program: program,
-      gradYear: gradYear
+  register(firstName, lastName, googleId, uid, school, program, gradYear) {
+    if (!firstName || !lastName || !school || !program || !gradYear) {
+      this.missingValues = true;
+    } else {
+      this.db.object('users/' + school + '/' + program + '/' + lastName + firstName).set({
+        firstname: firstName,
+        lastname: lastName,
+        googleId: googleId,
+        school: school,
+        program: program,
+        gradYear: gradYear
+      });
+      this.db.object('users/' + school + '/' + gradYear + '/' + lastName + firstName).set({
+        firstname: firstName,
+        lastname: lastName,
+        googleId: googleId,
+        school: school,
+        program: program,
+        gradYear: gradYear
+      });
+      this.db.object('users/all/' + uid).set({
+        firstname: firstName,
+        lastname: lastName,
+        googleId: googleId,
+        school: school,
+        program: program,
+        gradYear: gradYear,
     });
-    this.db.object('users/' + school + '/' + gradYear + '/' + lastName + firstName).set({
-      firstname: firstName,
-      lastname: lastName,
-      googleId: googleId,
-      school: school,
-      program: program,
-      gradYear: gradYear
-    });
+      document.getElementById('userRegistrationForm').style.display = 'none';
+    }
   }
 }
+
