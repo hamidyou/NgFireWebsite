@@ -25,6 +25,16 @@ export class UserRegistrationComponent {
     this.users = db.object('users/all');
   }
 
+  checkUser(uid) {
+    const user = this.db.object('users/all/' + uid);
+    user.subscribe(data => {
+      if (data.$exists()) {
+        document.getElementById('userRegistrationForm').style.display = 'none';
+        alert('User already registered.');
+      }
+    });
+  }
+
   register(firstName, lastName, googleId, uid, school, program, gradYear) {
     if (!firstName || !lastName || !school || !program || !gradYear) {
       this.missingValues = true;
@@ -35,7 +45,8 @@ export class UserRegistrationComponent {
         googleId: googleId,
         school: school,
         program: program,
-        gradYear: gradYear
+        gradYear: gradYear,
+        uid: uid
       });
       this.db.object('users/' + school + '/' + gradYear + '/' + lastName + firstName).set({
         firstname: firstName,
@@ -43,7 +54,8 @@ export class UserRegistrationComponent {
         googleId: googleId,
         school: school,
         program: program,
-        gradYear: gradYear
+        gradYear: gradYear,
+        uid: uid
       });
       this.db.object('users/all/' + uid).set({
         firstname: firstName,
@@ -52,6 +64,7 @@ export class UserRegistrationComponent {
         school: school,
         program: program,
         gradYear: gradYear,
+        uid: uid
     });
       document.getElementById('userRegistrationForm').style.display = 'none';
     }

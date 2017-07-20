@@ -3,11 +3,11 @@
     <h2>User Registration</h2>
   </div>
 
-  <form class="w3-container" >
+  <form class="w3-container">
     <span onclick="document.getElementById('userRegistrationForm').style.display='none'"
           class="w3-button w3-display-topright">&times;</span>
     <br/>
-    <input class="w3-input w3-border" placeholder="First Name" id="firstName" required #firstname>
+    <input class="w3-input w3-border" placeholder="First Name" id="firstName" required #firstname (focus)="checkUser(uid.value)">
     <br/>
     <input class="w3-input w3-border" placeholder="Last Name" id="lastName" required #lastname>
     <br/>
@@ -32,6 +32,7 @@
     <br/>
     <br/>
     <button class="w3-btn w3-indigo" (click)="register(firstname.value, lastname.value, googleid.value, uid.value, school.value, program.value, gradyear.value)">Register</button>
+    <button class="w3-btn w3-indigo" (click)="checkUser(uid.value)">Check UserName</button>
     <br/>
     <br/>
   </form>

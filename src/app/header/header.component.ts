@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from '../authentication.service';
-import {AngularFireDatabase} from 'angularfire2/database';
+import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 
 @Component({
   selector: 'app-header',
@@ -10,8 +10,10 @@ import {AngularFireDatabase} from 'angularfire2/database';
 })
 
 export class HeaderComponent {
-
-  constructor (public _AuthenticationService: AuthenticationService, public db: AngularFireDatabase) {}
+  users: FirebaseListObservable<any>;
+  constructor (public _AuthenticationService: AuthenticationService, public db: AngularFireDatabase) {
+    this.users = db.list('users/all');
+  }
 
   login() {
     this._AuthenticationService.login();
