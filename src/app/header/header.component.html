@@ -1,3 +1,7 @@
+<form style="display: none">
+  <input class="w3-input w3-border" value="{{ (_AuthenticationService.user | async)?.uid }}" id="uid" required #uid style="display: none">
+</form>
+
 <div class="header w3-container w3-border-bottom w3-border-white w3-indigo w3-centered">
   <div class="w3-half w3-container">
     <h1>Self-Paced Online Music Theory</h1>
@@ -5,7 +9,7 @@
       <button class="w3-center w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black" id="logoutbtn" (click)="logout()">Logout
       </button>
       <button class="w3-center w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black" id="register"
-              onclick="document.getElementById('userRegistrationForm').style.display='block'" *ngIf="!userExists">User Registration
+              onclick="document.getElementById('userRegistrationForm').style.display='block'" *ngIf="!userExists" (click)="checkUser(uid.value)">User Registration
       </button>
 
       <div id="userRegistrationForm" class="w3-modal">

@@ -11,13 +11,18 @@ import {HeaderComponent} from './header/header.component';
 import {AuthenticationService} from './authentication.service';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import {FormsModule} from '@angular/forms';
+import {CheckUserService} from './check-user.service';
+import {RegistrationService} from './registration.service';
+import {UnitInfoService} from './home-page/unit-info.service';
+import {HomePageComponent} from './home-page/home-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    UserRegistrationComponent
+    UserRegistrationComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,7 @@ import {FormsModule} from '@angular/forms';
     AngularFireDatabaseModule,
     FormsModule
   ],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService, CheckUserService, RegistrationService, UnitInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
