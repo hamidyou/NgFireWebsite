@@ -1,0 +1,22 @@
+<div class="w3-section w3-center">
+  <div class="w3-button w3-round w3-black w3-text-white w3-hover-black">Click On A Unit Below to Access the Lessons and Quizzes
+    for that Unit
+  </div>
+</div>
+
+<div class="w3-container">
+  <div class="w3-row w3-section" style="height: 400px;">
+    <div *ngFor="let unit of units" class="w3-quarter w3-container w3-center w3-hover-gray w3-border" style="height: 400px">
+      <a [href]="unit.landing">
+        <h1>{{unit.title}}</h1>
+        <h3>{{unit.subtitle}}</h3>
+        <img [src]="unit.image" class="w3-image w3-center w3-padding"/>
+        <div class="Unit w3-left-align" [id]="unit.id">
+          <ul>
+            <li *ngFor="let concept of unit.concepts">{{concept}}</li>
+          </ul>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
