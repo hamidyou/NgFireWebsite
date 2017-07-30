@@ -10,7 +10,7 @@ export class PianoQuizService {
   public octaveClass: any;
   public inProgress: boolean;
   public correctNote: boolean;
-  public  correctOctave: boolean;
+  public correctOctave: boolean;
   public checkMark: boolean;
   public wrongAnswer: boolean;
   public hideAnswer: boolean;
@@ -21,36 +21,10 @@ export class PianoQuizService {
   public octavesIncorrect: number;
   public octavesAttempted: number;
   public total: any;
-  public bank: any;
-  public usedBank: any;
   public current: any;
 
   constructor(private _OctaveClassService: OctaveClassService, private _NoteNamesService: NoteNamesService, private _pianoQuizQuestionService: PianoQuizQuestionService) {
   }
-
-  /*
-    getPianoQuizBank(): PianoQuiz[] {
-      return PianoQuizBank;
-    }
-
-    getPianoQuizUsedBank(): PianoQuiz[] {
-      return PianoQuizUsedBank;
-    }
-
-    getPianoQuizQuestion(): void {
-      this.bank = this.getPianoQuizBank();
-      this.usedBank = this.getPianoQuizUsedBank();
-      const rand = Math.floor(Math.random() * (this.bank.length));
-      this.current = this.bank[rand];
-      this.usedBank.push(this.current);
-      this.bank.splice(this.current, 1);
-      this.correctNote = false;
-      this.correctOctave = false;
-      this.checkMark = false;
-      this.wrongAnswer = false;
-      this.hideAnswer = true;
-    }
-  */
 
   getPianoQuizQuestion(): void {
     this._pianoQuizQuestionService.getPianoQuizQuestion();
