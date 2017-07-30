@@ -17,9 +17,7 @@ export class PianoLessonComponent implements OnInit {
 
   getLessons(): void {
     this.lessons = this._PianoLessonsService.getPianoLesson();
-    console.log(this.lessons);
     this.current = this.lessons[0];
-    console.log(this.current);
   }
 
   ngOnInit(): void {

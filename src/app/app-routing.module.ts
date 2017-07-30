@@ -1,8 +1,10 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+
 import {HomePageComponent} from './home-page/home-page.component';
-import {UnitOneComponent} from './unit-one/unit-one.component';
 import {PianoLessonComponent} from './unit-one/piano-lesson/piano-lesson.component';
+import {PianoQuizComponent} from './unit-one/piano-quiz/piano-quiz.component';
+import {UnitOneComponent} from './unit-one/unit-one.component';
 
 const routes: Routes = [
   {
@@ -16,6 +18,10 @@ const routes: Routes = [
   {
     path: 'unit-one/piano-lesson',
     component: PianoLessonComponent
+  },
+  {
+    path: 'unit-one/piano-quiz',
+    component: PianoQuizComponent
   }
 ];
 
@@ -23,4 +29,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

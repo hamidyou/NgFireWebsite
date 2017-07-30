@@ -73,7 +73,7 @@ export const PianoLessonInfo: PianoLesson[] = [
         line: 'The significance of this note goes beyond naming and will be discussed more later this Unit.'
       }
     ],
-    audio: '../../audio/C4.mp3'
+    audio: '../../assets/audio/C4.mp3'
   },
   {
     index: 5,

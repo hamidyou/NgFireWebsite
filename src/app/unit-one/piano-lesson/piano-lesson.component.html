@@ -9,7 +9,7 @@
         <br/>
       </li>
     </ul>
-
+    <br/>
 
     <div class="audio">
       <audio autoplay src="{{ current.audio }}" type="audio/mpeg"></audio>
@@ -24,9 +24,11 @@
             (click)="next()">Next
     </button>
   </div>
-  <div class="w3-section">
-    <button class="endLesson w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black">
-      End Piano Note Identification Lesson
-    </button>
+  <div class="w3-section w3-center">
+    <a routerLink="/unit-one" routerLinkActive="active">
+      <button class="endLesson w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black">
+        End Piano Note Identification Lesson
+      </button>
+    </a>
   </div>
 </div>

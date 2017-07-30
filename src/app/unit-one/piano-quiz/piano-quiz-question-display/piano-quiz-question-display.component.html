@@ -1,0 +1,22 @@
+<img class="quizImage w3-image" src="{{ current.image }}" alt="{{ current.image }}" id="{{current.note}}"/>
+
+<div class="quizQuestion w3-center w3-xlarge w3-section" *ngIf="!correctNote"> What note is
+  highlighted in the piano image above?
+</div>
+
+
+<div class="quizQuestion w3-center w3-xlarge w3-section" *ngIf="correctNote"> What octave class
+  does the highlighted note belong to?
+</div>
+
+<div class="quizAnswer w3-center w3-xlarge w3-section" *ngIf="correctNote"> {{
+  current.note }}
+  <img class="checkMark w3-image" src="../../../../assets/img/checkmark.gif" alt="CorrectAnswer"
+       *ngIf="checkMark"/>
+</div>
+
+<div class="quizAnswer w3-center w3-xlarge w3-section" *ngIf="correctOctave"> {{ current.note }}{{
+  current.octaveClass }} <br/> Correct!
+  <img class="checkmark w3-image" src="../../../../assets/img/checkmark.gif" alt="CorrectAnswer"
+       *ngIf="checkMark"/>
+</div>

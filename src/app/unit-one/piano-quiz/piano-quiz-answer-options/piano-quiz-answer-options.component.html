@@ -1,0 +1,23 @@
+<div class="w3-margin w3-center">
+  <img class="w3-image" src="../../../../assets/img/WrongAnswer.gif" alt="WrongAnswer" *ngIf="wrongAnswer"/>
+</div>
+
+<div *ngIf="hideAnswer">
+  <div class="w3-btn-bar w3-show-inline-block w3-center">
+    <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" *ngFor="let note of noteNames.natural" id="{{ note }}" (click)="checkNote($event)">
+      {{ note }}
+    </button>
+  </div>
+</div>
+
+<div *ngIf="correctNote">
+  <div class="quizAnswerOptions w3-btn-bar w3-show-inline-block w3-center " *ngFor="let octave of octaveClass">
+    <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" (click)="checkOctave($event)" id="{{ octave }}">
+      {{ octave }}
+    </button>
+  </div>
+</div>
+
+<div class="audio" *ngIf="correctOctave">
+  <audio autoplay src="{{ current.audio }}" type="audio/mpeg"></audio>
+</div>
