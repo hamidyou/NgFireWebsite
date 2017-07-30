@@ -1,6 +1,8 @@
 import {Component, DoCheck, OnInit} from '@angular/core';
 
 import {PianoQuizService} from '../piano-quiz.service';
+import {PercentPipe} from '@angular/common';
+import {DecimalPipe} from '@angular/common';
 
 @Component({
   selector: 'app-piano-quiz-scoring',
@@ -14,7 +16,7 @@ export class PianoQuizScoringComponent implements OnInit, DoCheck {
   octavesCorrect;
   octavesIncorrect;
   octavesAttempted;
-  total;
+  total: number;
 
   constructor(private _pianoQuizService: PianoQuizService) {
   }

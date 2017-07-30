@@ -1,59 +1,65 @@
 import {Injectable} from '@angular/core';
+import {NoteNamesService} from '../../note-names.service';
 
 import {OctaveClassService} from '../../octave-class.service';
-import {NoteNamesService} from '../../note-names.service';
-import {PianoQuiz} from './piano-quiz';
-import {PianoQuizBank} from './piano-quiz-bank';
-import {PianoQuizUsedBank} from './piano-quiz-used-bank';
+import {PianoQuizQuestionService} from './piano-quiz-question.service';
 
 @Injectable()
 export class PianoQuizService {
-  noteNames: any;
-  octaveClass: any;
-  inProgress: boolean;
-  correctNote: boolean;
-  correctOctave: boolean;
-  checkMark: boolean;
-  wrongAnswer: boolean;
-  hideAnswer: boolean;
-  notesCorrect: number;
-  notesIncorrect: number;
-  notesAttempted: number;
-  octavesCorrect: number;
-  octavesIncorrect: number;
-  octavesAttempted: number;
-  total: number;
-  bank: any;
-  usedBank: any;
-  current: any;
+  public noteNames: any;
+  public octaveClass: any;
+  public inProgress: boolean;
+  public correctNote: boolean;
+  public  correctOctave: boolean;
+  public checkMark: boolean;
+  public wrongAnswer: boolean;
+  public hideAnswer: boolean;
+  public notesCorrect: number;
+  public notesIncorrect: number;
+  public notesAttempted: number;
+  public octavesCorrect: number;
+  public octavesIncorrect: number;
+  public octavesAttempted: number;
+  public total: any;
+  public bank: any;
+  public usedBank: any;
+  public current: any;
 
-  constructor(private _OctaveClassService: OctaveClassService, private _NoteNamesService: NoteNamesService) {
+  constructor(private _OctaveClassService: OctaveClassService, private _NoteNamesService: NoteNamesService, private _pianoQuizQuestionService: PianoQuizQuestionService) {
   }
 
-  getPianoQuizBank(): PianoQuiz[] {
-    return PianoQuizBank;
-  }
+  /*
+    getPianoQuizBank(): PianoQuiz[] {
+      return PianoQuizBank;
+    }
 
-  getPianoQuizUsedBank(): PianoQuiz[] {
-    return PianoQuizUsedBank;
-  }
+    getPianoQuizUsedBank(): PianoQuiz[] {
+      return PianoQuizUsedBank;
+    }
+
+    getPianoQuizQuestion(): void {
+      this.bank = this.getPianoQuizBank();
+      this.usedBank = this.getPianoQuizUsedBank();
+      const rand = Math.floor(Math.random() * (this.bank.length));
+      this.current = this.bank[rand];
+      this.usedBank.push(this.current);
+      this.bank.splice(this.current, 1);
+      this.correctNote = false;
+      this.correctOctave = false;
+      this.checkMark = false;
+      this.wrongAnswer = false;
+      this.hideAnswer = true;
+    }
+  */
 
   getPianoQuizQuestion(): void {
-    this.bank = this.getPianoQuizBank();
-    console.log(this.bank);
-    this.usedBank = this.getPianoQuizUsedBank();
-    console.log(this.usedBank);
-    const rand = Math.floor(Math.random() * (this.bank.length));
-    this.current = this.bank[rand];
-    this.usedBank.push(this.current);
-    this.bank.splice(this.current, 1);
-    console.log(this.bank);
-    console.log(this.usedBank);
-    this.correctNote = false;
-    this.correctOctave = false;
-    this.checkMark = false;
-    this.wrongAnswer = false;
-    this.hideAnswer = true;
+    this._pianoQuizQuestionService.getPianoQuizQuestion();
+    this.current = this._pianoQuizQuestionService.current;
+    this.correctNote = this._pianoQuizQuestionService.correctNote;
+    this.correctOctave = this._pianoQuizQuestionService.correctOctave;
+    this.wrongAnswer = this._pianoQuizQuestionService.wrongAnswer;
+    this.checkMark = this._pianoQuizQuestionService.checkMark;
+    this.hideAnswer = this._pianoQuizQuestionService.hideAnswer;
   }
 
   setInitialPianoQuizVariables(): void {
@@ -84,22 +90,16 @@ export class PianoQuizService {
     this.getOctaveClassOptions();
   }
 
-
   checkNote(event): void {
     const target = event.currentTarget;
-    console.log('target = ' + target);
-
     const idAttr = target.attributes.id;
-    console.log('idAttr = ' + idAttr);
-
     const value = idAttr.nodeValue;
-    console.log('value = ' + value);
 
     if (value === this.current.note) {
       this.correctNote = true;
       this.checkMark = true;
       this.hideAnswer = false;
-      setTimeout(() => this.checkMark = false,  2000);
+      setTimeout(() => this.checkMark = false, 2000);
       this.notesCorrect += 1;
       this.notesAttempted += 1;
     } else {
@@ -112,24 +112,15 @@ export class PianoQuizService {
 
   checkOctave(event): void {
     const target = event.currentTarget;
-    console.log('target = ' + target);
-
     const idAttr = target.attributes.id;
-    console.log('idAttr = ' + idAttr);
-
     const value = idAttr.nodeValue;
-    console.log('value = ' + value);
-
-    console.log('current = ' + this.current);
-
-    console.log('currentOctaveClass = ' + this.current.octaveClass);
 
     if (value == this.current.octaveClass) {
       this.correctOctave = true;
       this.correctNote = false;
       this.checkMark = true;
       this.hideAnswer = false;
-      setTimeout(() => this.getPianoQuizQuestion(),  2000);
+      setTimeout(() => this.getPianoQuizQuestion(), 2000);
       this.octavesCorrect += 1;
       this.octavesAttempted += 1;
     } else {
@@ -142,7 +133,7 @@ export class PianoQuizService {
 
   totalPercentage(): void {
     if ((this.notesCorrect + this.octavesCorrect) > (this.notesIncorrect + this.octavesIncorrect)) {
-      this.total = ((((this.notesCorrect + this.octavesCorrect) - (this.notesIncorrect + this.octavesIncorrect)) / (this.notesAttempted + this.octavesAttempted)) * 100);
+      this.total = (((this.notesCorrect + this.octavesCorrect) - (this.notesIncorrect + this.octavesIncorrect)) / (this.notesAttempted + this.octavesAttempted));
     } else {
       this.total = 0;
     }
