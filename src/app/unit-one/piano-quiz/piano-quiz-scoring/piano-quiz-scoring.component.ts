@@ -10,13 +10,13 @@ import {DecimalPipe} from '@angular/common';
   styleUrls: ['./piano-quiz-scoring.component.css'],
 })
 export class PianoQuizScoringComponent implements OnInit, DoCheck {
-  notesCorrect;
-  notesIncorrect;
-  notesAttempted;
-  octavesCorrect;
-  octavesIncorrect;
-  octavesAttempted;
-  total: number;
+  public notesCorrect: number;
+  public notesIncorrect: number;
+  public notesAttempted: number;
+  public octavesCorrect: number;
+  public octavesIncorrect: number;
+  public octavesAttempted: number;
+  public total: number;
 
   constructor(private _pianoQuizService: PianoQuizService) {
   }

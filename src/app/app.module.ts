@@ -24,6 +24,7 @@ import {PianoQuizScoringComponent} from './unit-one/piano-quiz/piano-quiz-scorin
 import {PianoQuizAnswerOptionsComponent} from './unit-one/piano-quiz/piano-quiz-answer-options/piano-quiz-answer-options.component';
 import {OctaveClassService} from './octave-class.service';
 import {NoteNamesService} from './note-names.service';
+import {PianoQuizStopwatchComponent} from './unit-one/piano-quiz/piano-quiz-stopwatch/piano-quiz-stopwatch.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import {NoteNamesService} from './note-names.service';
     PianoQuizComponent,
     PianoQuizQuestionDisplayComponent,
     PianoQuizScoringComponent,
-    PianoQuizAnswerOptionsComponent
+    PianoQuizAnswerOptionsComponent,
+    PianoQuizStopwatchComponent
   ],
   imports: [
     BrowserModule,

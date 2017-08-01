@@ -3,7 +3,7 @@ import {NoteNamesInfo} from './note-names-info';
 
 @Injectable()
 export class NoteNamesService {
-  getNoteNamesOptions() {
+  public getNoteNamesOptions() {
     return NoteNamesInfo;
   }
 }

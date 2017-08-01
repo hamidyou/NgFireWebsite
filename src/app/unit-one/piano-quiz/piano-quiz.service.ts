@@ -87,7 +87,7 @@ export class PianoQuizService {
   checkOctave(event): void {
     const target = event.currentTarget;
     const idAttr = target.attributes.id;
-    const value = idAttr.nodeValue;
+    const value: number = idAttr.nodeValue;
 
     if (value == this.current.octaveClass) {
       this.correctOctave = true;

@@ -36,5 +36,7 @@ export class PianoQuizQuestionService {
     this.checkMark = false;
     this.wrongAnswer = false;
     this.hideAnswer = true;
+    console.log(this.bank);
+    console.log(this.usedBank);
   }
 }

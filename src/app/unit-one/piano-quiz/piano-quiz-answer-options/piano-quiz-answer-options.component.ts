@@ -7,13 +7,13 @@ import {PianoQuizService} from '../piano-quiz.service';
   styleUrls: ['./piano-quiz-answer-options.component.css']
 })
 export class PianoQuizAnswerOptionsComponent implements OnInit, DoCheck{
-  hideAnswer;
-  correctNote;
-  correctOctave;
-  noteNames;
-  octaveClass;
-  current;
-  wrongAnswer;
+  public hideAnswer: boolean;
+  public correctNote: boolean;
+  public correctOctave: boolean;
+  public noteNames: boolean;
+  public octaveClass: boolean;
+  public current: any;
+  public wrongAnswer: boolean;
 
   constructor(private _pianoQuizService: PianoQuizService) {}
 
