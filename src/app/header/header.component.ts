@@ -1,6 +1,6 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {AuthenticationService} from '../authentication.service';
+import {Component} from '@angular/core';
 import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
+import {AuthenticationService} from '../authentication.service';
 import {CheckUserService} from '../check-user.service';
 
 @Component({
@@ -12,13 +12,16 @@ import {CheckUserService} from '../check-user.service';
 
 export class HeaderComponent {
   users: FirebaseListObservable<any>;
-  registered = false;
-  constructor (public _AuthenticationService: AuthenticationService, public db: AngularFireDatabase, public _checkUser: CheckUserService) {
+  userId: any;
+
+  constructor(public _AuthenticationService: AuthenticationService, public db: AngularFireDatabase, public _checkUser: CheckUserService) {
     this.users = db.list('users/all');
+    this.userId = this._AuthenticationService.userId;
   }
 
   login(): void {
     this._AuthenticationService.login();
+    console.log(this.userId);
   }
 
   logout(): void {
@@ -26,8 +29,6 @@ export class HeaderComponent {
   }
 
   checkUser(uid): void {
-    this._checkUser.checkUser(uid);
-    console.log(uid);
-    this.registered = true;
+    this._AuthenticationService.checkUserRegistration(uid);
   }
 }

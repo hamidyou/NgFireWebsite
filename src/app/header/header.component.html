@@ -1,20 +1,21 @@
 <form style="display: none">
-  <input class="w3-input w3-border" value="{{ (_AuthenticationService.user | async)?.uid }}" id="uid" required #uid style="display: none">
+  <input class="w3-input w3-border" value="{{ (_AuthenticationService.user | async)?.uid }}" id="uid" #uid style="display: none">
 </form>
 
-<div class="header w3-container w3-border-bottom w3-border-white w3-indigo w3-centered">
+<div class="header w3-container w3-border-bottom w3-border-white w3-indigo w3-centered" onload="checkUser(uid.value)">
   <div class="w3-half w3-container">
     <h1>Self-Paced Online Music Theory</h1>
     <div *ngIf="_AuthenticationService.user | async">
       <button class="w3-center w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black" id="logoutbtn" (click)="logout()">Logout
       </button>
       <button class="w3-center w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black" id="register"
-              onclick="document.getElementById('userRegistrationForm').style.display='block'" *ngIf="!userExists" (click)="checkUser(uid.value)">User Registration
+              onclick="document.getElementById('userRegistrationForm').style.display='block'" *ngIf="!(_AuthenticationService.registered)">User
+        Registration
       </button>
 
       <div id="userRegistrationForm" class="w3-modal">
         <div class="w3-modal-content">
-            <app-user-registration></app-user-registration>
+          <app-user-registration></app-user-registration>
         </div>
       </div>
 
@@ -57,7 +58,12 @@
         </a>
       </div>
     </div>
-    <h3 *ngIf="_AuthenticationService.user | async">You are currently logged in as: {{ (_AuthenticationService.user | async)?.email }}</h3>
+    <div *ngIf="_AuthenticationService.user | async">
+      <h3>You are currently logged in as: {{ (_AuthenticationService.user | async)?.email }}</h3>
+      <h3 *ngIf="_AuthenticationService.registered">You are registered and may save your quiz results.</h3>
+      <h3 *ngIf="!(_AuthenticationService.registered)">You are not registered and will not be able to save your quiz results.</h3>
+    </div>
+
     <h3 *ngIf="!(_AuthenticationService.user | async)">You are not currently logged in. Please login with your GoogleId and then register if you would
       like to save your progress.</h3>
   </div>

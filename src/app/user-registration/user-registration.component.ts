@@ -1,13 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {AngularFireDatabase, FirebaseObjectObservable} from 'angularfire2/database';
 import {AuthenticationService} from '../authentication.service';
-import {CheckUserService} from '../check-user.service';
 
 @Component({
   selector: 'app-user-registration',
   templateUrl: './user-registration.component.html',
   styleUrls: ['./user-registration.component.css'],
-  providers: [AuthenticationService, CheckUserService]
+  providers: [AuthenticationService]
 })
 export class UserRegistrationComponent {
   schools = ['CFEVS'];
@@ -22,12 +21,8 @@ export class UserRegistrationComponent {
 
   users: FirebaseObjectObservable<any>;
 
-  constructor(public db: AngularFireDatabase, public _AuthenticationService: AuthenticationService, public _checkUser: CheckUserService) {
+  constructor(public db: AngularFireDatabase, public _AuthenticationService: AuthenticationService) {
     this.users = db.object('users/all');
-  }
-
-  checkUser(uid) {
-    this._checkUser.checkUser(uid);
   }
 
   register(firstName, lastName, googleId, uid, school, program, gradYear) {

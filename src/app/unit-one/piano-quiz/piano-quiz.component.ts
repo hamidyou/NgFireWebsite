@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {PianoQuizQuestionDisplayComponent} from './piano-quiz-question-display/piano-quiz-question-display.component';
 import {PianoQuizScoringComponent} from './piano-quiz-scoring/piano-quiz-scoring.component';
 import {PianoQuizAnswerOptionsComponent} from './piano-quiz-answer-options/piano-quiz-answer-options.component';
@@ -13,7 +13,7 @@ import {PianoQuizAnswerOptionsService} from './piano-quiz-answer-options.service
   entryComponents: [PianoQuizQuestionDisplayComponent, PianoQuizScoringComponent, PianoQuizAnswerOptionsComponent],
   providers: [PianoQuizService, PianoQuizQuestionService, PianoQuizAnswerOptionsService]
 })
-export class PianoQuizComponent implements OnInit {
+export class PianoQuizComponent {
   total: number = this._pianoQuizService.total;
   inProgress: boolean = this._pianoQuizService.inProgress;
 
@@ -25,10 +25,6 @@ export class PianoQuizComponent implements OnInit {
     this._pianoQuizService.getAnswerOptions();
     this.total = 0;
     this.inProgress = true;
-  }
-
-  ngOnInit(): void {
-    this.startQuiz();
   }
 
 }
