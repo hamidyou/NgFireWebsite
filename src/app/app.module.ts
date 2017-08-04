@@ -26,6 +26,7 @@ import {OctaveClassService} from './octave-class.service';
 import {NoteNamesService} from './note-names.service';
 import {PianoQuizStopwatchComponent} from './unit-one/piano-quiz/piano-quiz-stopwatch/piano-quiz-stopwatch.component';
 import { PianoQuizSubmitComponent } from './unit-one/piano-quiz/piano-quiz-submit/piano-quiz-submit.component';
+import {PianoQuizSubmitService} from './unit-one/piano-quiz/piano-quiz-submit/piano-quiz-submit.service';
 
 
 @NgModule({
@@ -51,7 +52,7 @@ import { PianoQuizSubmitComponent } from './unit-one/piano-quiz/piano-quiz-submi
     AngularFireDatabaseModule,
     FormsModule
   ],
-  providers: [AuthenticationService, CheckUserService, RegistrationService, UnitInfoService, PianoLessonService, OctaveClassService, NoteNamesService, PianoQuizComponent],
+  providers: [AuthenticationService, CheckUserService, RegistrationService, UnitInfoService, PianoLessonService, OctaveClassService, NoteNamesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

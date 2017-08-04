@@ -3,6 +3,7 @@ import {Component, DoCheck, OnInit} from '@angular/core';
 import {PianoQuizService} from '../piano-quiz.service';
 import {PercentPipe} from '@angular/common';
 import {DecimalPipe} from '@angular/common';
+import {AngularFireDatabase} from 'angularfire2/database';
 
 @Component({
   selector: 'app-piano-quiz-scoring',
@@ -30,50 +31,6 @@ export class PianoQuizScoringComponent implements OnInit, DoCheck {
     this.octavesAttempted = this._pianoQuizService.octavesAttempted;
     this.total = this._pianoQuizService.total;
   }
-
-/*
-  submitScores(firstName, lastName, googleId, uid, school, program, gradYear, total, timeToComplete, quiz) {
-    if (this.notesCorrect >= 20) {
-      this.db.object('users/' + school + '/' + program + '/' + lastName + firstName).set({
-        firstname: firstName,
-        lastname: lastName,
-        googleId: googleId,
-        school: school,
-        program: program,
-        uid: uid,
-        notesCorrect: this.notesCorrect,
-        notesIncorrect: this.notesIncorrect,
-        notesAttempted: this.notesAttempted,
-        octavesCorrect: this.octavesCorrect,
-        octavesIncorrect: this.octavesIncorrect,
-        octavesAttempted: this.octavesAttempted,
-        total: total,
-        timeSubmitted: Date.now(),
-        timeToComplete: timeToComplete,
-        quiz: 'Piano Note Identification Quiz'
-      });
-      this.db.object('users/' + school + '/' + gradYear + '/' + lastName + firstName).set({
-        firstname: firstName,
-        lastname: lastName,
-        googleId: googleId,
-        school: school,
-        program: program,
-        gradYear: gradYear,
-        uid: uid
-      });
-      this.db.object('users/all/' + uid).set({
-        firstname: firstName,
-        lastname: lastName,
-        googleId: googleId,
-        school: school,
-        program: program,
-        gradYear: gradYear,
-        uid: uid
-      });
-      document.getElementById('userRegistrationForm').style.display = 'none';
-    }
-  }
-*/
 
   ngOnInit(): void {
     this.getPianoQuizScore();

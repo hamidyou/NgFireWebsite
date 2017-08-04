@@ -17,8 +17,6 @@ export class UserRegistrationComponent {
 
   missingValues = false;
 
-  userExists = false;
-
   users: FirebaseObjectObservable<any>;
 
   constructor(public db: AngularFireDatabase, public _AuthenticationService: AuthenticationService) {

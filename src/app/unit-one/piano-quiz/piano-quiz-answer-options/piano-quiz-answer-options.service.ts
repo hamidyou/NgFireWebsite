@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {OctaveClassService} from '../../octave-class.service';
-import {NoteNamesService} from '../../note-names.service';
+import {OctaveClassService} from '../../../octave-class.service';
+import {NoteNamesService} from '../../../note-names.service';
 
 @Injectable()
 export class PianoQuizAnswerOptionsService {

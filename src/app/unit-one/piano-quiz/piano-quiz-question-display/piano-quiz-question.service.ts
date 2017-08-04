@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {PianoQuiz} from './piano-quiz';
-import {PianoQuizBank} from './piano-quiz-bank';
-import {PianoQuizUsedBank} from './piano-quiz-used-bank';
+import {PianoQuiz} from '../piano-quiz';
+import {PianoQuizBank} from '../piano-quiz-bank';
+import {PianoQuizUsedBank} from '../piano-quiz-used-bank';
 
 @Injectable()
 export class PianoQuizQuestionService {

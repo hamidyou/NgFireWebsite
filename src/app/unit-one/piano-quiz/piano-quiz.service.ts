@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {NoteNamesService} from '../../note-names.service';
 
 import {OctaveClassService} from '../../octave-class.service';
-import {PianoQuizQuestionService} from './piano-quiz-question.service';
+import {PianoQuizQuestionService} from './piano-quiz-question-display/piano-quiz-question.service';
 
 @Injectable()
 export class PianoQuizService {
