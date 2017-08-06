@@ -8,7 +8,6 @@ import {PianoQuizQuestionService} from './piano-quiz-question-display/piano-quiz
 export class PianoQuizService {
   public noteNames: any;
   public octaveClass: any;
-  public inProgress: boolean;
   public correctNote: boolean;
   public correctOctave: boolean;
   public checkMark: boolean;
@@ -20,7 +19,7 @@ export class PianoQuizService {
   public octavesCorrect: number;
   public octavesIncorrect: number;
   public octavesAttempted: number;
-  public total: any;
+  public total: number;
   public current: any;
 
   constructor(private _OctaveClassService: OctaveClassService, private _NoteNamesService: NoteNamesService, private _pianoQuizQuestionService: PianoQuizQuestionService) {

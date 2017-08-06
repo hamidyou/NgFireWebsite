@@ -10,7 +10,7 @@ import {AuthenticationService} from '../../../authentication.service';
 })
 export class PianoQuizSubmitComponent {
 
-  constructor(private _pianoQuizSubmitService: PianoQuizSubmitService, public _authenticationService: AuthenticationService) {
+  constructor(public _pianoQuizSubmitService: PianoQuizSubmitService, public _authenticationService: AuthenticationService) {
   }
 
   submitScore(): void {
