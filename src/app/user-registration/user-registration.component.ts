@@ -57,5 +57,10 @@ export class UserRegistrationComponent {
       document.getElementById('userRegistrationForm').style.display = 'none';
     }
   }
+
+  checkUser(uid): void {
+    this._AuthenticationService.checkUserRegistration(uid);
+  }
+
 }
 
