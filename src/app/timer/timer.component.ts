@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-piano-quiz-stopwatch',
-  templateUrl: './piano-quiz-stopwatch.component.html',
-  styleUrls: ['./piano-quiz-stopwatch.component.css']
+  selector: 'app-timer',
+  templateUrl: './timer.component.html',
+  styleUrls: ['./timer.component.css']
 })
-export class PianoQuizStopwatchComponent implements OnInit {
+export class TimerComponent implements OnInit {
   public stopwatchSeconds: number;
   public stopwatchMinutes: number;
 

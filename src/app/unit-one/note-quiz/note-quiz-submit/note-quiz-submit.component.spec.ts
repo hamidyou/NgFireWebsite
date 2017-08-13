@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PianoQuizStopwatchComponent } from './piano-quiz-stopwatch.component';
+import { NoteQuizSubmitComponent } from './note-quiz-submit.component';
 
-describe('PianoQuizStopwatchComponent', () => {
-  let component: PianoQuizStopwatchComponent;
-  let fixture: ComponentFixture<PianoQuizStopwatchComponent>;
+describe('NoteQuizSubmitComponent', () => {
+  let component: NoteQuizSubmitComponent;
+  let fixture: ComponentFixture<NoteQuizSubmitComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PianoQuizStopwatchComponent ]
+      declarations: [ NoteQuizSubmitComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PianoQuizStopwatchComponent);
+    fixture = TestBed.createComponent(NoteQuizSubmitComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -24,9 +24,16 @@ import {PianoQuizScoringComponent} from './unit-one/piano-quiz/piano-quiz-scorin
 import {PianoQuizAnswerOptionsComponent} from './unit-one/piano-quiz/piano-quiz-answer-options/piano-quiz-answer-options.component';
 import {OctaveClassService} from './octave-class.service';
 import {NoteNamesService} from './note-names.service';
-import {PianoQuizStopwatchComponent} from './unit-one/piano-quiz/piano-quiz-stopwatch/piano-quiz-stopwatch.component';
 import { PianoQuizSubmitComponent } from './unit-one/piano-quiz/piano-quiz-submit/piano-quiz-submit.component';
 import { UserProgressComponent } from './user-progress/user-progress.component';
+import { ClefsLessonComponent } from './unit-one/clefs-lesson/clefs-lesson.component';
+import { NoteQuizComponent } from './unit-one/note-quiz/note-quiz.component';
+import {TimerComponent} from './timer/timer.component';
+import { NoteQuizScoringComponent } from './unit-one/note-quiz/note-quiz-scoring/note-quiz-scoring.component';
+import { NoteQuizQuestionDisplayComponent } from './unit-one/note-quiz/note-quiz-question-display/note-quiz-question-display.component';
+import { NoteQuizAnswerOptionsComponent } from './unit-one/note-quiz/note-quiz-answer-options/note-quiz-answer-options.component';
+import { NoteQuizSubmitComponent } from './unit-one/note-quiz/note-quiz-submit/note-quiz-submit.component';
+import {ClefsService} from './clefs.service';
 
 
 @NgModule({
@@ -41,9 +48,15 @@ import { UserProgressComponent } from './user-progress/user-progress.component';
     PianoQuizQuestionDisplayComponent,
     PianoQuizScoringComponent,
     PianoQuizAnswerOptionsComponent,
-    PianoQuizStopwatchComponent,
     PianoQuizSubmitComponent,
-    UserProgressComponent
+    UserProgressComponent,
+    ClefsLessonComponent,
+    NoteQuizComponent,
+    TimerComponent,
+    NoteQuizScoringComponent,
+    NoteQuizQuestionDisplayComponent,
+    NoteQuizAnswerOptionsComponent,
+    NoteQuizSubmitComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +66,7 @@ import { UserProgressComponent } from './user-progress/user-progress.component';
     AngularFireDatabaseModule,
     FormsModule
   ],
-  providers: [AuthenticationService, CheckUserService, RegistrationService, UnitInfoService, PianoLessonService, OctaveClassService, NoteNamesService],
+  providers: [AuthenticationService, CheckUserService, RegistrationService, UnitInfoService, PianoLessonService, OctaveClassService, NoteNamesService, ClefsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -6,6 +6,8 @@ import {PianoLessonComponent} from './unit-one/piano-lesson/piano-lesson.compone
 import {PianoQuizComponent} from './unit-one/piano-quiz/piano-quiz.component';
 import {UnitOneComponent} from './unit-one/unit-one.component';
 import {UserProgressComponent} from './user-progress/user-progress.component';
+import {ClefsLessonComponent} from './unit-one/clefs-lesson/clefs-lesson.component';
+import {NoteQuizComponent} from './unit-one/note-quiz/note-quiz.component';
 
 const routes: Routes = [
   {
@@ -27,6 +29,14 @@ const routes: Routes = [
   {
     path: 'unit-one/piano-quiz',
     component: PianoQuizComponent
+  },
+  {
+    path: 'unit-one/clefs-lesson',
+    component: ClefsLessonComponent
+  },
+  {
+    path: 'unit-one/note-quiz',
+    component: NoteQuizComponent
   }
 ];
 

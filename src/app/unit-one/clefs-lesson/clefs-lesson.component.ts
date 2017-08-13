@@ -1,21 +1,22 @@
-import {Component, OnInit} from '@angular/core';
-
-import {PianoLessonService} from './piano-lesson.service';
+import { Component, OnInit } from '@angular/core';
+import {ClefsLessonService} from './clefs-lesson.service';
 
 @Component({
-  selector: 'app-piano-lesson',
-  templateUrl: './piano-lesson.component.html',
-  styleUrls: ['./piano-lesson.component.css']
+  selector: 'app-clefs-lesson',
+  templateUrl: './clefs-lesson.component.html',
+  styleUrls: ['./clefs-lesson.component.css'],
+  providers: [ClefsLessonService]
 })
-export class PianoLessonComponent implements OnInit {
+export class ClefsLessonComponent implements OnInit {
   current: any;
   lessons: any;
+  lesson = 'Clefs, Staff, & Note Identification';
 
-  constructor(private _PianoLessonsService: PianoLessonService) {
+  constructor(private _clefsLessonService: ClefsLessonService) {
   }
 
   getLessons(): void {
-    this.lessons = this._PianoLessonsService.getPianoLesson();
+    this.lessons = this._clefsLessonService.getClefsLesson();
     this.current = this.lessons[0];
   }
 
@@ -38,5 +39,3 @@ export class PianoLessonComponent implements OnInit {
     this.current = this.lessons[i];
   }
 }
-
-

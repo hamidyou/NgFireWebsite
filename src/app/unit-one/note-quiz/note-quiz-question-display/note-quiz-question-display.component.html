@@ -1,0 +1,42 @@
+<div class="form-group">
+  <label for="options">Options:</label>
+  <div *ngFor="let option of options">
+    <label>
+      <input type="checkbox"
+             name="options"
+             value="{{option.value}}"
+             [(ngModel)]="option.checked"/>
+      {{option.name}}
+    </label>
+  </div>
+</div>
+
+<img class="quizImage w3-image" src="{{ currentOption.image }}" alt="{{ currentOption.image }}" id="{{currentOption.note}}"/>
+
+<div class="quizQuestion w3-center w3-xlarge w3-section" *ngIf="hideAnswer"> What clef is shown in the image above?
+</div>
+
+<div class="quizQuestion w3-center w3-xlarge w3-section" *ngIf="correctClef"> What note is shown in the image above?
+</div>
+
+<div class="quizQuestion w3-center w3-xlarge w3-section" *ngIf="correctNote"> What octave class
+  does the note in the image above belong to?
+</div>
+
+<div class="quizAnswer w3-center w3-xlarge w3-section" *ngIf="correctClef"> {{
+  current.clef }}
+  <img class="checkMark w3-image" src="../../../../assets/img/checkmark.gif" alt="CorrectAnswer"
+       *ngIf="checkMark"/>
+</div>
+
+<div class="quizAnswer w3-center w3-xlarge w3-section" *ngIf="correctNote"> {{
+  current.clef }}: {{ currentOption.note }}
+  <img class="checkMark w3-image" src="../../../../assets/img/checkmark.gif" alt="CorrectAnswer"
+       *ngIf="checkMark"/>
+</div>
+
+<div class="quizAnswer w3-center w3-xlarge w3-section" *ngIf="correctOctave"> {{
+  current.clef }}: {{ currentOption.note }}{{ currentOption.octaveClass }}<br/> Correct!
+  <img class="checkmark w3-image" src="../../../../assets/img/checkmark.gif" alt="CorrectAnswer"
+       *ngIf="checkMark"/>
+</div>

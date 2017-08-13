@@ -8,11 +8,11 @@ import {PianoQuizService} from '../piano-quiz.service';
   styleUrls: ['./piano-quiz-question-display.component.css']
 })
 export class PianoQuizQuestionDisplayComponent implements OnInit, DoCheck {
-  current;
-  correctNote;
-  correctOctave;
-  wrongAnswer;
-  checkMark;
+  public current: any;
+  public correctNote: boolean;
+  public correctOctave: boolean;
+  public wrongAnswer: boolean;
+  public checkMark: boolean;
 
   constructor(private _pianoQuizService: PianoQuizService) {
   }

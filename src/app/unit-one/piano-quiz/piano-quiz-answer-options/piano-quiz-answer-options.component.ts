@@ -6,7 +6,7 @@ import {PianoQuizService} from '../piano-quiz.service';
   templateUrl: './piano-quiz-answer-options.component.html',
   styleUrls: ['./piano-quiz-answer-options.component.css']
 })
-export class PianoQuizAnswerOptionsComponent implements OnInit, DoCheck{
+export class PianoQuizAnswerOptionsComponent implements OnInit, DoCheck {
   public hideAnswer: boolean;
   public correctNote: boolean;
   public correctOctave: boolean;

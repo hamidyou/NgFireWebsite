@@ -1,9 +1,6 @@
 import {Component, DoCheck, OnInit} from '@angular/core';
 
 import {PianoQuizService} from '../piano-quiz.service';
-import {PercentPipe} from '@angular/common';
-import {DecimalPipe} from '@angular/common';
-import {AngularFireDatabase} from 'angularfire2/database';
 
 @Component({
   selector: 'app-piano-quiz-scoring',

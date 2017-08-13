@@ -4,15 +4,15 @@ import {PianoQuizScoringComponent} from './piano-quiz-scoring/piano-quiz-scoring
 import {PianoQuizAnswerOptionsComponent} from './piano-quiz-answer-options/piano-quiz-answer-options.component';
 import {PianoQuizService} from './piano-quiz.service';
 import {PianoQuizQuestionService} from './piano-quiz-question-display/piano-quiz-question.service';
-import {PianoQuizAnswerOptionsService} from './piano-quiz-answer-options/piano-quiz-answer-options.service';
 import {PianoQuizSubmitService} from './piano-quiz-submit/piano-quiz-submit.service';
+import {TimerComponent} from '../../timer/timer.component';
 
 @Component({
   selector: 'app-piano-quiz',
   templateUrl: './piano-quiz.component.html',
   styleUrls: ['./piano-quiz.component.css'],
-  entryComponents: [PianoQuizQuestionDisplayComponent, PianoQuizScoringComponent, PianoQuizAnswerOptionsComponent],
-  providers: [PianoQuizService, PianoQuizQuestionService, PianoQuizAnswerOptionsService, PianoQuizSubmitService]
+  entryComponents: [PianoQuizQuestionDisplayComponent, PianoQuizScoringComponent, PianoQuizAnswerOptionsComponent, TimerComponent],
+  providers: [PianoQuizService, PianoQuizQuestionService, PianoQuizSubmitService]
 })
 export class PianoQuizComponent implements OnInit {
   total: number = this._pianoQuizService.total;

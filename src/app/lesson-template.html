@@ -1,0 +1,34 @@
+<div class="w3-container">
+  <div class="w3-card w3-center">
+    <img class="w3-image" src="{{ current.image }}" alt="{{ current.image }}"/>
+    <ul class="w3-large w3-border w3-border-black w3-round-xlarge w3-margin-top w3-margin-bottom"
+        style="max-width: 50%; margin: auto; list-style-image: url('../../img/favicon.ico')">
+      <li *ngFor="let text of current.text" [innerHTML]="text.line">
+        {{ text.line }}
+        <br/>
+        <br/>
+      </li>
+    </ul>
+    <br/>
+
+    <div class="audio">
+      <audio autoplay src="{{ current.audio }}" type="audio/mpeg"></audio>
+    </div>
+  </div>
+
+  <div class="w3-container w3-center">
+    <button class="previousSlide w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black"
+            (click)="previous()">Previous
+    </button>
+    <button class="nextSlide w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black"
+            (click)="next()">Next
+    </button>
+  </div>
+  <div class="w3-section w3-center">
+    <a routerLink="/unit-one" routerLinkActive="active">
+      <button class="endLesson w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black">
+        End {{lesson}} Lesson
+      </button>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="w3-display-container w3-responsive">
+  <table class="w3-table w3-responsive w3-centered ">
+    <tr>
+      <th>Clefs Correct</th>
+      <th>Clefs Incorrect</th>
+      <th>Clefs Attempted</th>
+    </tr>
+    <tr>
+      <td>{{ clefsCorrect }}</td>
+      <td>{{ clefsIncorrect }}</td>
+      <td>{{ clefsAttempted }}</td>
+    </tr>
+    <tr>
+      <th>Notes Correct</th>
+      <th>Notes Incorrect</th>
+      <th>Notes Attempted</th>
+    </tr>
+    <tr>
+      <td>{{ notesCorrect }}</td>
+      <td>{{ notesIncorrect }}</td>
+      <td>{{ notesAttempted }}</td>
+    </tr>
+    <tr>
+      <th>Octaves Correct</th>
+      <th>Octaves Incorrect</th>
+      <th>Octaves Attempted</th>
+    </tr>
+    <tr>
+      <td>{{ octavesCorrect }}</td>
+      <td>{{ octavesIncorrect }}</td>
+      <td>{{ octavesAttempted }}</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Total Percentage</th>
+    </tr>
+    <tr>
+      <td></td>
+      <td>{{ total | percent: '1.0-0' }}
+      </td>
+    </tr>
+  </table>
+</div>
