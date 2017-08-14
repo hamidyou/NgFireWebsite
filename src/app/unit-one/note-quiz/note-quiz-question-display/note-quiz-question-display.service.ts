@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import {NoteQuiz} from '../note-quiz';
+import {Injectable} from '@angular/core';
 import {NoteQuizBank} from '../note-quiz-bank';
 import {NoteQuizUsedBank} from '../note-quiz-used-bank';
 
 @Injectable()
 export class NoteQuizQuestionDisplayService {
+  public bankWithOptions = [];
   public currentOption: any;
   public current: any;
   public correctNote: boolean;
@@ -15,7 +15,6 @@ export class NoteQuizQuestionDisplayService {
   public correctClef: boolean;
   public bank: any;
   public usedBank: any;
-  public remove: any;
   public options = [
     {name: 'Alto Clef', value: '2', checked: true},
     {name: 'Bass Clef', value: '1', checked: true},
@@ -23,7 +22,8 @@ export class NoteQuizQuestionDisplayService {
     {name: 'Treble Clef', value: '0', checked: true},
   ];
 
-  constructor() { }
+  constructor() {
+  }
 
   get selectedOptions() { // right now: ['1','3']
     return this.options
@@ -37,13 +37,20 @@ export class NoteQuizQuestionDisplayService {
 
   getNoteQuizUsedBank() {
     return NoteQuizUsedBank;
-}
+  }
+
+  getBankWithOptions(): void {
+    this.bank = this.getNoteQuizBank();
+
+    for (const i of this.selectedOptions) {
+      this.bankWithOptions.push(this.bank[i]);
+    }
+  }
 
   getNoteQuizQuestion(): void {
-    this.bank = this.getNoteQuizBank();
     this.usedBank = this.getNoteQuizUsedBank();
-    const rand = Math.floor(Math.random() * (this.bank.length));
-    this.current = this.bank[rand];
+    const rand = Math.floor(Math.random() * (this.bankWithOptions.length));
+    this.current = this.bankWithOptions[rand];
     const rand2 = Math.floor(Math.random() * this.current.options.length);
     this.currentOption = this.current.options[rand2];
     this.usedBank.push(this.currentOption);
@@ -54,11 +61,6 @@ export class NoteQuizQuestionDisplayService {
     this.correctOctave = false;
     this.checkMark = false;
     this.wrongAnswer = false;
-    console.log(this.bank);
-    console.log(this.usedBank);
-    console.log(this.current);
-    console.log(this.currentOption);
-    console.log(this.current.options[rand2]);
   }
 
 }

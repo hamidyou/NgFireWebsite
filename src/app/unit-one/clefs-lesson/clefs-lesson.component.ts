@@ -3,7 +3,7 @@ import {ClefsLessonService} from './clefs-lesson.service';
 
 @Component({
   selector: 'app-clefs-lesson',
-  templateUrl: './clefs-lesson.component.html',
+  templateUrl: '../../lesson-template.html',
   styleUrls: ['./clefs-lesson.component.css'],
   providers: [ClefsLessonService]
 })

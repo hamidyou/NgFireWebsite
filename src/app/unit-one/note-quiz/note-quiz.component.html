@@ -3,7 +3,32 @@
     <h2> Note Identification Quiz</h2>
   </div>
 
-  <div class="w3-container w3-center">
+  <div *ngIf="!inProgress">
+    <div class="w3-container w3-center w3-border w3-border-black" style="width: 50%; margin: auto">
+      <h4>Select Clef Options</h4>
+      <ul>
+        <li>AP Prep students select all 4</li>
+        <li>Choir students select Treble & Bass</li>
+        <li>Instrumental students select the clef that your instrument is written in.</li>
+      </ul>
+    </div>
+    <div class="form-group">
+      <div *ngFor="let option of options">
+        <label>
+          <input type="checkbox"
+                 name="options"
+                 value="{{option.value}}"
+                 [(ngModel)]="option.checked"/>
+          {{option.name}}
+        </label>
+        <br/>
+      </div>
+    </div>
+    <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" (click)="startQuiz()">Start Quiz</button>
+  </div>
+
+
+  <div class="w3-container w3-center" *ngIf="inProgress">
 
     <app-note-quiz-scoring></app-note-quiz-scoring>
     <app-note-quiz-question-display></app-note-quiz-question-display>

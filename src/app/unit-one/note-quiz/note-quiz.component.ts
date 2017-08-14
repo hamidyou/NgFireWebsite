@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NoteQuizAnswerOptionsComponent} from './note-quiz-answer-options/note-quiz-answer-options.component';
 import {NoteQuizQuestionDisplayComponent} from './note-quiz-question-display/note-quiz-question-display.component';
 import {NoteQuizScoringComponent} from './note-quiz-scoring/note-quiz-scoring.component';
@@ -16,18 +16,22 @@ import {NoteQuizQuestionDisplayService} from './note-quiz-question-display/note-
 })
 export class NoteQuizComponent implements OnInit {
   total: number = this._noteQuizService.total;
+  options: any;
+  inProgress: boolean;
 
-  constructor(private _noteQuizService: NoteQuizService) { }
+  constructor(private _noteQuizService: NoteQuizService, private _noteQuizQuestionsDisplayService: NoteQuizQuestionDisplayService) { }
 
   startQuiz(): void {
+    console.log('note-quiz-component');
+    this._noteQuizService.getBankWithOptions();
     this._noteQuizService.getNoteQuizQuestion();
     this._noteQuizService.setInitialNoteQuizVariables();
     this._noteQuizService.getAnswerOptions();
     this.total = 0;
+    this.inProgress = true;
   }
 
   ngOnInit(): void {
-    this.startQuiz();
+    this.options = this._noteQuizQuestionsDisplayService.options;
   }
-
 }

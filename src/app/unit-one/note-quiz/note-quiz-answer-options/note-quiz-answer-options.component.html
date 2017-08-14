@@ -4,7 +4,7 @@
 
 <div *ngIf="hideAnswer">
   <div class="w3-btn-bar w3-show-inline-block w3-center">
-    <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" *ngFor="let clef of clefs" id="{{ clef }}" (click)="checkClef($event)">
+    <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" *ngFor="let clef of clefs" id="{{ clef }}" (click)="checkClef($event); getQuizAnswerOptionsVariables();">
       {{ clef }}
     </button>
   </div>
@@ -12,7 +12,7 @@
 
 <div *ngIf="correctClef">
   <div class="w3-btn-bar w3-show-inline-block w3-center">
-    <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" *ngFor="let note of noteNames.natural" id="{{ note }}" (click)="checkNote($event)">
+    <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" *ngFor="let note of noteNames.natural" id="{{ note }}" (click)="checkNote($event); getQuizAnswerOptionsVariables();">
       {{ note }}
     </button>
   </div>
@@ -20,7 +20,7 @@
 
 <div *ngIf="correctNote">
   <div class="quizAnswerOptions w3-btn-bar w3-show-inline-block w3-center " *ngFor="let octave of octaveClass">
-    <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" (click)="checkOctave($event)" id="{{ octave }}">
+    <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" (click)="checkOctave($event); getQuizAnswerOptionsVariables();" id="{{ octave }}">
       {{ octave }}
     </button>
   </div>

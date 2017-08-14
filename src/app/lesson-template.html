@@ -1,5 +1,7 @@
 <div class="w3-container">
+  <h1 class="w3-center">{{lesson}} Lesson</h1>
   <div class="w3-card w3-center">
+    <br/>
     <img class="w3-image" src="{{ current.image }}" alt="{{ current.image }}"/>
     <ul class="w3-large w3-border w3-border-black w3-round-xlarge w3-margin-top w3-margin-bottom"
         style="max-width: 50%; margin: auto; list-style-image: url('../../img/favicon.ico')">
@@ -25,7 +27,7 @@
     </button>
   </div>
   <div class="w3-section w3-center">
-    <a routerLink="/unit-one" routerLinkActive="active">
+    <a routerLink="{{unit}}" routerLinkActive="active">
       <button class="endLesson w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black">
         End {{lesson}} Lesson
       </button>

@@ -26,10 +26,38 @@
       <th class="w3-border w3-border-black">Time</th>
     </tr>
     <tr *ngFor="let quiz of quizResults">
-      <td class="w3-border w3-border-black">{{ quiz.quiz }}</td>
+      <td class="w3-border w3-border-black"><button onclick="document.getElementById('specificQuizResults').style.display='block'" (click)="getSpecificQuizResults($event)">{{ quiz.quiz }}</button>
+        <div id="specificQuizResults" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-card-4">
+                  <span onclick="document.getElementById('specificQuizResults').style.display='none'"
+                        class="w3-button w3-display-topright">&times;</span>
+
+              <div class="w3-container w3-center w3-indigo">
+                <h2>{{quiz.quiz}} Results</h2>
+              </div>
+
+              <table class="w3-table-all">
+                <tr>
+                  <th class="w3-border w3-border-black">Date</th>
+                  <th class="w3-border w3-border-black">Total</th>
+                  <th class="w3-border w3-border-black">Time</th>
+                </tr>
+                <tr *ngFor="let quizzes of quizResults2">
+                  <td class="w3-border w3-border-black">{{quizzes.date2}}</td>
+                  <td class="w3-border w3-border-black">{{quizzes.total2}}</td>
+                  <td class="w3-border w3-border-black">{{quizzes.time2}}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </td>
       <td class="w3-border w3-border-black">{{ quiz.date }}</td>
       <td class="w3-border w3-border-black">{{quiz.total}}%</td>
       <td class="w3-border w3-border-black">{{quiz.time}}</td>
     </tr>
   </table>
+
 </div>

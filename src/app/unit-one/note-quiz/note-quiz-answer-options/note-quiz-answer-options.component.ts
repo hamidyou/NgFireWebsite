@@ -6,12 +6,11 @@ import {NoteQuizService} from '../note-quiz.service';
   templateUrl: './note-quiz-answer-options.component.html',
   styleUrls: ['./note-quiz-answer-options.component.css']
 })
-export class NoteQuizAnswerOptionsComponent implements OnInit, DoCheck {
+export class NoteQuizAnswerOptionsComponent implements OnInit/*, DoCheck*/ {
   public current: any;
   public currentOption: any;
   public correctNote: boolean;
   public correctOctave: boolean;
-  public checkMark: boolean;
   public wrongAnswer: boolean;
   public hideAnswer: boolean;
   public correctClef: boolean;
@@ -47,10 +46,6 @@ export class NoteQuizAnswerOptionsComponent implements OnInit, DoCheck {
   }
 
   ngOnInit(): void {
-    this.getQuizAnswerOptionsVariables();
-  }
-
-  ngDoCheck(): void {
     this.getQuizAnswerOptionsVariables();
   }
 }

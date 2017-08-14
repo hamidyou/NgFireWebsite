@@ -1,27 +1,29 @@
 import {Component, OnInit} from '@angular/core';
 
-import {PianoLessonService} from './piano-lesson.service';
+import {AccidentalsLessonService} from './accidentals-lesson.service';
 
 @Component({
-  selector: 'app-piano-lesson',
+  selector: 'app-accidentals-lesson',
   templateUrl: '../../lesson-template.html',
-  styleUrls: ['./piano-lesson.component.css']
+  styleUrls: ['./accidentals-lesson.component.css'],
+  providers: [AccidentalsLessonService]
 })
-export class PianoLessonComponent implements OnInit {
+export class AccidentalsLessonComponent implements OnInit {
   current: any;
   lessons: any;
-  lesson = 'Piano Note Identification';
+  lesson = 'Accidentals';
+  unit = 'unit-one';
 
-  constructor(private _PianoLessonsService: PianoLessonService) {
+  constructor(public _accidentalLessonService: AccidentalsLessonService) {
   }
 
-  getLessons(): void {
-    this.lessons = this._PianoLessonsService.getPianoLesson();
+  getAccidentalsLessons(): void {
+    this.lessons = this._accidentalLessonService.getAccidentalsLessons();
     this.current = this.lessons[0];
   }
 
-  ngOnInit(): void {
-    this.getLessons();
+  ngOnInit() {
+    this.getAccidentalsLessons();
   }
 
   getIndex(currentIndex, shift): number {
@@ -38,6 +40,5 @@ export class PianoLessonComponent implements OnInit {
     const i = this.getIndex(this.current.index, -1);
     this.current = this.lessons[i];
   }
+
 }
-
-

@@ -8,6 +8,7 @@ import {UnitOneComponent} from './unit-one/unit-one.component';
 import {UserProgressComponent} from './user-progress/user-progress.component';
 import {ClefsLessonComponent} from './unit-one/clefs-lesson/clefs-lesson.component';
 import {NoteQuizComponent} from './unit-one/note-quiz/note-quiz.component';
+import {AccidentalsLessonComponent} from './unit-one/accidentals-lesson/accidentals-lesson.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'unit-one/note-quiz',
     component: NoteQuizComponent
+  },
+  {
+    path: 'unit-one/accidentals-lesson',
+    component: AccidentalsLessonComponent
   }
 ];
 

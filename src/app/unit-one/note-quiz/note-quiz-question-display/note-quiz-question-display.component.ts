@@ -1,4 +1,4 @@
-import {Component, DoCheck, OnInit} from '@angular/core';
+import {Component, OnInit, DoCheck, OnChanges, OnDestroy} from '@angular/core';
 import {NoteQuizService} from '../note-quiz.service';
 import {NoteQuizQuestionDisplayService} from './note-quiz-question-display.service';
 
@@ -21,7 +21,7 @@ export class NoteQuizQuestionDisplayComponent implements OnInit, DoCheck {
   constructor(private _noteQuizService: NoteQuizService, public _noteQuizQuestionDisplayService: NoteQuizQuestionDisplayService) {
   }
 
-  getNoteQuizQuestion(): void {
+  checkVariables(): void {
     this.options = this._noteQuizQuestionDisplayService.options;
     this.currentOption = this._noteQuizService.currentOption;
     this.current = this._noteQuizService.current;
@@ -31,16 +31,13 @@ export class NoteQuizQuestionDisplayComponent implements OnInit, DoCheck {
     this.wrongAnswer = this._noteQuizService.wrongAnswer;
     this.hideAnswer = this._noteQuizService.hideAnswer;
     this.correctClef = this._noteQuizService.correctClef;
-    console.log('current = ' + this.current);
-    console.log('currentOption = ' + this.currentOption);
-    console.log('this.hideAnswer = ' + this.hideAnswer);
   }
 
-  ngOnInit() {
-    this.getNoteQuizQuestion();
+  ngOnInit(): void {
+    this.checkVariables();
   }
 
-  ngDoCheck() {
-    this.getNoteQuizQuestion();
+  ngDoCheck(): void {
+    this.checkVariables();
   }
 }

@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AngularFireDatabase, FirebaseObjectObservable} from 'angularfire2/database';
+import 'rxjs/add/operator/take';
 import {AuthenticationService} from '../../../authentication.service';
 import {NoteQuizService} from '../note-quiz.service';
-import 'rxjs/add/operator/take';
 
 @Injectable()
 export class NoteQuizSubmitService {
@@ -13,6 +13,7 @@ export class NoteQuizSubmitService {
   public attemptDate: any;
   public verify: string;
   public passed: boolean;
+  public x: string;
 
   constructor(private db: AngularFireDatabase, public _authenticationService: AuthenticationService, public _noteQuizService: NoteQuizService) {
     this.user = db.object('users/all', {preserveSnapshot: true});
@@ -37,7 +38,7 @@ export class NoteQuizSubmitService {
   }
 
   quizSet(): void {
-    this.db.object('quizzes/NoteIdentificationQuiz/' + this.userFile.school + '/' + this.userFile.lastname + this.userFile.firstname).set({
+    this.db.list('quizzes/NoteIdentificationQuiz/' + this.userFile.school + '/' + this.userFile.lastname + this.userFile.firstname).push({
       dateTimeSubmitted: new Date().toLocaleString(),
       timeElapsed: this.timeElapsed,
       total: (this._noteQuizService.total * 100).toFixed(0),
@@ -49,17 +50,19 @@ export class NoteQuizSubmitService {
       octavesAttempted: this._noteQuizService.octavesAttempted,
       uid: this._authenticationService.userId
     });
-    this.db.object('/quizzes/' + this.userFile.school + '/' + this.userFile.lastname + this.userFile.firstname + '/NoteIdentificationQuiz').set({
-      dateTimeSubmitted: new Date().toLocaleString(),
-      timeElapsed: this.timeElapsed,
-      total: (this._noteQuizService.total * 100).toFixed(0),
-      notesCorrect: this._noteQuizService.notesCorrect,
-      notesIncorrect: this._noteQuizService.notesIncorrect,
-      notesAttempted: this._noteQuizService.notesAttempted,
-      octavesCorrect: this._noteQuizService.octavesCorrect,
-      octavesIncorrect: this._noteQuizService.octavesIncorrect,
-      octavesAttempted: this._noteQuizService.octavesAttempted,
-      uid: this._authenticationService.userId
+    this.db.list('/quizzes/' + this.userFile.school + '/' + this.userFile.lastname + this.userFile.firstname).push({
+      NoteIdentificationQuiz: {
+        dateTimeSubmitted: new Date().toLocaleString(),
+        timeElapsed: this.timeElapsed,
+        total: (this._noteQuizService.total * 100).toFixed(0),
+        notesCorrect: this._noteQuizService.notesCorrect,
+        notesIncorrect: this._noteQuizService.notesIncorrect,
+        notesAttempted: this._noteQuizService.notesAttempted,
+        octavesCorrect: this._noteQuizService.octavesCorrect,
+        octavesIncorrect: this._noteQuizService.octavesIncorrect,
+        octavesAttempted: this._noteQuizService.octavesAttempted,
+        uid: this._authenticationService.userId
+      }
     });
 
   }

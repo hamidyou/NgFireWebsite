@@ -34,6 +34,8 @@ import { NoteQuizQuestionDisplayComponent } from './unit-one/note-quiz/note-quiz
 import { NoteQuizAnswerOptionsComponent } from './unit-one/note-quiz/note-quiz-answer-options/note-quiz-answer-options.component';
 import { NoteQuizSubmitComponent } from './unit-one/note-quiz/note-quiz-submit/note-quiz-submit.component';
 import {ClefsService} from './clefs.service';
+import {UserProgressService} from './user-progress/user-progress.service';
+import { AccidentalsLessonComponent } from './unit-one/accidentals-lesson/accidentals-lesson.component';
 
 
 @NgModule({
@@ -56,7 +58,8 @@ import {ClefsService} from './clefs.service';
     NoteQuizScoringComponent,
     NoteQuizQuestionDisplayComponent,
     NoteQuizAnswerOptionsComponent,
-    NoteQuizSubmitComponent
+    NoteQuizSubmitComponent,
+    AccidentalsLessonComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +69,7 @@ import {ClefsService} from './clefs.service';
     AngularFireDatabaseModule,
     FormsModule
   ],
-  providers: [AuthenticationService, CheckUserService, RegistrationService, UnitInfoService, PianoLessonService, OctaveClassService, NoteNamesService, ClefsService],
+  providers: [AuthenticationService, CheckUserService, RegistrationService, UnitInfoService, PianoLessonService, OctaveClassService, NoteNamesService, ClefsService, UserProgressService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -43,7 +43,12 @@ export class NoteQuizService {
     this.correctClef = this._noteQuizQuestionDisplayService.correctClef;
   }
 
+  getBankWithOptions(): void {
+    this._noteQuizQuestionDisplayService.getBankWithOptions();
+  }
+
   setInitialNoteQuizVariables(): void {
+    this.correctClef = false;
     this.correctNote = false;
     this.correctOctave = false;
     this.checkMark = false;
@@ -68,6 +73,7 @@ export class NoteQuizService {
   }
 
   checkClef(event): void {
+    this.current = this._noteQuizQuestionDisplayService.current;
     const target = event.currentTarget;
     const idAttr = target.attributes.id;
     const value = idAttr.nodeValue;
@@ -77,17 +83,18 @@ export class NoteQuizService {
       this.checkMark = true;
       this.hideAnswer = false;
       setTimeout(() => this.checkMark = false, 2000);
-      this.notesCorrect += 1;
-      this.notesAttempted += 1;
+      this.clefsCorrect += 1;
+      this.clefsAttempted += 1;
     } else {
       this.wrongAnswer = true;
       setTimeout(() => this.wrongAnswer = false, 2000);
-      this.notesIncorrect += 1;
+      this.clefsIncorrect += 1;
     }
     this.totalPercentage();
   }
 
   checkNote(event): void {
+    this.currentOption = this._noteQuizQuestionDisplayService.currentOption;
     const target = event.currentTarget;
     const idAttr = target.attributes.id;
     const value = idAttr.nodeValue;
@@ -108,6 +115,7 @@ export class NoteQuizService {
   }
 
   checkOctave(event): void {
+    this.currentOption = this._noteQuizQuestionDisplayService.currentOption;
     const target = event.currentTarget;
     const idAttr = target.attributes.id;
     const value: number = idAttr.nodeValue;
@@ -116,6 +124,7 @@ export class NoteQuizService {
       this.correctOctave = true;
       this.correctNote = false;
       this.checkMark = true;
+      this.hideAnswer = true;
       setTimeout(() => this.getNoteQuizQuestion(), 2000);
       this.octavesCorrect += 1;
       this.octavesAttempted += 1;
@@ -128,8 +137,8 @@ export class NoteQuizService {
   }
 
   totalPercentage(): void {
-    if ((this.notesCorrect + this.octavesCorrect) > (this.notesIncorrect + this.octavesIncorrect)) {
-      this.total = (((this.notesCorrect + this.octavesCorrect) - (this.notesIncorrect + this.octavesIncorrect)) / (this.notesAttempted + this.octavesAttempted));
+    if ((this.notesCorrect + this.octavesCorrect + this.clefsCorrect) > (this.notesIncorrect + this.octavesIncorrect + this.clefsIncorrect)) {
+      this.total = (((this.notesCorrect + this.octavesCorrect + this.clefsCorrect) - (this.notesIncorrect + this.octavesIncorrect + this.clefsIncorrect)) / (this.notesAttempted + this.octavesAttempted + this.clefsAttempted));
     } else {
       this.total = 0;
     }

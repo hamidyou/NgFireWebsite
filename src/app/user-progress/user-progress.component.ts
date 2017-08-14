@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {UserProgressService} from './user-progress.service';
 import {AuthenticationService} from '../authentication.service';
 import {AngularFireDatabase, FirebaseObjectObservable} from 'angularfire2/database';
@@ -9,8 +9,9 @@ import {AngularFireDatabase, FirebaseObjectObservable} from 'angularfire2/databa
   styleUrls: ['./user-progress.component.css'],
   providers: [UserProgressService]
 })
-export class UserProgressComponent {
+export class UserProgressComponent implements OnInit {
   userInfo: any;
+  public quizResults2: any;
   public quizResults: any;
   public user: FirebaseObjectObservable<any>;
   showProgress = false;
@@ -30,5 +31,15 @@ export class UserProgressComponent {
 
   hideUserProgress(): void {
     this.showProgress = false;
+    this.quizResults = '';
+  }
+
+  getSpecificQuizResults(): void {
+    this._userProgressService.getSpecificQuizResults(event);
+    this.quizResults2 = this._userProgressService.quizResults2;
+  }
+
+  ngOnInit(): void {
+    this.getUserProgress();
   }
 }
