@@ -1,11 +1,16 @@
 import {Injectable} from '@angular/core';
-import {AngularFireDatabase, FirebaseObjectObservable} from 'angularfire2/database';
+import {AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable} from 'angularfire2/database';
 import 'rxjs/add/operator/take';
 import {AuthenticationService} from '../../../authentication.service';
 import {NoteQuizService} from '../note-quiz.service';
+import {consoleTestResultsHandler} from 'tslint/lib/test';
 
 @Injectable()
 export class NoteQuizSubmitService {
+  newPost: any;
+  postUnderQuizObject: FirebaseObjectObservable<any>;
+  postUnderQuiz: FirebaseListObservable<any[]>;
+  postUnderLastName: FirebaseListObservable<any[]>;
   private user: FirebaseObjectObservable<any>;
   private currentUser: any;
   private userFile: any;
@@ -13,7 +18,7 @@ export class NoteQuizSubmitService {
   public attemptDate: any;
   public verify: string;
   public passed: boolean;
-  public x: string;
+  public newKey: string;
 
   constructor(private db: AngularFireDatabase, public _authenticationService: AuthenticationService, public _noteQuizService: NoteQuizService) {
     this.user = db.object('users/all', {preserveSnapshot: true});
@@ -37,6 +42,7 @@ export class NoteQuizSubmitService {
     });
   }
 
+/*
   quizSet(): void {
     this.db.list('quizzes/NoteIdentificationQuiz/' + this.userFile.school + '/' + this.userFile.lastname + this.userFile.firstname).push({
       dateTimeSubmitted: new Date().toLocaleString(),
@@ -65,6 +71,29 @@ export class NoteQuizSubmitService {
       }
     });
 
+  }
+*/
+
+  quizSet(): void {
+    const postData = {
+      dateTimeSubmitted: new Date().toLocaleString(),
+      timeElapsed: this.timeElapsed,
+      total: (this._noteQuizService.total * 100).toFixed(0),
+      notesCorrect: this._noteQuizService.notesCorrect,
+      notesIncorrect: this._noteQuizService.notesIncorrect,
+      notesAttempted: this._noteQuizService.notesAttempted,
+      octavesCorrect: this._noteQuizService.octavesCorrect,
+      octavesIncorrect: this._noteQuizService.octavesIncorrect,
+      octavesAttempted: this._noteQuizService.octavesAttempted,
+      uid: this._authenticationService.userId
+    };
+
+    this.postUnderQuiz = this.db.list('quizzes/NoteIdentificationQuiz/' + this.userFile.school + '/' + this.userFile.lastname + this.userFile.firstname);
+
+    this.postUnderLastName = this.db.list('/quizzes/' + this.userFile.school + '/' + this.userFile.lastname + this.userFile.firstname);
+
+    this.postUnderQuiz.push(postData);
+    this.postUnderLastName.push(postData);
   }
 
   submitScore(): void {
@@ -139,4 +168,5 @@ export class NoteQuizSubmitService {
       this.quizSet();
     }
   }
+
 }

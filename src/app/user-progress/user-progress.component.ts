@@ -25,7 +25,9 @@ export class UserProgressComponent implements OnInit {
 
   getUserProgress(): void {
     this._userProgressService.getUserProgress();
+    this._userProgressService.getSpecificQuizResults();
     this.quizResults = this._userProgressService.quizResults;
+    this.quizResults2 = this._userProgressService.quizResults2;
     this.showProgress = true;
   }
 
@@ -34,9 +36,8 @@ export class UserProgressComponent implements OnInit {
     this.quizResults = '';
   }
 
-  getSpecificQuizResults(): void {
-    this._userProgressService.getSpecificQuizResults(event);
-    this.quizResults2 = this._userProgressService.quizResults2;
+  getSpecificQuizResults(): any {
+    console.log('component = ' + this.quizResults2);
   }
 
   ngOnInit(): void {

@@ -49,7 +49,7 @@ export class PianoQuizSubmitService {
       octavesAttempted: this._pianoQuizService.octavesAttempted,
       uid: this._authenticationService.userId
     });
-    this.db.object('/quizzes/' + this.userFile.school + '/' + this.userFile.lastname + this.userFile.firstname + '/PianoNoteIdentificationQuiz').set({
+    this.db.object('quizzes/' + this.userFile.school + '/' + this.userFile.lastname + this.userFile.firstname + '/PianoNoteIdentificationQuiz').set({
       dateTimeSubmitted: new Date().toLocaleString(),
       timeElapsed: this.timeElapsed,
       total: (this._pianoQuizService.total * 100).toFixed(0),
