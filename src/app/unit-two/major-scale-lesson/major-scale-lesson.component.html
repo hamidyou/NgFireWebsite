@@ -1,0 +1,28 @@
+<h1>Major Scale Lesson</h1>
+  <div class="content w3-card">
+    <img class="w3-image" src="{{ current.image }}" alt="{{ current.image }}"/>
+    <ul class="w3-large w3-border w3-border-black w3-round-xlarge w3-margin-top w3-margin-bottom"
+        style="max-width: 50%; margin: auto; list-style-image: url('../../../assets/img/favicon.ico')">
+      <li ng-repeat="text in current.text" ng-bind-html="text.line">
+        {{ text.line }}
+        <br/>
+        <br/>
+      </li>
+    </ul>
+  </div>
+
+  <div class="audio">
+    <audio autoplay src="{{ current.audio }}" type="audio/mpeg"></audio>
+  </div>
+
+  <div class="w3-container w3-center">
+    <button class="previousSlide w3-btn w3-round w3-black w3-text-white w3-border w3-border-white w3-margin"
+            ng-click="previous()">Previous
+    </button>
+    <button class="nextSlide w3-btn w3-round w3-black w3-text-white w3-border w3-border-white w3-margin"
+            ng-click="next()">Next
+    </button>
+  </div>
+
+  <button class="endLesson w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black">End Major Scales Lesson</button>
+</div>

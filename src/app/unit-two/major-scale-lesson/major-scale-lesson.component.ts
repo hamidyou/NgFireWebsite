@@ -1,23 +1,24 @@
 import {Component, OnInit} from '@angular/core';
 
-import {PianoLessonService} from './piano-lesson.service';
+import {MajorScaleLessonService} from './major-scale-lesson.service';
 
 @Component({
-  selector: 'app-piano-lesson',
+  selector: 'app-major-scale-lesson',
   templateUrl: '../../lesson-template.html',
-  styleUrls: ['./piano-lesson.component.css'],
-  providers: [PianoLessonService]
+  styleUrls: ['./major-scale-lesson.component.css'],
+  providers: [MajorScaleLessonService]
 })
-export class PianoLessonComponent implements OnInit {
+export class MajorScaleLessonComponent implements OnInit {
   current: any;
   lessons: any;
-  lesson = 'Piano Note Identification';
+  lesson = 'Major Scale';
+  unit = 'unit-two';
 
-  constructor(private _PianoLessonsService: PianoLessonService) {
+  constructor(private _majorScaleLessonService: MajorScaleLessonService) {
   }
 
   getLessons(): void {
-    this.lessons = this._PianoLessonsService.getPianoLesson();
+    this.lessons = this._majorScaleLessonService.getMajorScaleLesson();
     this.current = this.lessons[0];
   }
 
@@ -39,6 +40,5 @@ export class PianoLessonComponent implements OnInit {
     const i = this.getIndex(this.current.index, -1);
     this.current = this.lessons[i];
   }
+
 }
-
-

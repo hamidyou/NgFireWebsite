@@ -30,8 +30,8 @@ export class UserProgressComponent implements OnInit {
   }
 
   hideUserProgress(): void {
+    this._userProgressService.quizResults = [];
     this.showProgress = false;
-    this.quizResults = '';
   }
 
   getSpecificQuizResults(event): any {

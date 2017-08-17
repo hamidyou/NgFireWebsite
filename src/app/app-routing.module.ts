@@ -9,6 +9,8 @@ import {UserProgressComponent} from './user-progress/user-progress.component';
 import {ClefsLessonComponent} from './unit-one/clefs-lesson/clefs-lesson.component';
 import {NoteQuizComponent} from './unit-one/note-quiz/note-quiz.component';
 import {AccidentalsLessonComponent} from './unit-one/accidentals-lesson/accidentals-lesson.component';
+import {UnitTwoComponent} from './unit-two/unit-two/unit-two.component';
+import {MajorScaleLessonComponent} from './unit-two/major-scale-lesson/major-scale-lesson.component';
 
 const routes: Routes = [
   {
@@ -42,6 +44,14 @@ const routes: Routes = [
   {
     path: 'unit-one/accidentals-lesson',
     component: AccidentalsLessonComponent
+  },
+  {
+    path: 'unit-two',
+    component: UnitTwoComponent
+  },
+  {
+    path: 'unit-two/major-scale-lesson',
+    component: MajorScaleLessonComponent
   }
 ];
 

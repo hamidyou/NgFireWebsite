@@ -6,11 +6,15 @@
   <div class="w3-half w3-container">
     <h1>Self-Paced Online Music Theory</h1>
     <div *ngIf="_AuthenticationService.user | async">
-      <button class="w3-center w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black" id="logoutbtn" (click)="logout()">Logout
+      <button class="w3-center w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black" id="logoutbtn" (click)="logout()">
+        <a routerLink="/" routerLinkActive="active">
+          Logout
+        </a>
       </button>
+
       <button class="w3-center w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black" id="register"
-              onclick="document.getElementById('userRegistrationForm').style.display='block'" *ngIf="!(_AuthenticationService.registered)">User
-        Registration
+              onclick="document.getElementById('userRegistrationForm').style.display='block'" *ngIf="!(_AuthenticationService.registered)">
+        User Registration
       </button>
 
       <div id="userRegistrationForm" class="w3-modal">
@@ -19,7 +23,10 @@
         </div>
       </div>
 
-      <button class="w3-center w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black" id="user" routerLink="user-progress" routerLinkActive="active">User Information/Progress</button>
+      <button class="w3-center w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black" id="user" routerLink="user-progress"
+              routerLinkActive="active">
+        User Information/Progress
+      </button>
     </div>
     <div *ngIf="!(_AuthenticationService.user | async)">
       <button class="w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black" id="loginbtn" (click)="login()">Login</button>
@@ -32,7 +39,7 @@
         <div class="w3-button w3-mobile w3-border w3-border-white">Units <i class="fa fa-caret-down"></i></div>
         <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-gray w3-text-black">
           <a routerLink="unit-one" routerLinkActive="active" class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-border-black">Unit 1</a>
-          <a href="pages/Unit2/Unit2.php" class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-border-black">Unit 2</a>
+          <a routerLink="unit-two" routerLinkActive="active" class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-border-black">Unit 2</a>
           <a href="pages/Unit3/Unit3.php" class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-border-black">Unit 3</a>
           <a href="pages/Unit4/Unit4.php" class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-border-black">Unit 4</a>
           <a href="pages/Unit5/Unit5.php" class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-border-black">Unit 5</a>

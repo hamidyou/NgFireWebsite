@@ -4,11 +4,6 @@ import {AuthenticationService} from '../authentication.service';
 
 @Injectable()
 export class UserProgressService {
-  date2: any;
-  results2: any;
-  quiz2: any;
-  total2: any;
-  time2: any;
   quizResults2: any = [];
   quiz: any;
   time: any;
@@ -20,17 +15,16 @@ export class UserProgressService {
   public userResults: FirebaseObjectObservable<any>;
   public quizzes = ['PianoNoteIdentificationQuiz', 'NoteIdentificationQuiz'];
   public quizResults: any = [];
-  public registered: boolean = this._authenticationService.registered;
+  // public registered: boolean = this._authenticationService.registered;
   public specificQuizResults: FirebaseListObservable<any>;
-  public newKey: string;
 
   constructor(public db: AngularFireDatabase, public _authenticationService: AuthenticationService) {
     this.user = db.object('users/all', {preserveSnapshot: true});
     this.user.subscribe(data => {
         this.userFile = data.child(this._authenticationService.userId).val();
-        this.registered = true;
-        console.log(this._authenticationService.registered);
-        console.log(this.registered);
+        // this.registered = true;
+        // console.log(this._authenticationService.registered);
+        // console.log(this.registered);
     });
   }
 

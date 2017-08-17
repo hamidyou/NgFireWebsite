@@ -14,7 +14,7 @@ export const unitInfo: Unit[] = [
     subtitle: 'Scales',
     image: '/assets/img/MajorScaleLesson/FMajorScale_Treble.gif',
     id: 'Unit2',
-    landing: 'pages/Unit2/Unit2.php',
+    landing: 'unit-two',
     concepts: ['Major', 'Natural Minor', 'Harmonic Minor', 'Melodic Minor']
   },
   {
