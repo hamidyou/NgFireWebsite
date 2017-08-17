@@ -3,7 +3,6 @@ import {AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable} f
 import 'rxjs/add/operator/take';
 import {AuthenticationService} from '../../../authentication.service';
 import {NoteQuizService} from '../note-quiz.service';
-import {consoleTestResultsHandler} from 'tslint/lib/test';
 
 @Injectable()
 export class NoteQuizSubmitService {
@@ -42,38 +41,6 @@ export class NoteQuizSubmitService {
     });
   }
 
-/*
-  quizSet(): void {
-    this.db.list('quizzes/NoteIdentificationQuiz/' + this.userFile.school + '/' + this.userFile.lastname + this.userFile.firstname).push({
-      dateTimeSubmitted: new Date().toLocaleString(),
-      timeElapsed: this.timeElapsed,
-      total: (this._noteQuizService.total * 100).toFixed(0),
-      notesCorrect: this._noteQuizService.notesCorrect,
-      notesIncorrect: this._noteQuizService.notesIncorrect,
-      notesAttempted: this._noteQuizService.notesAttempted,
-      octavesCorrect: this._noteQuizService.octavesCorrect,
-      octavesIncorrect: this._noteQuizService.octavesIncorrect,
-      octavesAttempted: this._noteQuizService.octavesAttempted,
-      uid: this._authenticationService.userId
-    });
-    this.db.list('/quizzes/' + this.userFile.school + '/' + this.userFile.lastname + this.userFile.firstname).push({
-      NoteIdentificationQuiz: {
-        dateTimeSubmitted: new Date().toLocaleString(),
-        timeElapsed: this.timeElapsed,
-        total: (this._noteQuizService.total * 100).toFixed(0),
-        notesCorrect: this._noteQuizService.notesCorrect,
-        notesIncorrect: this._noteQuizService.notesIncorrect,
-        notesAttempted: this._noteQuizService.notesAttempted,
-        octavesCorrect: this._noteQuizService.octavesCorrect,
-        octavesIncorrect: this._noteQuizService.octavesIncorrect,
-        octavesAttempted: this._noteQuizService.octavesAttempted,
-        uid: this._authenticationService.userId
-      }
-    });
-
-  }
-*/
-
   quizSet(): void {
     const postData = {
       dateTimeSubmitted: new Date().toLocaleString(),
@@ -90,7 +57,7 @@ export class NoteQuizSubmitService {
 
     this.postUnderQuiz = this.db.list('quizzes/NoteIdentificationQuiz/' + this.userFile.school + '/' + this.userFile.lastname + this.userFile.firstname);
 
-    this.postUnderLastName = this.db.list('/quizzes/' + this.userFile.school + '/' + this.userFile.lastname + this.userFile.firstname);
+    this.postUnderLastName = this.db.list('/quizzes/' + this.userFile.school + '/' + this.userFile.lastname + this.userFile.firstname + '/' + 'NoteIdentificationQuiz');
 
     this.postUnderQuiz.push(postData);
     this.postUnderLastName.push(postData);

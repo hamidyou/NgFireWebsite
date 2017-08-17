@@ -53,8 +53,14 @@ export class UserProgressService {
     }
   }
 
-  getSpecificQuizResults(): void {
-    this.specificQuizResults = this.db.list('/quizzes/' + this.userFile.school + '/' + this.userFile.lastname + this.userFile.firstname);
+  getSpecificQuizResults(event): void {
+    const target = event.currentTarget;
+    const idAttr = target.attributes.id;
+    const value = idAttr.nodeValue;
+
+    console.log(value);
+
+    this.specificQuizResults = this.db.list('/quizzes/' + this.userFile.school + '/' + this.userFile.lastname + this.userFile.firstname + '/' + value);
     this.specificQuizResults.subscribe(results => {
       console.log(results);
       this.quizResults2 = results;
