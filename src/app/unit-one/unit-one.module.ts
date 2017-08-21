@@ -15,6 +15,7 @@ import {NoteQuizQuestionDisplayComponent} from './note-quiz/note-quiz-question-d
 import {NoteQuizScoringComponent} from './note-quiz/note-quiz-scoring/note-quiz-scoring.component';
 import {NoteQuizComponent} from './note-quiz/note-quiz.component';
 import {ClefsLessonComponent} from './clefs-lesson/clefs-lesson.component';
+
 import {AppRoutingModule} from '../app-routing.module';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';

@@ -10,6 +10,7 @@ import {FormsModule} from '@angular/forms';
 import {environment} from '../../environments/environment';
 import {UnitTwoComponent} from './unit-two/unit-two.component';
 import {MajorScaleLessonComponent} from './major-scale-lesson/major-scale-lesson.component';
+import {MajorScaleQuizModule} from './major-scale-quiz/major-scale-quiz.module';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import {MajorScaleLessonComponent} from './major-scale-lesson/major-scale-lesson
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     TimerModule,
-    FormsModule
+    FormsModule,
+    MajorScaleQuizModule
   ],
   declarations: [
     UnitTwoComponent,
