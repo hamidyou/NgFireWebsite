@@ -16,7 +16,6 @@ export class MajorScaleQuizQuestionDisplayService {
   public wrongAnswer: boolean;
   public checkMark: boolean;
   public hideAnswer: boolean;
-  public currentOption: any;
   public current: any;
   public bank: any;
   public usedBank: any;
@@ -38,7 +37,7 @@ export class MajorScaleQuizQuestionDisplayService {
     const rand = Math.floor(Math.random() * (this.bank.length));
     this.current = this.bank[rand];
     this.usedBank.push(this.current);
-    this.current.splice(this.current, 1);
+    this.bank.splice(this.current, 1);
     this.correct1 = false;
     this.correct2 = false;
     this.correct3 = false;

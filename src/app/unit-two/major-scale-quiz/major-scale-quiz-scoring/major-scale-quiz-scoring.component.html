@@ -1,0 +1,23 @@
+<h2> Major Scale Construction Quiz </h2>
+<div class="w3-container w3-center">
+  <table class="w3-table w3-responsive w3-centered">
+    <tr>
+      <th>Notes Correct</th>
+      <th>Notes Incorrect</th>
+      <th>Notes Attempted</th>
+    </tr>
+    <tr>
+      <td>{{ notesCorrect }}</td>
+      <td>{{ notesIncorrect }}</td>
+      <td>{{ notesAttempted }}</td>
+    </tr>
+    <tr>
+      <th>Scales Attempted</th>
+      <th>Total Percentage</th>
+    </tr>
+    <tr>
+      <td>{{ scalesAttempted }}</td>
+      <td>{{ total | percent: '1.0-0' }}</td>
+    </tr>
+  </table>
+</div>

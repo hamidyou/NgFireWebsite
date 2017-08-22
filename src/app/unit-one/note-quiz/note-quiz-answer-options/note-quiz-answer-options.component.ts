@@ -1,4 +1,4 @@
-import {Component, DoCheck, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NoteQuizService} from '../note-quiz.service';
 
 @Component({
@@ -6,7 +6,7 @@ import {NoteQuizService} from '../note-quiz.service';
   templateUrl: './note-quiz-answer-options.component.html',
   styleUrls: ['./note-quiz-answer-options.component.css']
 })
-export class NoteQuizAnswerOptionsComponent implements OnInit/*, DoCheck*/ {
+export class NoteQuizAnswerOptionsComponent implements OnInit {
   public current: any;
   public currentOption: any;
   public correctNote: boolean;
