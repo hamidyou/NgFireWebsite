@@ -20,9 +20,6 @@ export class MajorScaleQuizQuestionDisplayService {
   public bank: any;
   public usedBank: any;
 
-  constructor() {
-  }
-
   getMajorScaleQuizBank() {
     return MajorScaleQuizBank;
   }

@@ -1,0 +1,15 @@
+<form *ngIf="_authenticationService.user | async">
+  <button class="w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black">
+    <input type="button" value="Submit Quiz Score" (click)="submitScore()" onclick="document.getElementById('dataVerify').style.display='block'"/>
+  </button>
+  <div id="dataVerify" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom w3-round" style="max-width:600px">
+      <p id="verifyMessage">{{ _majorScaleQuizSubmitService.verify }}</p>
+      <button onclick="document.getElementById('dataVerify').style.display='none'" type="button" class="w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black">Close</button>
+    </div>
+  </div>
+</form>
+
+<div class="w3-section w3-center" *ngIf="(!(_authenticationService.user) | async)">
+  <p> Since you are not logged in or registered, you will not be able to submit your score . Please login and register if you wish to track your progress.</p>
+</div>

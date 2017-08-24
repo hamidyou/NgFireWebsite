@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
 import {MajorScaleQuizService} from './major-scale-quiz.service';
-import {MajorScaleQuizQuestionDisplayService} from './major-scale-quiz-question-display/major-scale-quiz-question-display.service';
 
 @Component({
   selector: 'app-major-scale-quiz',
@@ -10,7 +10,7 @@ import {MajorScaleQuizQuestionDisplayService} from './major-scale-quiz-question-
 export class MajorScaleQuizComponent implements OnInit {
   total: number = this._majorScaleQuizService.total;
 
-  constructor(public _majorScaleQuizService: MajorScaleQuizService, public _majorScaleQuizQuestionDisplayService: MajorScaleQuizQuestionDisplayService) { }
+  constructor(public _majorScaleQuizService: MajorScaleQuizService) { }
 
   startQuiz(): void {
     this._majorScaleQuizService.getMajorScaleQuizQuestion();

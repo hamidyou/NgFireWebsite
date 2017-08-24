@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MajorScaleQuizCheckAnswersService} from '../major-scale-quiz-check-answers.service';
+
 import {MajorScaleQuizService} from '../major-scale-quiz.service';
 
 @Component({

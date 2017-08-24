@@ -11,6 +11,8 @@ import {environment} from '../../environments/environment';
 import {UnitTwoComponent} from './unit-two/unit-two.component';
 import {MajorScaleLessonComponent} from './major-scale-lesson/major-scale-lesson.component';
 import {MajorScaleQuizModule} from './major-scale-quiz/major-scale-quiz.module';
+import { MinorScaleLessonComponent } from './minor-scale-lesson/minor-scale-lesson.component';
+import {MinorScalesQuizModule} from './minor-scales-quiz/minor-scales-quiz.module';
 
 @NgModule({
   imports: [
@@ -21,15 +23,18 @@ import {MajorScaleQuizModule} from './major-scale-quiz/major-scale-quiz.module';
     AngularFireDatabaseModule,
     TimerModule,
     FormsModule,
-    MajorScaleQuizModule
+    MajorScaleQuizModule,
+    MinorScalesQuizModule
   ],
   declarations: [
     UnitTwoComponent,
-    MajorScaleLessonComponent
+    MajorScaleLessonComponent,
+    MinorScaleLessonComponent
   ],
   exports: [
     UnitTwoComponent,
-    MajorScaleLessonComponent
+    MajorScaleLessonComponent,
+    MinorScaleLessonComponent
   ]
 })
 export class UnitTwoModule { }

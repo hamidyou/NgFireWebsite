@@ -6,8 +6,6 @@ import {NoteQuizService} from '../note-quiz.service';
 
 @Injectable()
 export class NoteQuizSubmitService {
-  newPost: any;
-  postUnderQuizObject: FirebaseObjectObservable<any>;
   postUnderQuiz: FirebaseListObservable<any[]>;
   postUnderLastName: FirebaseListObservable<any[]>;
   private user: FirebaseObjectObservable<any>;
@@ -17,7 +15,6 @@ export class NoteQuizSubmitService {
   public attemptDate: any;
   public verify: string;
   public passed: boolean;
-  public newKey: string;
 
   constructor(private db: AngularFireDatabase, public _authenticationService: AuthenticationService, public _noteQuizService: NoteQuizService) {
     this.user = db.object('users/all', {preserveSnapshot: true});
@@ -64,7 +61,7 @@ export class NoteQuizSubmitService {
   }
 
   submitScore(): void {
-    if (this._noteQuizService.notesCorrect < 0 || this._noteQuizService.octavesCorrect < 0) {
+    if (this._noteQuizService.notesCorrect < 20 || this._noteQuizService.octavesCorrect < 20) {
       this.verify = 'This quiz cannot be submitted until you have 20 correct notes AND 20 correct octaves. Please click close then continue with the quiz or click reset to start over.';
     } else {
       this.timeElapsed = document.getElementById('timer').innerHTML;
@@ -86,7 +83,7 @@ export class NoteQuizSubmitService {
             this.currentUser.subscribe(data => {
               if (data.$exists) {
                 this.currentUser.set({
-                  'Piano-Note-Identification-Quiz': {
+                  'PianoNoteIdentificationQuiz': {
                     dateTimeSubmitted: new Date().toLocaleString(),
                     timeElapsed: this.timeElapsed,
                     total: (this._noteQuizService.total * 100).toFixed(0),

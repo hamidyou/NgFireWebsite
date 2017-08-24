@@ -12,6 +12,8 @@ import {AccidentalsLessonComponent} from './unit-one/accidentals-lesson/accident
 import {UnitTwoComponent} from './unit-two/unit-two/unit-two.component';
 import {MajorScaleLessonComponent} from './unit-two/major-scale-lesson/major-scale-lesson.component';
 import {MajorScaleQuizComponent} from './unit-two/major-scale-quiz/major-scale-quiz.component';
+import {MinorScaleLessonComponent} from './unit-two/minor-scale-lesson/minor-scale-lesson.component';
+import {MinorScalesQuizComponent} from './unit-two/minor-scales-quiz/minor-scales-quiz.component';
 
 const routes: Routes = [
   {
@@ -55,8 +57,16 @@ const routes: Routes = [
     component: MajorScaleLessonComponent
   },
   {
+    path: 'unit-two/minor-scale-lesson',
+    component: MinorScaleLessonComponent
+  },
+  {
     path: 'unit-two/major-scale-construction-quiz',
     component: MajorScaleQuizComponent
+  },
+  {
+    path: 'unit-two/minor-scales-construction-quiz',
+    component: MinorScalesQuizComponent
   }
 ];
 

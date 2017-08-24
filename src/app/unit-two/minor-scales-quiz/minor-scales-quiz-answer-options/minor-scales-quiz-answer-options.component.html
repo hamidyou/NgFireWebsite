@@ -1,0 +1,55 @@
+<div class="w3-btn-bar w3-show-inline-block w3-center"
+     *ngFor="let note of noteNames.minorScales">
+
+  <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" (click)="check1($event); getQuizAnswerOptionsVariables();"
+          id="{{ note }}" *ngIf="hideAnswer"> {{ note }}
+  </button>
+  <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" (click)="check2($event); getQuizAnswerOptionsVariables();"
+          id="{{ note }}" *ngIf="correct1"> {{ note }}
+  </button>
+  <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" (click)="check3($event); getQuizAnswerOptionsVariables();"
+          id="{{ note }}" *ngIf="correct2"> {{ note }}
+  </button>
+  <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" (click)="check4($event); getQuizAnswerOptionsVariables();"
+          id="{{ note }}" *ngIf="correct3"> {{ note }}
+  </button>
+  <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" (click)="check5($event); getQuizAnswerOptionsVariables();"
+          id="{{ note }}" *ngIf="correct4"> {{ note }}
+  </button>
+  <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" (click)="check6($event); getQuizAnswerOptionsVariables();"
+          id="{{ note }}" *ngIf="correct5"> {{ note }}
+  </button>
+  <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" (click)="check7($event); getQuizAnswerOptionsVariables();"
+          id="{{ note }}" *ngIf="correct6"> {{ note }}
+  </button>
+  <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" (click)="check8($event); getQuizAnswerOptionsVariables();"
+          id="{{ note }}" *ngIf="correct7"> {{ note }}
+  </button>
+</div>
+
+<div class="audio">
+  <audio autoplay *ngIf="correct1" src="{{ current.notesInScale[0].audio }}" type="audio/mpeg"></audio>
+  <audio autoplay *ngIf="correct1" src="{{ current.notesInScale[0].audio2 }}"
+         type="audio/mpeg"></audio>
+  <audio autoplay *ngIf="correct2" src="{{ current.notesInScale[1].audio }}" type="audio/mpeg"></audio>
+  <audio autoplay *ngIf="correct2" src="{{ current.notesInScale[1].audio2 }}"
+         type="audio/mpeg"></audio>
+  <audio autoplay *ngIf="correct3" src="{{ current.notesInScale[2].audio }}" type="audio/mpeg"></audio>
+  <audio autoplay *ngIf="correct3" src="{{ current.notesInScale[2].audio2 }}"
+         type="audio/mpeg"></audio>
+  <audio autoplay *ngIf="correct4" src="{{ current.notesInScale[3].audio }}" type="audio/mpeg"></audio>
+  <audio autoplay *ngIf="correct4" src="{{ current.notesInScale[3].audio2 }}"
+         type="audio/mpeg"></audio>
+  <audio autoplay *ngIf="correct5" src="{{ current.notesInScale[4].audio }}" type="audio/mpeg"></audio>
+  <audio autoplay *ngIf="correct5" src="{{ current.notesInScale[4].audio2 }}"
+         type="audio/mpeg"></audio>
+  <audio autoplay *ngIf="correct6" src="{{ current.notesInScale[5].audio }}" type="audio/mpeg"></audio>
+  <audio autoplay *ngIf="correct6" src="{{ current.notesInScale[5].audio2 }}"
+         type="audio/mpeg"></audio>
+  <audio autoplay *ngIf="correct7" src="{{ current.notesInScale[6].audio }}" type="audio/mpeg"></audio>
+  <audio autoplay *ngIf="correct7" src="{{ current.notesInScale[6].audio2 }}"
+         type="audio/mpeg"></audio>
+  <audio autoplay *ngIf="correct8" src="{{ current.notesInScale[7].audio }}" type="audio/mpeg"></audio>
+  <audio autoplay *ngIf="correct8" src="{{ current.notesInScale[7].audio2 }}"
+         type="audio/mpeg"></audio>
+</div>

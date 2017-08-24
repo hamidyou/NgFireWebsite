@@ -13,18 +13,14 @@ export class UserProgressService {
   public user: FirebaseObjectObservable<any>;
   public userFile: any;
   public userResults: FirebaseObjectObservable<any>;
-  public quizzes = ['PianoNoteIdentificationQuiz', 'NoteIdentificationQuiz'];
+  public quizzes = ['PianoNoteIdentificationQuiz', 'NoteIdentificationQuiz', 'MajorScaleConstructionQuiz', 'MinorScalesConstructionQuiz'];
   public quizResults: any = [];
-  // public registered: boolean = this._authenticationService.registered;
   public specificQuizResults: FirebaseListObservable<any>;
 
   constructor(public db: AngularFireDatabase, public _authenticationService: AuthenticationService) {
     this.user = db.object('users/all', {preserveSnapshot: true});
     this.user.subscribe(data => {
-        this.userFile = data.child(this._authenticationService.userId).val();
-        // this.registered = true;
-        // console.log(this._authenticationService.registered);
-        // console.log(this.registered);
+      this.userFile = data.child(this._authenticationService.userId).val();
     });
   }
 

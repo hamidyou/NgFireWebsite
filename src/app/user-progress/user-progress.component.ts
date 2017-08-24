@@ -15,12 +15,14 @@ export class UserProgressComponent implements OnInit {
   public quizResults: any;
   public user: FirebaseObjectObservable<any>;
   showProgress = false;
+  public registered = true;
 
   constructor(public _userProgressService: UserProgressService, public _authenticationService: AuthenticationService, private db: AngularFireDatabase) {
     this.user = db.object('users/all', {preserveSnapshot: true});
     this.user.subscribe(data => {
       this.userInfo = data.child(this._authenticationService.userId).val();
     });
+    this._authenticationService.registered = true;
   }
 
   getUserProgress(): void {

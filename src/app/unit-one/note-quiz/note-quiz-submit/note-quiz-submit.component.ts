@@ -8,7 +8,7 @@ import {AuthenticationService} from '../../../authentication.service';
   templateUrl: './note-quiz-submit.component.html',
   styleUrls: ['./note-quiz-submit.component.css']
 })
-export class NoteQuizSubmitComponent{
+export class NoteQuizSubmitComponent {
 
   constructor(public _noteQuizSubmitService: NoteQuizSubmitService, public _authenticationService: AuthenticationService) { }
 

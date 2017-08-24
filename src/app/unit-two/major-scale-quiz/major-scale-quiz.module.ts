@@ -14,6 +14,8 @@ import {MajorScaleQuizQuestionDisplayComponent} from './major-scale-quiz-questio
 import {MajorScaleQuizQuestionDisplayService} from './major-scale-quiz-question-display/major-scale-quiz-question-display.service';
 import { MajorScaleQuizScoringComponent } from './major-scale-quiz-scoring/major-scale-quiz-scoring.component';
 import {MajorScaleQuizAnswerOptionsComponent} from './major-scale-quiz-answer-options/major-scale-quiz-answer-options.component';
+import { MajorScaleQuizSubmitComponent } from './major-scale-quiz-submit/major-scale-quiz-submit.component';
+import {MajorScaleQuizSubmitService} from './major-scale-quiz-submit/major-scale-quiz-submit.service';
 
 
 @NgModule({
@@ -26,8 +28,8 @@ import {MajorScaleQuizAnswerOptionsComponent} from './major-scale-quiz-answer-op
     TimerModule,
     FormsModule
   ],
-  declarations: [MajorScaleQuizComponent, MajorScaleQuizQuestionDisplayComponent, MajorScaleQuizScoringComponent, MajorScaleQuizAnswerOptionsComponent],
+  declarations: [MajorScaleQuizComponent, MajorScaleQuizQuestionDisplayComponent, MajorScaleQuizScoringComponent, MajorScaleQuizAnswerOptionsComponent, MajorScaleQuizSubmitComponent],
   exports: [MajorScaleQuizComponent],
-  providers: [MajorScaleQuizService, MajorScaleQuizQuestionDisplayService]
+  providers: [MajorScaleQuizService, MajorScaleQuizQuestionDisplayService, MajorScaleQuizSubmitService]
 })
 export class MajorScaleQuizModule { }
