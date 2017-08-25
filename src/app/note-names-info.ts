@@ -4,7 +4,8 @@ export const NoteNamesInfo = {
   majorKeys: ['Ab', 'A', 'Bb', 'B', 'Cb', 'C', 'C#', 'Db', 'D', 'Eb', 'E', 'F', 'F#', 'Gb', 'G'],
   minorKeys: ['ab', 'a', 'a#', 'bb', 'b', 'c', 'c#', 'd', 'd#', 'eb', 'e', 'f', 'f#', 'g', 'g#'],
   majorScales: ['Ab', 'A', 'A#', 'Bb', 'B', 'B#', 'Cb', 'C', 'C#', 'Db', 'D', 'D#', 'Eb', 'E', 'E#', 'Fb', 'F', 'F#', 'Gb', 'G', 'G#'],
-  minorScales: ['Ab', 'A', 'A#', 'Ax', 'Bb', 'B', 'B#', 'Bx', 'Cb', 'C', 'C#', 'Cx', 'Db', 'D', 'D#', 'Dx', 'Eb', 'E', 'E#', 'Ex', 'Fb', 'F', 'F#', 'Fx', 'Gb', 'G', 'G#', 'Gx']
+  minorScales: ['Ab', 'A', 'A#', 'Ax', 'Bb', 'B', 'B#', 'Bx', 'Cb', 'C', 'C#', 'Cx', 'Db', 'D', 'D#', 'Dx', 'Eb', 'E', 'E#', 'Ex', 'Fb', 'F', 'F#', 'Fx', 'Gb', 'G', 'G#', 'Gx'],
+  scaleTonics: ['Ab', 'A', 'A#', 'Bb', 'B', 'B#', 'Cb', 'C', 'C#', 'Db', 'D', 'D#', 'Eb', 'E', 'E#', 'Fb', 'F', 'F#', 'Gb', 'G', 'G#']
 };
 
 

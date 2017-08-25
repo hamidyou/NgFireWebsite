@@ -13,6 +13,8 @@ import {MajorScaleLessonComponent} from './major-scale-lesson/major-scale-lesson
 import {MajorScaleQuizModule} from './major-scale-quiz/major-scale-quiz.module';
 import { MinorScaleLessonComponent } from './minor-scale-lesson/minor-scale-lesson.component';
 import {MinorScalesQuizModule} from './minor-scales-quiz/minor-scales-quiz.module';
+import { ScaleDegreesLessonComponent } from './scale-degrees-lesson/scale-degrees-lesson.component';
+import {ScaleIdentificationQuizModule} from './scale-identification-quiz/scale-identification-quiz.module';
 
 @NgModule({
   imports: [
@@ -24,17 +26,20 @@ import {MinorScalesQuizModule} from './minor-scales-quiz/minor-scales-quiz.modul
     TimerModule,
     FormsModule,
     MajorScaleQuizModule,
-    MinorScalesQuizModule
+    MinorScalesQuizModule,
+    ScaleIdentificationQuizModule
   ],
   declarations: [
     UnitTwoComponent,
     MajorScaleLessonComponent,
-    MinorScaleLessonComponent
+    MinorScaleLessonComponent,
+    ScaleDegreesLessonComponent
   ],
   exports: [
     UnitTwoComponent,
     MajorScaleLessonComponent,
-    MinorScaleLessonComponent
+    MinorScaleLessonComponent,
+    ScaleDegreesLessonComponent
   ]
 })
 export class UnitTwoModule { }
