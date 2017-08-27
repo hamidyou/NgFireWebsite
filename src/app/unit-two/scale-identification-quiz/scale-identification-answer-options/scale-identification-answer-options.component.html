@@ -1,3 +1,15 @@
-<p>
-  scale-identification-answer-options works!
-</p>
+<div class="w3-btn-bar w3-show-inline-block w3-center " *ngFor="let note of noteNames.scaleTonics" >
+  <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" *ngIf="hideAnswer"
+          (click)="checkTonic($event)" id="{{ note }}"> {{ note }}
+  </button>
+</div>
+
+<div class="w3-btn-bar w3-show-inline-block w3-center" *ngFor="let scale of scaleQualities"  >
+  <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" (click)="checkScale($event)"
+          id="{{ scale }}" *ngIf="correctTonic"> {{ scale }}
+  </button>
+</div>
+
+<div class="audio" *ngIf="correctScale">
+  <audio autoplay src="{{ current.audio }}" type="audio/mpeg"></audio>
+</div>

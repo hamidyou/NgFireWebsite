@@ -15,6 +15,7 @@ import {ScaleIdentificationQuizQuestionDisplayComponent} from './scale-identific
 import {ScaleIdentificationQuizSubmitComponent} from './scale-identification-quiz-submit/scale-identification-quiz-submit.component';
 import {ScaleIdentificationQuizQuestionDisplayService} from './scale-identification-quiz-question-display/scale-identification-quiz-question-display.service';
 import {ScaleIdentificationQuizService} from './scale-identification-quiz.service';
+import {ScaleIdentificationQuizSubmitService} from './scale-identification-quiz-submit/scale-identification-quiz-submit.service';
 
 @NgModule({
   imports: [
@@ -28,6 +29,6 @@ import {ScaleIdentificationQuizService} from './scale-identification-quiz.servic
   ],
   declarations: [ScaleIdentificationQuizComponent, ScaleIdentificationAnswerOptionsComponent, ScaleIdentificationQuizScoringComponent, ScaleIdentificationQuizQuestionDisplayComponent, ScaleIdentificationQuizSubmitComponent],
   exports: [ScaleIdentificationQuizComponent, ScaleIdentificationAnswerOptionsComponent, ScaleIdentificationQuizScoringComponent, ScaleIdentificationQuizQuestionDisplayComponent, ScaleIdentificationQuizSubmitComponent],
-  providers: [ScaleIdentificationQuizQuestionDisplayService, ScaleIdentificationQuizService]
+  providers: [ScaleIdentificationQuizQuestionDisplayService, ScaleIdentificationQuizService, ScaleIdentificationQuizSubmitService]
 })
 export class ScaleIdentificationQuizModule { }

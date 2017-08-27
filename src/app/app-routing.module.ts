@@ -15,6 +15,7 @@ import {MajorScaleQuizComponent} from './unit-two/major-scale-quiz/major-scale-q
 import {MinorScaleLessonComponent} from './unit-two/minor-scale-lesson/minor-scale-lesson.component';
 import {MinorScalesQuizComponent} from './unit-two/minor-scales-quiz/minor-scales-quiz.component';
 import {ScaleDegreesLessonComponent} from './unit-two/scale-degrees-lesson/scale-degrees-lesson.component';
+import {ScaleIdentificationQuizComponent} from './unit-two/scale-identification-quiz/scale-identification-quiz.component';
 
 const routes: Routes = [
   {
@@ -72,6 +73,10 @@ const routes: Routes = [
   {
     path: 'unit-two/scale-degrees-lesson',
     component: ScaleDegreesLessonComponent
+  },
+  {
+    path: 'unit-two/scale-identification-quiz',
+    component: ScaleIdentificationQuizComponent
   }
 ];
 

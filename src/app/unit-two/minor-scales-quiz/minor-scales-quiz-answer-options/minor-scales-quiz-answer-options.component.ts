@@ -71,7 +71,7 @@ export class MinorScalesQuizAnswerOptionsComponent implements OnInit {
     this.current = this._minorScalesQuizService.current;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getQuizAnswerOptionsVariables();
   }
 }

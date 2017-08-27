@@ -71,6 +71,7 @@ export class ScaleIdentificationQuizService {
       this.tonicsIncorrect += 1;
     }
     this.totalPercentage();
+    console.log(this.scaleQualities + this.correctTonic + this.hideAnswer + this.correctScale);
   }
 
   checkScale(event): void {

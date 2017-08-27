@@ -1,3 +1,32 @@
-<p>
-  scale-identification-quiz-scoring works!
-</p>
+<div class="w3-display-container w3-responsive">
+  <table class="w3-table w3-responsive w3-centered ">
+    <tr>
+      <th>Tonics Correct</th>
+      <th>Tonics Incorrect</th>
+      <th>Tonics Attempted</th>
+    </tr>
+    <tr>
+      <td>{{ tonicsCorrect }}</td>
+      <td>{{ tonicsIncorrect }}</td>
+      <td>{{ tonicsAttempted }}</td>
+    </tr>
+    <tr>
+      <th>Scales Correct</th>
+      <th>Scales Incorrect</th>
+      <th>Scales Attempted</th>
+    </tr>
+    <tr>
+      <td>{{ scalesCorrect }}</td>
+      <td>{{ scalesIncorrect }}</td>
+      <td>{{ scalesAttempted }}</td>
+    </tr>
+  <tr>
+    <th></th>
+    <th>Total Percentage</th>
+    </tr>
+    <tr>
+      <td></td>
+      <td>{{ total | percent: '1.0-0' }}</td>
+    </tr>
+  </table>
+</div>
