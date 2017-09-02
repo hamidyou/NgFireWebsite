@@ -23,6 +23,7 @@ import {UserProgressService} from './user-progress/user-progress.service';
 import {UnitOneModule} from './unit-one/unit-one.module';
 import {TimerModule} from './timer/timer.module';
 import {UnitTwoModule} from './unit-two/unit-two.module';
+import {UnitThreeModule} from './unit-three/unit-three.module';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import {UnitTwoModule} from './unit-two/unit-two.module';
     FormsModule,
     TimerModule,
     UnitOneModule,
-    UnitTwoModule
+    UnitTwoModule,
+    UnitThreeModule
   ],
   providers: [AuthenticationService, CheckUserService, RegistrationService, UnitInfoService, OctaveClassService, NoteNamesService, ClefsService, UserProgressService],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, DoCheck, OnInit} from '@angular/core';
 import {ScaleIdentificationQuizService} from '../scale-identification-quiz.service';
 
 @Component({
@@ -6,7 +6,7 @@ import {ScaleIdentificationQuizService} from '../scale-identification-quiz.servi
   templateUrl: './scale-identification-answer-options.component.html',
   styleUrls: ['./scale-identification-answer-options.component.css']
 })
-export class ScaleIdentificationAnswerOptionsComponent implements OnInit {
+export class ScaleIdentificationAnswerOptionsComponent implements OnInit, DoCheck {
   public correctTonic: boolean;
   public correctScale: boolean;
   public wrongAnswer: boolean;
@@ -38,6 +38,10 @@ export class ScaleIdentificationAnswerOptionsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getQuizAnswerOptionsVariables();
+  }
+
+  ngDoCheck(): void {
     this.getQuizAnswerOptionsVariables();
   }
 

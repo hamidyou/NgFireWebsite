@@ -6,8 +6,8 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {TimerModule} from '../timer/timer.module';
 import {FormsModule} from '@angular/forms';
-
 import {environment} from '../../environments/environment';
+
 import {UnitTwoComponent} from './unit-two/unit-two.component';
 import {MajorScaleLessonComponent} from './major-scale-lesson/major-scale-lesson.component';
 import {MajorScaleQuizModule} from './major-scale-quiz/major-scale-quiz.module';

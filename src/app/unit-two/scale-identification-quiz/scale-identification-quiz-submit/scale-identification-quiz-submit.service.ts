@@ -60,7 +60,7 @@ export class ScaleIdentificationQuizSubmitService {
   }
 
   submitScore(): void {
-    if (this._scaleIdentificationQuizService.tonicsCorrect < 10 || this._scaleIdentificationQuizService.scalesCorrect < 10) {
+    if (this._scaleIdentificationQuizService.tonicsCorrect < 1 || this._scaleIdentificationQuizService.scalesCorrect < 1) {
       this.verify = 'This quiz cannot be submitted until you have 10 correct tonics and scales. Please click close then continue with the quiz or click reset to start over.';
     } else {
       this.timeElapsed = document.getElementById('timer').innerHTML;

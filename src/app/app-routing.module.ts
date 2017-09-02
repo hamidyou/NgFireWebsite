@@ -16,6 +16,9 @@ import {MinorScaleLessonComponent} from './unit-two/minor-scale-lesson/minor-sca
 import {MinorScalesQuizComponent} from './unit-two/minor-scales-quiz/minor-scales-quiz.component';
 import {ScaleDegreesLessonComponent} from './unit-two/scale-degrees-lesson/scale-degrees-lesson.component';
 import {ScaleIdentificationQuizComponent} from './unit-two/scale-identification-quiz/scale-identification-quiz.component';
+import {UnitThreeComponent} from './unit-three/unit-three/unit-three.component';
+import {MajorKeySignaturesLessonComponent} from './unit-three/major-key-signatures-lesson/major-key-signatures-lesson.component';
+import {MinorKeySignaturesLessonComponent} from './unit-three/minor-key-signatures-lesson/minor-key-signatures-lesson.component';
 
 const routes: Routes = [
   {
@@ -77,6 +80,18 @@ const routes: Routes = [
   {
     path: 'unit-two/scale-identification-quiz',
     component: ScaleIdentificationQuizComponent
+  },
+  {
+    path: 'unit-three',
+    component: UnitThreeComponent
+  },
+  {
+    path: 'unit-three/major-key-signatures-lesson',
+    component: MajorKeySignaturesLessonComponent
+  },
+  {
+    path: 'unit-three/minor-key-signatures-lesson',
+    component: MinorKeySignaturesLessonComponent
   }
 ];
 

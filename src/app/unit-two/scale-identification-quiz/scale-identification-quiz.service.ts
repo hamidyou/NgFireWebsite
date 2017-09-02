@@ -30,6 +30,9 @@ export class ScaleIdentificationQuizService {
     this.checkMark = this._scaleIdentificationQuizQuestionDisplayService.checkMark;
     this.hideAnswer = this._scaleIdentificationQuizQuestionDisplayService.hideAnswer;
     this.current = this._scaleIdentificationQuizQuestionDisplayService.current;
+    console.log('correctTonic = ' + this.correctTonic);
+    console.log('correctScale = ' + this.correctScale);
+    console.log('hideAnswer = ' + this.hideAnswer);
   }
 
   setInitialQuizVariables(): void {
@@ -53,6 +56,10 @@ export class ScaleIdentificationQuizService {
   }
 
   checkTonic(event): void {
+    console.log('correctTonic = ' + this.correctTonic);
+    console.log('correctScale = ' + this.correctScale);
+    console.log('hideAnswer = ' + this.hideAnswer);
+
     this.current = this._scaleIdentificationQuizQuestionDisplayService.current;
     const target = event.currentTarget;
     const idAttr = target.attributes.id;
@@ -71,7 +78,9 @@ export class ScaleIdentificationQuizService {
       this.tonicsIncorrect += 1;
     }
     this.totalPercentage();
-    console.log(this.scaleQualities + this.correctTonic + this.hideAnswer + this.correctScale);
+    console.log('correctTonic = ' + this.correctTonic);
+    console.log('correctScale = ' + this.correctScale);
+    console.log('hideAnswer = ' + this.hideAnswer);
   }
 
   checkScale(event): void {
@@ -80,8 +89,8 @@ export class ScaleIdentificationQuizService {
     const idAttr = target.attributes.id;
     const value = idAttr.nodeValue;
 
-    if (value === this.current.scale) {/*evaluates whether the answer clicked is correct and sets*/
-      this.correctScale = true;								/*feedback and score elements accordingly*/
+    if (value === this.current.scale) {
+      this.correctScale = true;
       this.correctTonic = false;
       this.checkMark = true;
       this.hideAnswer = false;
