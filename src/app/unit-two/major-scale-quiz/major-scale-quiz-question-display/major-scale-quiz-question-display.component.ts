@@ -24,23 +24,24 @@ export class MajorScaleQuizQuestionDisplayComponent implements OnInit, DoCheck {
   public bank: any;
   public usedBank: any;
 
-  constructor(private _majorScaleQuizService: MajorScaleQuizService, private _majorScaleQuizQuestionDisplayService: MajorScaleQuizQuestionDisplayService) { }
+  constructor(private _majorScaleQuizService: MajorScaleQuizService, private _majorScaleQuizQuestionDisplayService: MajorScaleQuizQuestionDisplayService) {
+  }
 
   checkVariables(): void {
-  this.correct1 = this._majorScaleQuizService.correct1;
-  this.correct2 = this._majorScaleQuizService.correct2;
-  this.correct3 = this._majorScaleQuizService.correct3;
-  this.correct4 = this._majorScaleQuizService.correct4;
-  this.correct5 = this._majorScaleQuizService.correct5;
-  this.correct6 = this._majorScaleQuizService.correct6;
-  this.correct7 = this._majorScaleQuizService.correct7;
-  this.correct8 = this._majorScaleQuizService.correct8;
-  this.wrongAnswer = this._majorScaleQuizService.wrongAnswer;
-  this.checkMark = this._majorScaleQuizService.checkMark;
-  this.hideAnswer = this._majorScaleQuizService.hideAnswer;
-  this.current = this._majorScaleQuizService.current;
-  this.bank = this._majorScaleQuizQuestionDisplayService.bank;
-  this.usedBank = this._majorScaleQuizQuestionDisplayService.usedBank;
+    this.correct1 = this._majorScaleQuizService.correct1;
+    this.correct2 = this._majorScaleQuizService.correct2;
+    this.correct3 = this._majorScaleQuizService.correct3;
+    this.correct4 = this._majorScaleQuizService.correct4;
+    this.correct5 = this._majorScaleQuizService.correct5;
+    this.correct6 = this._majorScaleQuizService.correct6;
+    this.correct7 = this._majorScaleQuizService.correct7;
+    this.correct8 = this._majorScaleQuizService.correct8;
+    this.wrongAnswer = this._majorScaleQuizService.wrongAnswer;
+    this.checkMark = this._majorScaleQuizService.checkMark;
+    this.hideAnswer = this._majorScaleQuizService.hideAnswer;
+    this.current = this._majorScaleQuizService.current;
+    this.bank = this._majorScaleQuizQuestionDisplayService.bank;
+    this.usedBank = this._majorScaleQuizQuestionDisplayService.usedBank;
 
   }
 

@@ -1,12 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 import {AuthenticationService} from '../authentication.service';
+import {UserProgressService} from '../user-progress/user-progress.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  providers: [AuthenticationService]
+  providers: [AuthenticationService, UserProgressService]
 })
 
 export class HeaderComponent {

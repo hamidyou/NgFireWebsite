@@ -4,7 +4,7 @@
 
 <div class="header w3-container w3-border-bottom w3-border-white w3-indigo w3-centered" onload="checkUser(uid.value)">
   <div class="w3-half w3-container">
-    <h1>Self-Paced Online Music Theory</h1>
+    <h1 routerLink="/" routerLinkActive="active" class="w3-btn">AP Music Theory Prep Course</h1>
     <div *ngIf="_AuthenticationService.user | async">
       <button class="w3-center w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black" id="logoutbtn" (click)="logout()">
         <a routerLink="/" routerLinkActive="active">

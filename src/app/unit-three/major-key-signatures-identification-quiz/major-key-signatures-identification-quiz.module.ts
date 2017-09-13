@@ -11,6 +11,11 @@ import {environment} from '../../../environments/environment';
 import {MajorKeySignaturesIdentificationQuizComponent} from './major-key-signatures-identification-quiz.component';
 import {MajorKeySignaturesIdentificationQuizQuestionDisplayComponent} from './major-key-signatures-identification-quiz-question-display/major-key-signatures-identification-quiz-question-display.component';
 import {MajorKeySignaturesIdentificationQuizScoringComponent} from './major-key-signatures-identification-quiz-scoring/major-key-signatures-identification-quiz-scoring.component';
+import {MajorKeySignaturesIdentificationQuizAnswerOptionsComponent} from './major-key-signatures-identification-quiz-answer-options/major-key-signatures-identification-quiz-answer-options.component';
+import {MajorKeySignaturesIdentificationQuizSubmitComponent} from './major-key-signatures-identification-quiz-submit/major-key-signatures-identification-quiz-submit.component';
+import {MajorKeySignaturesIdentificationQuizService} from './major-key-signatures-identification-quiz.service';
+import {MajorKeySignaturesIdentificationQuizSubmitService} from './major-key-signatures-identification-quiz-submit/major-key-signatures-identification-quiz-submit.service';
+import {MajorKeySignaturesIdentificationQuizQuestionDisplayService} from './major-key-signatures-identification-quiz-question-display/major-key-signatures-identification-quiz-question-display.service';
 
 @NgModule({
   imports: [
@@ -25,8 +30,15 @@ import {MajorKeySignaturesIdentificationQuizScoringComponent} from './major-key-
   declarations: [
     MajorKeySignaturesIdentificationQuizComponent,
     MajorKeySignaturesIdentificationQuizQuestionDisplayComponent,
-    MajorKeySignaturesIdentificationQuizScoringComponent
+    MajorKeySignaturesIdentificationQuizScoringComponent,
+    MajorKeySignaturesIdentificationQuizAnswerOptionsComponent,
+    MajorKeySignaturesIdentificationQuizSubmitComponent
   ],
-  exports: [MajorKeySignaturesIdentificationQuizComponent]
+  exports: [MajorKeySignaturesIdentificationQuizComponent],
+  providers: [
+    MajorKeySignaturesIdentificationQuizService,
+    MajorKeySignaturesIdentificationQuizSubmitService,
+    MajorKeySignaturesIdentificationQuizQuestionDisplayService
+  ]
 })
 export class MajorKeySignaturesIdentificationQuizModule { }

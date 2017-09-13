@@ -7,8 +7,8 @@
     <p>Graduation Year: {{userInfo.gradYear}}</p>
     <p>Email: {{userInfo.googleId}}</p>
   </div>
-  <button (click)="getUserProgress()" *ngIf="!showProgress">Show User Progress</button>
-  <button (click)="hideUserProgress()" *ngIf="showProgress">Hide User Progress</button>
+  <button (click)="getUserProgress()" *ngIf="!showProgress" class="w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black">Show User Progress</button>
+  <button (click)="hideUserProgress()" *ngIf="showProgress" class="w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black">Hide User Progress</button>
 </div>
 
 
@@ -26,7 +26,7 @@
       <th class="w3-border w3-border-black">Time</th>
     </tr>
     <tr *ngFor="let quiz of quizResults">
-      <td class="w3-border w3-border-black"><button onclick="document.getElementById('specificQuizResults').style.display='block'" (click)="getSpecificQuizResults($event)" id="{{quiz.quiz}}">{{ quiz.quiz }}</button>
+      <td class="w3-border w3-border-black"><button class="w3-btn w3-round w3-white w3-text-black w3-card-4 w3-margin w3-hover-black" onclick="document.getElementById('specificQuizResults').style.display='block'" (click)="getSpecificQuizResults($event)" id="{{quiz.quiz}}">{{ quiz.quiz }}</button>
         <div id="specificQuizResults" class="w3-modal">
           <div class="w3-modal-content">
             <div class="w3-card-4">

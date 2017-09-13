@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {MajorKeySignaturesIdentificationQuizService} from './major-key-signatures-identification-quiz.service';
+import {MajorKeySignaturesIdentificationQuizService} from '../major-key-signatures-identification-quiz/major-key-signatures-identification-quiz.service';
 
 @Component({
-  selector: 'app-major-key-signatures-identification-quiz',
-  templateUrl: './major-key-signatures-identification-quiz.component.html',
-  styleUrls: ['./major-key-signatures-identification-quiz.component.css']
+  selector: 'app-major-key-signatures-construction-quiz',
+  templateUrl: './major-key-signatures-construction-quiz.component.html',
+  styleUrls: ['./major-key-signatures-construction-quiz.component.css']
 })
-export class MajorKeySignaturesIdentificationQuizComponent implements OnInit {
+export class MajorKeySignaturesConstructionQuizComponent implements OnInit {
   total: number = this._majorKeySignaturesIdentificationQuizService.total;
 
   constructor(public _majorKeySignaturesIdentificationQuizService: MajorKeySignaturesIdentificationQuizService) { }

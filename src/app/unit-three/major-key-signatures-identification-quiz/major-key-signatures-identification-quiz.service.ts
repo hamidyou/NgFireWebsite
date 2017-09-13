@@ -24,9 +24,6 @@ export class MajorKeySignaturesIdentificationQuizService {
     this.hideAnswer = this._majorKeySignaturesIdentificationQuizQuestionDisplayService.hideAnswer;
     this.wrongAnswer = this._majorKeySignaturesIdentificationQuizQuestionDisplayService.wrongAnswer;
     this.checkMark = this._majorKeySignaturesIdentificationQuizQuestionDisplayService.checkMark;
-    this.keysCorrect = this._majorKeySignaturesIdentificationQuizQuestionDisplayService.keysCorrect;
-    this.keysIncorrect = this._majorKeySignaturesIdentificationQuizQuestionDisplayService.keysIncorrect;
-    this.keysAttempted = this._majorKeySignaturesIdentificationQuizQuestionDisplayService.keysAttempted;
     this.current = this._majorKeySignaturesIdentificationQuizQuestionDisplayService.current;
   }
 

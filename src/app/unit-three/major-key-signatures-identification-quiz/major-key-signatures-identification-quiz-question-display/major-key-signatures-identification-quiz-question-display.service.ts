@@ -8,10 +8,6 @@ export class MajorKeySignaturesIdentificationQuizQuestionDisplayService {
   public hideAnswer: boolean;
   public wrongAnswer: boolean;
   public checkMark: boolean;
-  public keysCorrect: number;
-  public keysIncorrect: number;
-  public keysAttempted: number;
-  public total: number;
   public current: any;
   public bank: any;
   public usedBank: any;
@@ -35,9 +31,5 @@ export class MajorKeySignaturesIdentificationQuizQuestionDisplayService {
     this.hideAnswer = true;
     this.wrongAnswer = false;
     this.checkMark = false;
-    this.keysCorrect = 0;
-    this.keysIncorrect = 0;
-    this.keysAttempted = 0;
-    this.total = 0;
   }
 }
