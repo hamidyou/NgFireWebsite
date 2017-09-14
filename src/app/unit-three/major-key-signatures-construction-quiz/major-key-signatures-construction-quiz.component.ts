@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MajorKeySignaturesIdentificationQuizService} from '../major-key-signatures-identification-quiz/major-key-signatures-identification-quiz.service';
+
+import {MajorKeySignaturesConstructionQuizService} from './major-key-signatures-construction-quiz.service';
 
 @Component({
   selector: 'app-major-key-signatures-construction-quiz',
@@ -7,14 +8,14 @@ import {MajorKeySignaturesIdentificationQuizService} from '../major-key-signatur
   styleUrls: ['./major-key-signatures-construction-quiz.component.css']
 })
 export class MajorKeySignaturesConstructionQuizComponent implements OnInit {
-  total: number = this._majorKeySignaturesIdentificationQuizService.total;
+  total: number = this._majorKeySignaturesConstructionQuizService.total;
 
-  constructor(public _majorKeySignaturesIdentificationQuizService: MajorKeySignaturesIdentificationQuizService) { }
+  constructor(public _majorKeySignaturesConstructionQuizService: MajorKeySignaturesConstructionQuizService) { }
 
   startQuiz(): void {
-    this._majorKeySignaturesIdentificationQuizService.getMajorKeySignaturesIdentificationQuizQuestion();
-    this._majorKeySignaturesIdentificationQuizService.getAnswerOptions();
-    this._majorKeySignaturesIdentificationQuizService.setInitialQuizVariables();
+    this._majorKeySignaturesConstructionQuizService.getMajorKeySignaturesConstructionQuizQuestion();
+    this._majorKeySignaturesConstructionQuizService.getAnswerOptions();
+    this._majorKeySignaturesConstructionQuizService.setInitialQuizVariables();
     this.total = 0;
   }
 

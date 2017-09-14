@@ -1,2 +1,1 @@
-export class MajorKeySignaturesConstructionQuizUsedBank {
-}
+export const MajorKeySignaturesConstructionQuizUsedBank = [];

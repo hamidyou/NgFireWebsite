@@ -14,6 +14,7 @@ import {MajorKeySignaturesConstructionQuizScoringComponent} from './major-key-si
 import {MajorKeySignaturesConstructionQuizComponent} from './major-key-signatures-construction-quiz.component';
 import {MajorKeySignaturesConstructionQuizService} from './major-key-signatures-construction-quiz.service';
 import {MajorKeySignaturesConstructionQuizQuestionDisplayService} from './major-key-signatures-construction-quiz-question-display/major-key-signatures-construction-quiz-question-display.service';
+import {MajorKeySignaturesConstructionQuizQuestionDisplayComponent} from './major-key-signatures-construction-quiz-question-display/major-key-signatures-construction-quiz-question-display.component';
 
 @NgModule({
   imports: [
@@ -27,9 +28,10 @@ import {MajorKeySignaturesConstructionQuizQuestionDisplayService} from './major-
   ],
   declarations: [
     MajorKeySignaturesConstructionQuizAnswerOptionsComponent,
-    MajorKeySignaturesConstructionQuizSubmitComponent,
+    MajorKeySignaturesConstructionQuizQuestionDisplayComponent,
     MajorKeySignaturesConstructionQuizScoringComponent,
-    MajorKeySignaturesConstructionQuizSubmitComponent
+    // MajorKeySignaturesConstructionQuizSubmitComponent,
+    MajorKeySignaturesConstructionQuizComponent
   ],
   exports: [MajorKeySignaturesConstructionQuizComponent],
   providers: [

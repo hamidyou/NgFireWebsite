@@ -6,6 +6,7 @@ import {NoteNamesService} from '../../note-names.service';
 @Injectable()
 export class MajorKeySignaturesConstructionQuizService {
   public accidentalsInAnswer: any;
+  public correctAnswer: any;
   public correct1: boolean;
   public correct2: boolean;
   public correct3: boolean;
@@ -76,12 +77,21 @@ export class MajorKeySignaturesConstructionQuizService {
     const idAttr = target.attributes.id;
     const value = idAttr.nodeValue;
 
+    console.log('check1');
+    console.log('correct1 = ' + this.correct1);
+    console.log('hideAnswer = ' + this.hideAnswer);
+
+
     if (value === this.current.accidentalsInKey[0]) {
       this.accidentalsInAnswer.push(value);
       this.correct1 = true;
       this.hideAnswer = false;
       this.checkMark = true;
-      setTimeout(() => this.checkMark = false, 2000);
+      setTimeout(() => {
+        this.checkMark = false;
+        console.log('correct1 = ' + this.correct1);
+        console.log('hideAnswer = ' + this.hideAnswer);
+      }, 2000);
       this.accidentalsCorrect += 1;
       this.accidentalsAttempted += 1;
     } else {
@@ -97,6 +107,8 @@ export class MajorKeySignaturesConstructionQuizService {
     const target = event.currentTarget;
     const idAttr = target.attributes.id;
     const value = idAttr.nodeValue;
+
+    console.log('check2');
 
     if (value === this.current.accidentalsInKey[1]) {
       this.accidentalsInAnswer.push(value);
@@ -220,6 +232,32 @@ export class MajorKeySignaturesConstructionQuizService {
       this.wrongAnswer = true;
       setTimeout(() => this.wrongAnswer = false, 2000);
       this.accidentalsIncorrect += 1;
+    }
+    this.totalPercentage();
+  }
+
+  submit(): void {
+    if (this.accidentalsInAnswer.toString() === this.current.accidentalsInKey.toString()) {
+      this.correctAnswer = true;
+      this.hideAnswer = false;
+      this.checkMark = true;
+      setTimeout(() => {
+        this.checkMark = false;
+        this.correct1 = false;
+        this.correct2 = false;
+        this.correct3 = false;
+        this.correct4 = false;
+        this.correct5 = false;
+        this.correct6 = false;
+        this.correct7 = false;
+        this.getMajorKeySignaturesConstructionQuizQuestion();
+      }, 2000);
+      this.keysCorrect += 1;
+      this.keysAttempted += 1;
+    } else {
+      this.wrongAnswer = true;
+      setTimeout(() => this.wrongAnswer = false, 2000);
+      this.keysIncorrect += 1;
     }
     this.totalPercentage();
   }
