@@ -24,6 +24,7 @@ import {UnitOneModule} from './unit-one/unit-one.module';
 import {TimerModule} from './timer/timer.module';
 import {UnitTwoModule} from './unit-two/unit-two.module';
 import {UnitThreeModule} from './unit-three/unit-three.module';
+import {UnitFourModule} from './unit-four/unit-four.module';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {UnitThreeModule} from './unit-three/unit-three.module';
     TimerModule,
     UnitOneModule,
     UnitTwoModule,
-    UnitThreeModule
+    UnitThreeModule,
+    UnitFourModule
   ],
   providers: [AuthenticationService, CheckUserService, RegistrationService, UnitInfoService, OctaveClassService, NoteNamesService, ClefsService, UserProgressService],
   bootstrap: [AppComponent]

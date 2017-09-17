@@ -73,4 +73,9 @@ export class MajorKeySignaturesConstructionQuizAnswerOptionsComponent implements
     this.getQuizAnswerOptionsVariables();
   }
 
+  submit(): void {
+    this._majorKeySignaturesConstructionQuizService.submit();
+    this.getQuizAnswerOptionsVariables();
+  }
+
 }

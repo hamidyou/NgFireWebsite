@@ -1,0 +1,30 @@
+<div class="images">
+  <img class="w3-image w3-margin" src="{{ current.image[0] }}" alt="{{ current.image[0] }}"
+       *ngIf="correct1" id="Accidental1Image"/>
+  <img class="w3-image w3-margin" src="{{ current.image[1] }}" alt="{{ current.image[1] }}"
+       *ngIf="correct2" id="Accidental2Image"/>
+  <img class="w3-image w3-margin" src="{{ current.image[2] }}" alt="{{ current.image[2] }}"
+       *ngIf="correct3" id="Accidental3Image"/>
+  <img class="w3-image w3-margin" src="{{ current.image[3] }}" alt="{{ current.image[3] }}"
+       *ngIf="correct4" id="Accidental4Image"/>
+  <img class="w3-image w3-margin" src="{{ current.image[4] }}" alt="{{ current.image[4] }}"
+       *ngIf="correct5" id="Accidental5Image"/>
+  <img class="w3-image w3-margin" src="{{ current.image[5] }}" alt="{{ current.image[5] }}"
+       *ngIf="correct6" id="Accidental6Image"/>
+  <img class="w3-image w3-margin" src="{{ current.image[6] }}" alt="{{ current.image[6] }}"
+       *ngIf="correct7" id="Accidental7Image"/>
+</div>
+
+<div>
+  <p class="w3-center w3-xlarge w3-section" id="Question"> What accidentals are in the {{ current.key }}-Minor
+    key signature?</p>
+  <p class="w3-center w3-xlarge w3-section" id="Instructions"> Make sure to select the accidentals in the
+    correct order. </p>
+  <p class="w3-center w3-xlarge w3-section" id="answer"> {{ accidentalsInAnswer.join(" - ") }}
+    <img class="CorrectAnswer w3-image" src="../../../../assets/img/checkmark.gif" alt="CorrectAnswer"
+         *ngIf="checkMark"/>
+    <img class="WrongAnswer w3-image" src="../../../../assets/img/WrongAnswer.gif" alt="WrongAnswer"
+         *ngIf="wrongAnswer"/>
+  </p>
+</div>
+

@@ -1,0 +1,30 @@
+<table class="w3-table w3-responsive w3-centered ">
+  <tr>
+    <th>Accidentals Correct</th>
+    <th>Accidentals Incorrect</th>
+    <th>Accidentals Attempted</th>
+  </tr>
+  <tr>
+    <td>{{ accidentalsCorrect }}</td>
+    <td>{{ accidentalsIncorrect }}</td>
+    <td>{{ accidentalsAttempted }}</td>
+  </tr>
+  <tr>
+    <th>Keys Correct</th>
+    <th>Keys Incorrect</th>
+    <th>Keys Attempted</th>
+  </tr>
+  <tr>
+    <td>{{ keysCorrect }}</td>
+    <td>{{ keysIncorrect }}</td>
+    <td>{{ keysAttempted }}</td>
+  </tr>
+  <tr>
+    <th></th>
+    <th>Total Percentage</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td>{{ total | percent: '1.0-0'}}</td>
+  </tr>
+</table>

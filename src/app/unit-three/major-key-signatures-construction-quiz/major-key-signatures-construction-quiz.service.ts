@@ -44,6 +44,7 @@ export class MajorKeySignaturesConstructionQuizService {
     this.wrongAnswer = this._majorKeySignaturesConstructionQuizQuestionDisplayService.wrongAnswer;
     this.checkMark = this._majorKeySignaturesConstructionQuizQuestionDisplayService.checkMark;
     this.current = this._majorKeySignaturesConstructionQuizQuestionDisplayService.current;
+    this.correctAnswer = this._majorKeySignaturesConstructionQuizQuestionDisplayService.correctAnswer;
   }
 
   setInitialQuizVariables(): void {
@@ -76,11 +77,6 @@ export class MajorKeySignaturesConstructionQuizService {
     const target = event.currentTarget;
     const idAttr = target.attributes.id;
     const value = idAttr.nodeValue;
-
-    console.log('check1');
-    console.log('correct1 = ' + this.correct1);
-    console.log('hideAnswer = ' + this.hideAnswer);
-
 
     if (value === this.current.accidentalsInKey[0]) {
       this.accidentalsInAnswer.push(value);
@@ -239,17 +235,18 @@ export class MajorKeySignaturesConstructionQuizService {
   submit(): void {
     if (this.accidentalsInAnswer.toString() === this.current.accidentalsInKey.toString()) {
       this.correctAnswer = true;
-      this.hideAnswer = false;
       this.checkMark = true;
+      this.correct1 = false;
+      this.correct2 = false;
+      this.correct3 = false;
+      this.correct4 = false;
+      this.correct5 = false;
+      this.correct6 = false;
+      this.correct7 = false;
+      this.hideAnswer = true;
       setTimeout(() => {
         this.checkMark = false;
-        this.correct1 = false;
-        this.correct2 = false;
-        this.correct3 = false;
-        this.correct4 = false;
-        this.correct5 = false;
-        this.correct6 = false;
-        this.correct7 = false;
+        this.correctAnswer = false;
         this.getMajorKeySignaturesConstructionQuizQuestion();
       }, 2000);
       this.keysCorrect += 1;

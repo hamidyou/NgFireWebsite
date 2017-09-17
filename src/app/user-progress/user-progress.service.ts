@@ -13,7 +13,7 @@ export class UserProgressService {
   public user: FirebaseObjectObservable<any>;
   public userFile: any;
   public userResults: FirebaseObjectObservable<any>;
-  public quizzes = ['PianoNoteIdentificationQuiz', 'NoteIdentificationQuiz', 'MajorScaleConstructionQuiz', 'MinorScalesConstructionQuiz', 'ScaleIdentificationQuiz', 'MajorKeySignaturesIdentificationQuiz'];
+  public quizzes = ['PianoNoteIdentificationQuiz', 'NoteIdentificationQuiz', 'MajorScaleConstructionQuiz', 'MinorScalesConstructionQuiz', 'ScaleIdentificationQuiz', 'MajorKeySignaturesIdentificationQuiz', 'MajorKeySignaturesConstructionQuiz', 'MinorKeySignaturesIdentificationQuiz', 'MinorKeySignaturesConstructionQuiz'];
   public quizResults: any = [];
   public specificQuizResults: FirebaseListObservable<any>;
 

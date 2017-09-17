@@ -13,6 +13,8 @@ import { MajorKeySignaturesLessonComponent } from './major-key-signatures-lesson
 import { MinorKeySignaturesLessonComponent } from './minor-key-signatures-lesson/minor-key-signatures-lesson.component';
 import {MajorKeySignaturesIdentificationQuizModule} from './major-key-signatures-identification-quiz/major-key-signatures-identification-quiz.module';
 import {MajorKeySignaturesConstructionQuizModule} from './major-key-signatures-construction-quiz/major-key-signatures-construction-quiz.module';
+import {MinorKeySignaturesIdentificationQuizModule} from './minor-key-signatures-identification-quiz/minor-key-signatures-identification-quiz.module';
+import {MinorKeySignaturesConstructionQuizModule} from './minor-key-signatures-construction-quiz/minor-key-signatures-construction-quiz.module';
 
 @NgModule({
   imports: [
@@ -24,7 +26,9 @@ import {MajorKeySignaturesConstructionQuizModule} from './major-key-signatures-c
     TimerModule,
     FormsModule,
     MajorKeySignaturesIdentificationQuizModule,
-    MajorKeySignaturesConstructionQuizModule
+    MajorKeySignaturesConstructionQuizModule,
+    MinorKeySignaturesIdentificationQuizModule,
+    MinorKeySignaturesConstructionQuizModule
   ],
   declarations: [
     UnitThreeComponent,

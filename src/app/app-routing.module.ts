@@ -21,6 +21,8 @@ import {MajorKeySignaturesLessonComponent} from './unit-three/major-key-signatur
 import {MinorKeySignaturesLessonComponent} from './unit-three/minor-key-signatures-lesson/minor-key-signatures-lesson.component';
 import {MajorKeySignaturesIdentificationQuizComponent} from './unit-three/major-key-signatures-identification-quiz/major-key-signatures-identification-quiz.component';
 import {MajorKeySignaturesConstructionQuizComponent} from './unit-three/major-key-signatures-construction-quiz/major-key-signatures-construction-quiz.component';
+import {MinorKeySignaturesIdentificationQuizComponent} from './unit-three/minor-key-signatures-identification-quiz/minor-key-signatures-identification-quiz.component';
+import {MinorKeySignaturesConstructionQuizComponent} from './unit-three/minor-key-signatures-construction-quiz/minor-key-signatures-construction-quiz.component';
 
 const routes: Routes = [
   {
@@ -102,6 +104,14 @@ const routes: Routes = [
   {
     path: 'unit-three/major-key-signatures-construction-quiz',
     component: MajorKeySignaturesConstructionQuizComponent
+  },
+  {
+    path: 'unit-three/minor-key-signatures-identification-quiz',
+    component: MinorKeySignaturesIdentificationQuizComponent
+  },
+  {
+    path: 'unit-three/minor-key-signatures-construction-quiz',
+    component: MinorKeySignaturesConstructionQuizComponent
   }
 ];
 

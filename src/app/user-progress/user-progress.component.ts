@@ -22,6 +22,7 @@ export class UserProgressComponent implements OnInit {
     this.user.subscribe(data => {
       this.userInfo = data.child(this._authenticationService.userId).val();
     });
+    this._authenticationService.registered = true;
   }
 
   getUserProgress(): void {

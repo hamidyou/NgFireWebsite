@@ -18,6 +18,7 @@ export class MajorKeySignaturesConstructionQuizQuestionDisplayService {
   public current: any;
   public bank: any;
   public usedBank: any;
+  public correctAnswer: boolean;
 
   getMajorKeySignaturesConstructionQuizBank() {
     return MajorKeySignaturesConstructionQuizBank;
@@ -45,5 +46,6 @@ export class MajorKeySignaturesConstructionQuizQuestionDisplayService {
     this.hideAnswer = true;
     this.wrongAnswer = false;
     this.checkMark = false;
+    this.correctAnswer = false;
   }
 }

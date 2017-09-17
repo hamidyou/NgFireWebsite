@@ -1,25 +1,42 @@
 <div class="w3-btn-bar w3-show-inline-block w3-center " *ngFor="let accidental of noteNames.accidentals">
 
   <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black"
-          (click)="checkAnswer1($event);" id="{{ accidental }}" *ngIf="hideAnswer"> {{ accidental }}
+          (click)="checkAnswer1($event); getQuizAnswerOptionsVariables();" id="{{ accidental }}" *ngIf="hideAnswer"> {{
+    accidental }}
   </button>
   <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black"
-          (click)="checkAnswer2($event);" id="{{ accidental }}" *ngIf="correct1"> {{ accidental }}
+          (click)="checkAnswer2($event); getQuizAnswerOptionsVariables();" id="{{ accidental }}" *ngIf="correct1"> {{
+    accidental }}
   </button>
   <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black"
-          (click)="checkAnswer3($event);" id="{{ accidental }}" *ngIf="correct2"> {{ accidental }}
+          (click)="checkAnswer3($event); getQuizAnswerOptionsVariables();" id="{{ accidental }}" *ngIf="correct2"> {{
+    accidental }}
   </button>
   <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black"
-          (click)="checkAnswer4($event);" id="{{ accidental }}" *ngIf="correct3"> {{ accidental }}
+          (click)="checkAnswer4($event); getQuizAnswerOptionsVariables();" id="{{ accidental }}" *ngIf="correct3"> {{
+    accidental }}
   </button>
   <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black"
-          (click)="checkAnswer5($event);" id="{{ accidental }}" *ngIf="correct4"> {{ accidental }}
+          (click)="checkAnswer5($event); getQuizAnswerOptionsVariables();" id="{{ accidental }}" *ngIf="correct4"> {{
+    accidental }}
   </button>
   <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black"
-          (click)="checkAnswer6($event);" id="{{ accidental }}" *ngIf="correct5"> {{ accidental }}
+          (click)="checkAnswer6($event); getQuizAnswerOptionsVariables();" id="{{ accidental }}" *ngIf="correct5"> {{
+    accidental }}
   </button>
   <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black"
-          (click)="checkAnswer7($event);" id="{{ accidental }}" *ngIf="correct6"> {{ accidental }}
+          (click)="checkAnswer7($event); getQuizAnswerOptionsVariables();" id="{{ accidental }}" *ngIf="correct6"> {{
+    accidental }}
   </button>
 
+</div>
+
+<div>
+  <p class="SubmitInstructions w3-center w3-xlarge w3-section" *ngIf="!_majorKeySignaturesConstructionQuizService.correctAnswer"> Click "Submit Answer" when you think you
+    have completed constructing the correct key signature. For no flats or sharps, just click
+    immediately. </p>
+  <p class="w3-center w3-xlarge w3-section" *ngIf="_majorKeySignaturesConstructionQuizService.correctAnswer">CORRECT</p>
+  <button class="w3- margin w3-center w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black"
+          (click)="submit();"> Submit Answer
+  </button>
 </div>
