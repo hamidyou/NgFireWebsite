@@ -23,6 +23,10 @@ import {MajorKeySignaturesIdentificationQuizComponent} from './unit-three/major-
 import {MajorKeySignaturesConstructionQuizComponent} from './unit-three/major-key-signatures-construction-quiz/major-key-signatures-construction-quiz.component';
 import {MinorKeySignaturesIdentificationQuizComponent} from './unit-three/minor-key-signatures-identification-quiz/minor-key-signatures-identification-quiz.component';
 import {MinorKeySignaturesConstructionQuizComponent} from './unit-three/minor-key-signatures-construction-quiz/minor-key-signatures-construction-quiz.component';
+import {UnitFourComponent} from './unit-four/unit-four/unit-four.component';
+import {IntervalLessonOneComponent} from './unit-four/interval-lesson-one/interval-lesson-one.component';
+import {IntervalLessonTwoComponent} from './unit-four/interval-lesson-two/interval-lesson-two.component';
+import {IntervalLessonThreeComponent} from './unit-four/interval-lesson-three/interval-lesson-three.component';
 
 const routes: Routes = [
   {
@@ -112,6 +116,22 @@ const routes: Routes = [
   {
     path: 'unit-three/minor-key-signatures-construction-quiz',
     component: MinorKeySignaturesConstructionQuizComponent
+  },
+  {
+    path: 'unit-four',
+    component: UnitFourComponent
+  },
+  {
+    path: 'unit-four/interval-lesson-one',
+    component: IntervalLessonOneComponent
+  },
+  {
+    path: 'unit-four/interval-lesson-two',
+    component: IntervalLessonTwoComponent
+  },
+  {
+    path: 'unit-four/interval-lesson-three',
+    component: IntervalLessonThreeComponent
   }
 ];
 
