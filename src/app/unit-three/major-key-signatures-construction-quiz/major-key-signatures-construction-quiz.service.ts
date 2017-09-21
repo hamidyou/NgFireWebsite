@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 import {MajorKeySignaturesConstructionQuizQuestionDisplayService} from './major-key-signatures-construction-quiz-question-display/major-key-signatures-construction-quiz-question-display.service';
 import {NoteNamesService} from '../../note-names.service';
@@ -85,8 +85,6 @@ export class MajorKeySignaturesConstructionQuizService {
       this.checkMark = true;
       setTimeout(() => {
         this.checkMark = false;
-        console.log('correct1 = ' + this.correct1);
-        console.log('hideAnswer = ' + this.hideAnswer);
       }, 2000);
       this.accidentalsCorrect += 1;
       this.accidentalsAttempted += 1;

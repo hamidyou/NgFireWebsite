@@ -17,7 +17,7 @@ import {UnitInfoService} from './home-page/unit-info.service';
 import {HomePageComponent} from './home-page/home-page.component';
 import {OctaveClassService} from './octave-class.service';
 import {NoteNamesService} from './note-names.service';
-import { UserProgressComponent } from './user-progress/user-progress.component';
+import {UserProgressComponent} from './user-progress/user-progress.component';
 import {ClefsService} from './clefs.service';
 import {UserProgressService} from './user-progress/user-progress.service';
 import {UnitOneModule} from './unit-one/unit-one.module';
@@ -26,14 +26,13 @@ import {UnitTwoModule} from './unit-two/unit-two.module';
 import {UnitThreeModule} from './unit-three/unit-three.module';
 import {UnitFourModule} from './unit-four/unit-four.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     UserRegistrationComponent,
     HomePageComponent,
-    UserProgressComponent
+    UserProgressComponent,
   ],
   imports: [
     BrowserModule,

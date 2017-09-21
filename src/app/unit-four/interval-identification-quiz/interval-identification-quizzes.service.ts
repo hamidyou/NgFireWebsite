@@ -19,6 +19,10 @@ export class IntervalIdentificationQuizzesService {
   public total: number;
   public intervalQualities: ['diminished', 'minor', 'Major', 'Perfect', 'Augmented'];
   public intervalQuantities: ['2nd', '3rd', '4th', '5th', '6th', '7th', '8th'];
+  public currentQuantity: string;
+  public currentQuality: string;
+  public perfectMajor: boolean;
+  public perfectMajorMinor: boolean;
 
   constructor(public _intervalIdentificationQuizzesQuestionDisplayService: IntervalIdentificationQuizzesQuestionDisplayService) {
   }
@@ -30,7 +34,7 @@ export class IntervalIdentificationQuizzesService {
     this.wrongAnswer = this._intervalIdentificationQuizzesQuestionDisplayService.wrongAnswer;
     this.checkMark = this._intervalIdentificationQuizzesQuestionDisplayService.checkMark;
     this.hideAnswer = this._intervalIdentificationQuizzesQuestionDisplayService.hideAnswer;
-    this.current = this._intervalIdentificationQuizzesQuestionDisplayService.current
+    this.current = this._intervalIdentificationQuizzesQuestionDisplayService.current;
   }
 
   getPerfectMajorMinorIntervalIdentificaionQuizQuestion(): void {
@@ -40,7 +44,7 @@ export class IntervalIdentificationQuizzesService {
     this.wrongAnswer = this._intervalIdentificationQuizzesQuestionDisplayService.wrongAnswer;
     this.checkMark = this._intervalIdentificationQuizzesQuestionDisplayService.checkMark;
     this.hideAnswer = this._intervalIdentificationQuizzesQuestionDisplayService.hideAnswer;
-    this.current = this._intervalIdentificationQuizzesQuestionDisplayService.current
+    this.current = this._intervalIdentificationQuizzesQuestionDisplayService.current;
   }
 
   getAllIntervalIdentificaionQuizQuestion(): void {
@@ -50,7 +54,7 @@ export class IntervalIdentificationQuizzesService {
     this.wrongAnswer = this._intervalIdentificationQuizzesQuestionDisplayService.wrongAnswer;
     this.checkMark = this._intervalIdentificationQuizzesQuestionDisplayService.checkMark;
     this.hideAnswer = this._intervalIdentificationQuizzesQuestionDisplayService.hideAnswer;
-    this.current = this._intervalIdentificationQuizzesQuestionDisplayService.current
+    this.current = this._intervalIdentificationQuizzesQuestionDisplayService.current;
   }
 
   setInitialQuizVariables(): void {
@@ -76,6 +80,77 @@ export class IntervalIdentificationQuizzesService {
   getQualityAnswerOptions(): any {
     return this.intervalQualities;
   }
+
+  checkQuantity(event): void {
+    this.current = this._intervalIdentificationQuizzesQuestionDisplayService.current;
+    const target = event.currentTarget;
+    const idAttr = target.attributes.id;
+    const value = idAttr.nodeValue;
+
+    if (value === this.currentQuantity) {
+      this.correctQuantity = true;
+      this.checkMark = true;
+      this.hideAnswer = false;
+      setTimeout(() => {
+        this.checkMark = false;
+      }, 2000);
+      this.quantitiesCorrect += 1;
+      this.quantitiesAttempted += 1;
+    } else {
+      this.wrongAnswer = true;
+      setTimeout(() => {
+        this.wrongAnswer = false;
+      }, 2000);
+      this.quantitiesIncorrect += 1;
+      this.quantitiesAttempted += 1;
+    }
+    this.totalPercentage();
+  }
+
+  checkQuality(event): void {
+    this.current = this._intervalIdentificationQuizzesQuestionDisplayService.current;
+    const target = event.currentTarget;
+    const idAttr = target.attributes.id;
+    const value = idAttr.nodeValue;
+
+    if (value === this.currentQuality) {
+      this.correctQuantity = false;
+      this.correctQuality = true;
+      this.checkMark = true;
+      this.hideAnswer = false;
+      setTimeout(() => {
+        this.checkMark = false;
+        if (this.perfectMajor) {
+          this.getPerfectMajorIntervalIdentificaionQuizQuestion();
+        } else if (this.perfectMajorMinor) {
+          this.getPerfectMajorMinorIntervalIdentificaionQuizQuestion();
+        } else {
+          this.getAllIntervalIdentificaionQuizQuestion();
+        }
+      }, 2000);
+      this.qualitiesCorrect += 1;
+      this.qualitiesAttempted += 1;
+      this.intervalsAttempted += 1;
+      this.totalPercentage();
+    } else {
+      this.wrongAnswer = true;
+      setTimeout(() => {
+        this.wrongAnswer = false;
+      }, 2000);
+      this.qualitiesIncorrect += 1;
+      this.qualitiesAttempted += 1;
+    }
+    this.totalPercentage();
+  }
+
+  totalPercentage(): void {
+    if ((this.quantitiesCorrect + this.qualitiesCorrect) > (this.quantitiesIncorrect + this.qualitiesIncorrect)) {
+      this.total = (((this.quantitiesCorrect + this.qualitiesCorrect) - (this.quantitiesIncorrect +
+        this.qualitiesIncorrect)) / (this.quantitiesAttempted + this.qualitiesAttempted));
+    } else {
+      this.total = 0;
+    }
+  };
 
 
 }
