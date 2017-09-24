@@ -17,8 +17,8 @@ export class IntervalIdentificationQuizzesService {
   public qualitiesIncorrect: number;
   public intervalsAttempted: number;
   public total: number;
-  public intervalQualities: ['diminished', 'minor', 'Major', 'Perfect', 'Augmented'];
-  public intervalQuantities: ['2nd', '3rd', '4th', '5th', '6th', '7th', '8th'];
+  public intervalQualities = ['diminished', 'minor', 'Major', 'Perfect', 'Augmented'];
+  public intervalQuantities = ['2nd', '3rd', '4th', '5th', '6th', '7th', '8th'];
   public currentQuantity: string;
   public currentQuality: string;
   public perfectMajor: boolean;
@@ -35,6 +35,7 @@ export class IntervalIdentificationQuizzesService {
     this.checkMark = this._intervalIdentificationQuizzesQuestionDisplayService.checkMark;
     this.hideAnswer = this._intervalIdentificationQuizzesQuestionDisplayService.hideAnswer;
     this.current = this._intervalIdentificationQuizzesQuestionDisplayService.current;
+    this.perfectMajor = true;
   }
 
   getPerfectMajorMinorIntervalIdentificaionQuizQuestion(): void {
@@ -45,9 +46,10 @@ export class IntervalIdentificationQuizzesService {
     this.checkMark = this._intervalIdentificationQuizzesQuestionDisplayService.checkMark;
     this.hideAnswer = this._intervalIdentificationQuizzesQuestionDisplayService.hideAnswer;
     this.current = this._intervalIdentificationQuizzesQuestionDisplayService.current;
+    this.perfectMajorMinor = true;
   }
 
-  getAllIntervalIdentificaionQuizQuestion(): void {
+  getAllIntervalIdentificationQuizQuestion(): void {
     this._intervalIdentificationQuizzesQuestionDisplayService.getAllIntervalIdentificationQuizQuestion();
     this.correctQuantity = this._intervalIdentificationQuizzesQuestionDisplayService.correctQuantity;
     this.correctQuality = this._intervalIdentificationQuizzesQuestionDisplayService.correctQuality;
@@ -82,7 +84,7 @@ export class IntervalIdentificationQuizzesService {
   }
 
   checkQuantity(event): void {
-    this.current = this._intervalIdentificationQuizzesQuestionDisplayService.current;
+    this.currentQuantity = this._intervalIdentificationQuizzesQuestionDisplayService.currentQuantity;
     const target = event.currentTarget;
     const idAttr = target.attributes.id;
     const value = idAttr.nodeValue;
@@ -108,7 +110,7 @@ export class IntervalIdentificationQuizzesService {
   }
 
   checkQuality(event): void {
-    this.current = this._intervalIdentificationQuizzesQuestionDisplayService.current;
+    this.currentQuality = this._intervalIdentificationQuizzesQuestionDisplayService.currentQuality;
     const target = event.currentTarget;
     const idAttr = target.attributes.id;
     const value = idAttr.nodeValue;
@@ -125,7 +127,7 @@ export class IntervalIdentificationQuizzesService {
         } else if (this.perfectMajorMinor) {
           this.getPerfectMajorMinorIntervalIdentificaionQuizQuestion();
         } else {
-          this.getAllIntervalIdentificaionQuizQuestion();
+          this.getAllIntervalIdentificationQuizQuestion();
         }
       }, 2000);
       this.qualitiesCorrect += 1;

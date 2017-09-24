@@ -12,6 +12,7 @@ import {UnitFourComponent} from './unit-four/unit-four.component';
 import {IntervalLessonOneComponent} from './interval-lesson-one/interval-lesson-one.component';
 import {IntervalLessonTwoComponent} from './interval-lesson-two/interval-lesson-two.component';
 import {IntervalLessonThreeComponent} from './interval-lesson-three/interval-lesson-three.component';
+import {IntervalIdentificationQuizModule} from './interval-identification-quiz/interval-identification-quiz.module';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import {IntervalLessonThreeComponent} from './interval-lesson-three/interval-les
     AngularFireDatabaseModule,
     TimerModule,
     FormsModule,
+    IntervalIdentificationQuizModule
   ],
   declarations: [
     UnitFourComponent,

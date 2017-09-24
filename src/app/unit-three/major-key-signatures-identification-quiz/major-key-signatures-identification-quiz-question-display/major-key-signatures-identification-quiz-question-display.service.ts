@@ -25,6 +25,9 @@ export class MajorKeySignaturesIdentificationQuizQuestionDisplayService {
     this.usedBank = this.getMajorKeySignaturesIdentificationQuizUsedBank();
     const rand = Math.floor(Math.random() * (this.bank.length));
     this.current = this.bank[rand];
+    console.log('bank = ' + this.bank);
+    console.log('usedbank = ' + this.usedBank);
+    console.log('current = ' + this.current);
     this.usedBank.push(this.current);
     this.bank.splice(this.current, 1);
     this.correctAnswer = false;

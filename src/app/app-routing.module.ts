@@ -27,6 +27,8 @@ import {UnitFourComponent} from './unit-four/unit-four/unit-four.component';
 import {IntervalLessonOneComponent} from './unit-four/interval-lesson-one/interval-lesson-one.component';
 import {IntervalLessonTwoComponent} from './unit-four/interval-lesson-two/interval-lesson-two.component';
 import {IntervalLessonThreeComponent} from './unit-four/interval-lesson-three/interval-lesson-three.component';
+import {PerfectMajorIntervalIdentificationQuizComponent} from './unit-four/interval-identification-quiz/perfect-major-interval-identification-quiz/perfect-major-interval-identification-quiz.component';
+import {PerfectMajorMinorIntervalIdentificationQuizComponent} from './unit-four/interval-identification-quiz/perfect-major-minor-interval-identification-quiz/perfect-major-minor-interval-identification-quiz.component';
 
 const routes: Routes = [
   {
@@ -132,6 +134,14 @@ const routes: Routes = [
   {
     path: 'unit-four/interval-lesson-three',
     component: IntervalLessonThreeComponent
+  },
+  {
+    path: 'unit-four/perfect-major-interval-identification-quiz',
+    component: PerfectMajorIntervalIdentificationQuizComponent
+  },
+  {
+    path: 'unit-four/perfect-major-minor-interval-identification-quiz',
+    component: PerfectMajorMinorIntervalIdentificationQuizComponent
   }
 ];
 

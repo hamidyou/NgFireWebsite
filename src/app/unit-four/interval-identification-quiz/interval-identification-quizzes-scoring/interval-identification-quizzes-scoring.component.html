@@ -1,0 +1,30 @@
+<table class="w3-table w3-responsive w3-centered ">
+  <tr>
+    <th>Quantities Correct</th>
+    <th>Quantities Incorrect</th>
+    <th>Quantities Attempted</th>
+  </tr>
+  <tr>
+    <td>{{ quantitiesCorrect }}</td>
+    <td>{{ quantitiesIncorrect }}</td>
+    <td>{{ quantitiesAttempted }}</td>
+  </tr>
+  <tr>
+    <th>Qualities Correct</th>
+    <th>Qualities Incorrect</th>
+    <th>Qualities Attempted</th>
+  </tr>
+  <tr>
+    <td>{{ qualitiesCorrect }}</td>
+    <td>{{ qualitiesIncorrect }}</td>
+    <td>{{ qualitiesAttempted }}</td>
+  </tr>
+  <tr>
+    <th>Intervals Attempted</th>
+    <th>Total Percentage</th>
+  </tr>
+  <tr>
+    <td>{{ intervalsAttempted }}</td>
+    <td>{{ total | percent: '1.0-0'}}</td>
+  </tr>
+</table>
