@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+
 import {IntervalIdentificationQuizzesService} from '../interval-identification-quizzes.service';
 
 @Component({

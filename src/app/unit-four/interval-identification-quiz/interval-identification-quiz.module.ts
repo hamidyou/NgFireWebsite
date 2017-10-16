@@ -21,6 +21,9 @@ import {PerfectMajorMinorIntervalIdentificationQuizComponent} from './perfect-ma
 import {PerfectMajorMinorIntervalIdentificationQuizSubmitService} from './perfect-major-minor-interval-identification-quiz/perfect-major-minor-interval-identification-quiz-submit/perfect-major-minor-interval-identification-quiz-submit.service';
 import {PerfectMajorIntervalIdentificationQuizSubmitComponent} from './perfect-major-interval-identification-quiz/perfect-major-interval-identification-quiz-submit/perfect-major-interval-identification-quiz-submit.component';
 import {PerfectMajorMinorIntervalIdentificationQuizSubmitComponent} from './perfect-major-minor-interval-identification-quiz/perfect-major-minor-interval-identification-quiz-submit/perfect-major-minor-interval-identification-quiz-submit.component';
+import {AllIntervalIdentificationQuizComponent} from './all-interval-identification-quiz/all-interval-identification-quiz.component';
+import {AllIntervalIdentificationQuizSubmitComponent} from './all-interval-identification-quiz/all-interval-identification-quiz-submit/all-interval-identification-quiz-submit.component';
+import {AllIntervalIdentificationQuizSubmitService} from './all-interval-identification-quiz/all-interval-identification-quiz-submit/all-interval-identification-quiz-submit.service';
 
 @NgModule({
   imports: [
@@ -40,7 +43,9 @@ import {PerfectMajorMinorIntervalIdentificationQuizSubmitComponent} from './perf
     PerfectMajorIntervalIdentificationQuizComponent,
     PerfectMajorMinorIntervalIdentificationQuizComponent,
     PerfectMajorIntervalIdentificationQuizSubmitComponent,
-    PerfectMajorMinorIntervalIdentificationQuizSubmitComponent
+    PerfectMajorMinorIntervalIdentificationQuizSubmitComponent,
+    AllIntervalIdentificationQuizComponent,
+    AllIntervalIdentificationQuizSubmitComponent
   ],
   exports: [
     IntervalIdentificationQuizzesQuestionDisplayComponent,
@@ -50,13 +55,16 @@ import {PerfectMajorMinorIntervalIdentificationQuizSubmitComponent} from './perf
     PerfectMajorIntervalIdentificationQuizComponent,
     PerfectMajorIntervalIdentificationQuizSubmitComponent,
     PerfectMajorMinorIntervalIdentificationQuizComponent,
-    PerfectMajorMinorIntervalIdentificationQuizSubmitComponent
+    PerfectMajorMinorIntervalIdentificationQuizSubmitComponent,
+    AllIntervalIdentificationQuizComponent,
+    AllIntervalIdentificationQuizSubmitComponent
   ],
   providers: [
     IntervalIdentificationQuizzesService,
     IntervalIdentificationQuizzesQuestionDisplayService,
     PerfectMajorIntervalIdentificationQuizSubmitService,
-    PerfectMajorMinorIntervalIdentificationQuizSubmitService
+    PerfectMajorMinorIntervalIdentificationQuizSubmitService,
+    AllIntervalIdentificationQuizSubmitService
   ]
 })
 export class IntervalIdentificationQuizModule {

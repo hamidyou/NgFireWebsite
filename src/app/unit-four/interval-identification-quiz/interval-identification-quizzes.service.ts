@@ -21,8 +21,9 @@ export class IntervalIdentificationQuizzesService {
   public intervalQuantities = ['2nd', '3rd', '4th', '5th', '6th', '7th', '8th'];
   public currentQuantity: string;
   public currentQuality: string;
-  public perfectMajor: boolean;
-  public perfectMajorMinor: boolean;
+  public perfectMajor = false;
+  public perfectMajorMinor = false;
+  public all = false;
 
   constructor(public _intervalIdentificationQuizzesQuestionDisplayService: IntervalIdentificationQuizzesQuestionDisplayService) {
   }
@@ -57,6 +58,7 @@ export class IntervalIdentificationQuizzesService {
     this.checkMark = this._intervalIdentificationQuizzesQuestionDisplayService.checkMark;
     this.hideAnswer = this._intervalIdentificationQuizzesQuestionDisplayService.hideAnswer;
     this.current = this._intervalIdentificationQuizzesQuestionDisplayService.current;
+    this.all = true;
   }
 
   setInitialQuizVariables(): void {
@@ -152,7 +154,7 @@ export class IntervalIdentificationQuizzesService {
     } else {
       this.total = 0;
     }
-  };
+  }
 
 
 }
