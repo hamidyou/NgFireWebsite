@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 import {UnitOneComponent} from './unit-one.component';
 import {PianoLessonComponent} from './piano-lesson/piano-lesson.component';
@@ -23,6 +23,7 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {environment} from '../../environments/environment';
 import {TimerModule} from '../timer/timer.module';
 import {FormsModule} from '@angular/forms';
+import {RefactoredNoteQuizComponent} from './refactored-note-quiz/refactored-note-quiz.component';
 
 @NgModule({
   imports: [
@@ -49,6 +50,7 @@ import {FormsModule} from '@angular/forms';
     NoteQuizAnswerOptionsComponent,
     NoteQuizSubmitComponent,
     AccidentalsLessonComponent,
+    RefactoredNoteQuizComponent,
   ],
   exports: [
     UnitOneComponent,

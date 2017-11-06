@@ -23,7 +23,8 @@ export class IntervalIdentificationQuizzesQuestionDisplayComponent implements On
   public quantityBank: any;
   public usedBank: any;
 
-  constructor(private _intervalIdentificationQuizzesService: IntervalIdentificationQuizzesService, private _intervaldentificationQuizzesQuestionDisplayService: IntervalIdentificationQuizzesQuestionDisplayService) {
+  constructor(private _intervalIdentificationQuizzesService: IntervalIdentificationQuizzesService,
+              private _intervaldentificationQuizzesQuestionDisplayService: IntervalIdentificationQuizzesQuestionDisplayService) {
   }
 
   checkVariables(): void {

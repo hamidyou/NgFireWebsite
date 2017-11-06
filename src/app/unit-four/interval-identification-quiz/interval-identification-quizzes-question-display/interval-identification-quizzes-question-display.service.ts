@@ -39,12 +39,6 @@ export class IntervalIdentificationQuizzesQuestionDisplayService {
     this.current = this.quantityBank[randQuantity].intervals[randInterval];
     this.currentQuantity = this.quantityBank[randQuantity].quantity;
     this.currentQuality = this.quantityBank[randQuantity].quality;
-    console.log('bank = ' + this.bank);
-    console.log('usedbank = ' + this.usedBank);
-    console.log('quantitybank = ' + this.quantityBank);
-    console.log('current = ' + this.current.image);
-    console.log('currentQuantity = ' + this.currentQuantity);
-    console.log('currentQuality = ' + this.currentQuality);
     this.usedBank.push(this.current);
     this.quantityBank[randQuantity].intervals.splice(this.current, 1);
     this.correctQuantity = false;

@@ -30,6 +30,7 @@ import {IntervalLessonThreeComponent} from './unit-four/interval-lesson-three/in
 import {PerfectMajorIntervalIdentificationQuizComponent} from './unit-four/interval-identification-quiz/perfect-major-interval-identification-quiz/perfect-major-interval-identification-quiz.component';
 import {PerfectMajorMinorIntervalIdentificationQuizComponent} from './unit-four/interval-identification-quiz/perfect-major-minor-interval-identification-quiz/perfect-major-minor-interval-identification-quiz.component';
 import {AllIntervalIdentificationQuizComponent} from './unit-four/interval-identification-quiz/all-interval-identification-quiz/all-interval-identification-quiz.component';
+import {IntervalConstructionQuizComponent,} from './unit-four/interval-construction-quiz/interval-construction-quiz.component';
 
 const routes: Routes = [
   {
@@ -147,7 +148,11 @@ const routes: Routes = [
   {
     path: 'unit-four/all-interval-identification-quiz',
     component: AllIntervalIdentificationQuizComponent
-  }
+  },
+  {
+    path: 'unit-four/perfect-major-interval-construction-quiz',
+    component: IntervalConstructionQuizComponent
+  },
 ];
 
 @NgModule({

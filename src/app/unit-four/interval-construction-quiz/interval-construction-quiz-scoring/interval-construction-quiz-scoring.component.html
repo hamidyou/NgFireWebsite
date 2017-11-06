@@ -1,0 +1,21 @@
+<table class="w3-table w3-centered w3-center">
+  <tr>
+    <th>Notes Correct</th>
+    <th>Notes Incorrect</th>
+    <th>Notes Attempted</th>
+  </tr>
+  <tr>
+    <td>{{ answerNotesCorrect }}</td>
+    <td>{{ answerNotesIncorrect }}</td>
+    <td>{{ answerNotesAttempted }}</td>
+  </tr>
+  <tr>
+    <th>Intervals Attempted</th>
+    <th>Total Percentage</th>
+  </tr>
+  <tr>
+    <td>{{ intervalsAttempted }}</td>
+    <td>{{ total | percent: '1.0-0'}}</td>
+  </tr>
+</table>
+

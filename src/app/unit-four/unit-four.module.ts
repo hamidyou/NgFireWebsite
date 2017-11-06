@@ -13,6 +13,7 @@ import {IntervalLessonOneComponent} from './interval-lesson-one/interval-lesson-
 import {IntervalLessonTwoComponent} from './interval-lesson-two/interval-lesson-two.component';
 import {IntervalLessonThreeComponent} from './interval-lesson-three/interval-lesson-three.component';
 import {IntervalIdentificationQuizModule} from './interval-identification-quiz/interval-identification-quiz.module';
+import {IntervalConstructionQuizModule} from './interval-construction-quiz/interval-construction-quiz.module';
 
 @NgModule({
   imports: [
@@ -23,13 +24,14 @@ import {IntervalIdentificationQuizModule} from './interval-identification-quiz/i
     AngularFireDatabaseModule,
     TimerModule,
     FormsModule,
-    IntervalIdentificationQuizModule
+    IntervalIdentificationQuizModule,
+    IntervalConstructionQuizModule
   ],
   declarations: [
     UnitFourComponent,
     IntervalLessonOneComponent,
     IntervalLessonTwoComponent,
-    IntervalLessonThreeComponent
+    IntervalLessonThreeComponent,
   ],
   exports: [
     UnitFourComponent,

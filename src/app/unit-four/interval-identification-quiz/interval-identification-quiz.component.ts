@@ -7,7 +7,7 @@ import {IntervalIdentificationQuizzesService} from './interval-identification-qu
   styleUrls: ['./interval-identification-quiz.component.css']
 })
 export class IntervalIdentificationQuizComponent {
-  total: number = this._intervalIdentificationQuizzesService.total;
+  public total: number = this._intervalIdentificationQuizzesService.total;
   public quizTitle: string;
 
   constructor(public _intervalIdentificationQuizzesService: IntervalIdentificationQuizzesService) {
@@ -29,7 +29,7 @@ export class IntervalIdentificationQuizComponent {
     this._intervalIdentificationQuizzesService.getQuantityAnswerOptions();
     this._intervalIdentificationQuizzesService.setInitialQuizVariables();
     this.total = 0;
-    console.log('quiz = ' + this.quizTitle)
+    console.log('quiz = ' + this.quizTitle);
   }
 
   startAllIntervalIdentificationQuiz(): void {
