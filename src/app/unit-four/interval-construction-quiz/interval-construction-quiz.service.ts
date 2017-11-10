@@ -47,19 +47,25 @@ export class IntervalConstructionQuizService {
 
   getPerfectMajorIntervalConstructionQuizQuestion(): void {
     this._intervalConstructionQuizQuestionDisplayService.pm = true;
+    this._intervalConstructionQuizQuestionDisplayService.pmm = false;
+    this._intervalConstructionQuizQuestionDisplayService.all = false;
     this._intervalConstructionQuizQuestionDisplayService.getIntervalConstructionQuizQuestion();
     this.getQuestionVariables();
     console.log('running PM quiz from quiz service');
   }
 
   getPerfectMajorMinorIntervalConstructionQuizQuestion(): void {
-    this.pmm = true;
+    this._intervalConstructionQuizQuestionDisplayService.pmm = true;
+    this._intervalConstructionQuizQuestionDisplayService.pm = false;
+    this._intervalConstructionQuizQuestionDisplayService.all = false;
     this._intervalConstructionQuizQuestionDisplayService.getIntervalConstructionQuizQuestion();
     this.getQuestionVariables();
   }
 
   getAllIntervalConstructionQuizQuestion(): void {
-    this.all = true;
+    this._intervalConstructionQuizQuestionDisplayService.pmm = false;
+    this._intervalConstructionQuizQuestionDisplayService.pm = false;
+    this._intervalConstructionQuizQuestionDisplayService.all = true;
     this._intervalConstructionQuizQuestionDisplayService.getIntervalConstructionQuizQuestion();
     this.getQuestionVariables();
   }

@@ -1,5 +1,6 @@
 import {Component, DoCheck, OnInit} from '@angular/core';
 import {IntervalConstructionQuizQuestionDisplayService} from './interval-construction-quiz-question-display.service';
+import {IntervalConstructionQuizService} from '../interval-construction-quiz.service';
 
 
 @Component({
@@ -16,16 +17,17 @@ export class IntervalConstructionQuizQuestionDisplayComponent implements OnInit,
   public correctAnswerNote: boolean;
   public checkMark: boolean;
 
-  constructor(private _intervalConstructionQuizQuestionDisplayService: IntervalConstructionQuizQuestionDisplayService) {
+  constructor(private _intervalConstructionQuizQuestionDisplayService: IntervalConstructionQuizQuestionDisplayService,
+              public _intervalConstructionQuizService: IntervalConstructionQuizService) {
   }
 
   checkVariables(): void {
     this.current = this._intervalConstructionQuizQuestionDisplayService.current;
-    this.hideAnswer = this._intervalConstructionQuizQuestionDisplayService.hideAnswer;
-    this.wrongAnswer = this._intervalConstructionQuizQuestionDisplayService.wrongAnswer;
-    this.correctAnswerNote = this._intervalConstructionQuizQuestionDisplayService.correctAnswerNote;
-    this.checkMark = this._intervalConstructionQuizQuestionDisplayService.checkMark;
-    this.currentAnswerNote = this._intervalConstructionQuizQuestionDisplayService.currentAnswerNote;
+    this.hideAnswer = this._intervalConstructionQuizService.hideAnswer;
+    this.wrongAnswer = this._intervalConstructionQuizService.wrongAnswer;
+    this.correctAnswerNote = this._intervalConstructionQuizService.correctAnswerNote;
+    this.checkMark = this._intervalConstructionQuizService.checkMark;
+    this.currentAnswerNote = this._intervalConstructionQuizService.currentAnswerNote;
   }
 
   ngOnInit(): void {

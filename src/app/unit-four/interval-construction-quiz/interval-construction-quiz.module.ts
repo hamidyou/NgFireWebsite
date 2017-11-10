@@ -16,6 +16,9 @@ import {IntervalConstructionQuizService} from './interval-construction-quiz.serv
 import {PerfectMajorIntervalConstructionQuizSubmitComponent} from './perfect-major-interval-construction-quiz-submit/perfect-major-interval-construction-quiz-submit.component';
 import {IntervalConstructionQuizComponent} from './interval-construction-quiz.component';
 import {IntervalConstructionQuizQuestionDisplayService} from './interval-construction-quiz-question-display/interval-construction-quiz-question-display.service';
+import {PerfectMajorIntervalConstructionQuizSubmitService} from './perfect-major-interval-construction-quiz-submit/perfect-major-interval-construction-quiz-submit.service';
+import {PerfectMajorMinorIntervalConstructionQuizSubmitComponent} from './perfect-major-minor-interval-construction-quiz-submit/perfect-major-minor-interval-construction-quiz-submit.component';
+import {PerfectMajorMinorIntervalConstructionQuizSubmitService} from './perfect-major-minor-interval-construction-quiz-submit/perfect-major-minor-interval-construction-quiz-submit.service';
 
 @NgModule({
   imports: [
@@ -32,7 +35,8 @@ import {IntervalConstructionQuizQuestionDisplayService} from './interval-constru
     IntervalConstructionQuizAnswerOptionsComponent,
     IntervalConstructionQuizScoringComponent,
     PerfectMajorIntervalConstructionQuizSubmitComponent,
-    IntervalConstructionQuizComponent
+    IntervalConstructionQuizComponent,
+    PerfectMajorMinorIntervalConstructionQuizSubmitComponent
   ],
   exports: [
     IntervalConstructionQuizQuestionDisplayComponent,
@@ -43,7 +47,9 @@ import {IntervalConstructionQuizQuestionDisplayService} from './interval-constru
   ],
   providers: [
     IntervalConstructionQuizService,
-    IntervalConstructionQuizQuestionDisplayService
+    IntervalConstructionQuizQuestionDisplayService,
+    PerfectMajorIntervalConstructionQuizSubmitService,
+    PerfectMajorMinorIntervalConstructionQuizSubmitService
   ]
 })
 export class IntervalConstructionQuizModule {

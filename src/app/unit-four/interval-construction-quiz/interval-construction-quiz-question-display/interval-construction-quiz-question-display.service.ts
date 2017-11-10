@@ -33,20 +33,18 @@ export class IntervalConstructionQuizQuestionDisplayService {
         for (let j = 0; j < this.bank[i].rootOptions.length; j++) {
           for (let k = 0; k < this.pmIntervals.length; k++) {
             if (this.bank[i].rootOptions[j].interval === this.pmIntervals[k]) {
-              console.log(this.bank[i].rootOptions[j].interval + ' not ' + this.pmIntervals[k]);
               this.questionBank.push(this.bank[i].rootOptions[j]);
             }
           }
         }
       }
-      console.log('running PM quiz from quiz question display service');
     } else if (this.pmm) {
       this.bank = IntervalConstructionQuizBank;
       for (let i = 0; i < this.bank.length; i++) {
         for (let j = 0; j < this.bank[i].rootOptions.length; j++) {
           for (let k = 0; k < this.pmmIntervals.length; k++) {
-            while (this.bank[i].rootOptions[j].interval !== this.pmmIntervals[k]) {
-              this.bank[i].rootOptions[j].splice(1, 1);
+            if (this.bank[i].rootOptions[j].interval === this.pmmIntervals[k]) {
+              this.questionBank.push(this.bank[i].rootOptions[j]);
             }
           }
         }
@@ -58,8 +56,6 @@ export class IntervalConstructionQuizQuestionDisplayService {
     console.log(this.questionBank);
     this.usedBank = [];
     const rand = Math.floor(Math.random() * (this.questionBank.length));
-    // const randInterval = Math.floor(Math.random() * this.questionBank[rand].rootOptions.length);
-    // this.root = this.questionBank[rand].root;
     this.current = this.questionBank[rand];
     this.currentAnswerNote = this.current.answerNote;
     this.usedBank.push(this.current);
@@ -71,10 +67,7 @@ export class IntervalConstructionQuizQuestionDisplayService {
   }
 
   getNextQuestion(): void {
-    console.log('getNextQuestionRunning');
     const rand = Math.floor(Math.random() * (this.questionBank.length));
-    // const randInterval = Math.floor(Math.random() * this.questionBank[rand].rootOptions.length);
-    // this.root = this.questionBank[rand].root;
     this.current = this.questionBank[rand];
     console.log(this.questionBank.length);
     console.log(rand);

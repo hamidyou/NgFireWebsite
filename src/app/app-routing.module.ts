@@ -150,9 +150,9 @@ const routes: Routes = [
     component: AllIntervalIdentificationQuizComponent
   },
   {
-    path: 'unit-four/perfect-major-interval-construction-quiz',
+    path: 'unit-four/interval-construction-quiz',
     component: IntervalConstructionQuizComponent
-  },
+  }
 ];
 
 @NgModule({

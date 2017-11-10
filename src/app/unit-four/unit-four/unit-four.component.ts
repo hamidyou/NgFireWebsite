@@ -27,6 +27,12 @@ export class UnitFourComponent {
   }
 
   startPerfectMajorIntervalConstructionQuiz(): void {
+    this._intervalConstructionQuizComponent.pm = true;
     this._intervalConstructionQuizComponent.startPerfectMajorIntervalConstructionQuiz();
+  }
+
+  startPerfectMajorMinorIntervalConstructionQuiz(): void {
+    this._intervalConstructionQuizComponent.pmm = true;
+    this._intervalConstructionQuizComponent.startPerfectMajorMinorIntervalConstructionQuiz();
   }
 }
