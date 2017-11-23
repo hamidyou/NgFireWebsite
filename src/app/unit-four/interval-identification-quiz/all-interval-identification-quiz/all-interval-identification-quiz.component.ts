@@ -14,12 +14,17 @@ export class AllIntervalIdentificationQuizComponent implements OnInit {
   }
 
   startAllIntervalIdentificationQuiz(): void {
-    this.quizTitle = 'Perfect, Major, & minor';
+    this.quizTitle = 'ALL';
     this._intervalIdentificationQuizzesService.all = true;
     this._intervalIdentificationQuizzesService.getAllIntervalIdentificationQuizQuestion();
     this._intervalIdentificationQuizzesService.setInitialQuizVariables();
     this.total = 0;
   }
+
+  reset(): void {
+    this.startAllIntervalIdentificationQuiz();
+  }
+
 
   ngOnInit(): void {
     this.startAllIntervalIdentificationQuiz();

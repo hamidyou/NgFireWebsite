@@ -1,16 +1,22 @@
 <div class="w3-large w3-center">
   <div class="w3-center">
-    <h2> {{quizTitle}} Interval Construction Quiz </h2>
+    <h2> {{_intervalConstructionQuizService.quizTitle}} Interval Construction Quiz </h2>
     <div class="w3-center">
       <app-interval-construction-quiz-scoring></app-interval-construction-quiz-scoring>
       <app-interval-construction-quiz-question-display></app-interval-construction-quiz-question-display>
       <app-interval-construction-quiz-answer-options></app-interval-construction-quiz-answer-options>
-      <app-timer></app-timer>
-      <div *ngIf="_intervalConstructionQuizService.pm">
-        <app-perfect-major-interval-construction-quiz-submit></app-perfect-major-interval-construction-quiz-submit>
-      </div>
-      <div *ngIf="_intervalConstructionQuizService.pmm">
-        <app-perfect-major-minor-interval-construction-quiz-submit></app-perfect-major-minor-interval-construction-quiz-submit>
+      <div class="w3-bar">
+        <div class="w3-btn w3-round w3-card-4 w3-margin" (click)="reset()">Reset</div>
+        <app-timer class="w3-button"></app-timer>
+        <div class="w3-button" *ngIf="_intervalConstructionQuizService.pm">
+          <app-perfect-major-interval-construction-quiz-submit></app-perfect-major-interval-construction-quiz-submit>
+        </div>
+        <div class="w3-button" *ngIf="_intervalConstructionQuizService.pmm">
+          <app-perfect-major-minor-interval-construction-quiz-submit></app-perfect-major-minor-interval-construction-quiz-submit>
+        </div>
+        <div class="w3-button" *ngIf="_intervalConstructionQuizService.all">
+          <app-all-interval-construction-quiz-submit></app-all-interval-construction-quiz-submit>
+        </div>
       </div>
     </div>
 

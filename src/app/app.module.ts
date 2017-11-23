@@ -33,6 +33,7 @@ import {UnitFourModule} from './unit-four/unit-four.module';
     UserRegistrationComponent,
     HomePageComponent,
     UserProgressComponent,
+
   ],
   imports: [
     BrowserModule,

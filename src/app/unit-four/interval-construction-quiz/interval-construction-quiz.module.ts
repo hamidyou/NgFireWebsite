@@ -19,6 +19,8 @@ import {IntervalConstructionQuizQuestionDisplayService} from './interval-constru
 import {PerfectMajorIntervalConstructionQuizSubmitService} from './perfect-major-interval-construction-quiz-submit/perfect-major-interval-construction-quiz-submit.service';
 import {PerfectMajorMinorIntervalConstructionQuizSubmitComponent} from './perfect-major-minor-interval-construction-quiz-submit/perfect-major-minor-interval-construction-quiz-submit.component';
 import {PerfectMajorMinorIntervalConstructionQuizSubmitService} from './perfect-major-minor-interval-construction-quiz-submit/perfect-major-minor-interval-construction-quiz-submit.service';
+import {AllIntervalConstructionQuizSubmitComponent} from './all-interval-construction-quiz-submit/all-interval-construction-quiz-submit.component';
+import {AllIntervalConstructionQuizSubmitService} from './all-interval-construction-quiz-submit/all-interval-construction-quiz-submit.service';
 
 @NgModule({
   imports: [
@@ -36,20 +38,25 @@ import {PerfectMajorMinorIntervalConstructionQuizSubmitService} from './perfect-
     IntervalConstructionQuizScoringComponent,
     PerfectMajorIntervalConstructionQuizSubmitComponent,
     IntervalConstructionQuizComponent,
-    PerfectMajorMinorIntervalConstructionQuizSubmitComponent
+    PerfectMajorMinorIntervalConstructionQuizSubmitComponent,
+    AllIntervalConstructionQuizSubmitComponent
   ],
   exports: [
     IntervalConstructionQuizQuestionDisplayComponent,
     IntervalConstructionQuizAnswerOptionsComponent,
     IntervalConstructionQuizScoringComponent,
     PerfectMajorIntervalConstructionQuizSubmitComponent,
-    IntervalConstructionQuizComponent
+    IntervalConstructionQuizComponent,
+    PerfectMajorMinorIntervalConstructionQuizSubmitComponent,
+    AllIntervalConstructionQuizSubmitComponent
   ],
   providers: [
     IntervalConstructionQuizService,
     IntervalConstructionQuizQuestionDisplayService,
     PerfectMajorIntervalConstructionQuizSubmitService,
-    PerfectMajorMinorIntervalConstructionQuizSubmitService
+    PerfectMajorMinorIntervalConstructionQuizSubmitService,
+    AllIntervalConstructionQuizSubmitService,
+    IntervalConstructionQuizComponent
   ]
 })
 export class IntervalConstructionQuizModule {

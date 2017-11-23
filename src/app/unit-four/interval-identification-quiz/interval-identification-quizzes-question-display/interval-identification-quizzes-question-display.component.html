@@ -1,12 +1,12 @@
 <img class="Interval w3-image" src="{{ current.image }}" alt="{{ current.image }}"/>
 
-<div class="QuantityIdQuestion w3-center w3-xlarge w3-section" *ngIf="hideAnswer">
+<div class="QuantityIdQuestion w3-center w3-xlarge w3-container" *ngIf="hideAnswer">
   <p>What interval quantity is shown in the image above?</p>
   <img class="WrongAnswer w3-image w3-margin" src="../../../../assets/img/WrongAnswer.gif" alt="WrongAnswer"
        *ngIf="wrongAnswer"/>
 </div>
 
-<div class="QualityIdQuestion w3-center w3-xlarge w3-section" *ngIf="correctQuantity">
+<div class="QualityIdQuestion w3-center w3-xlarge w3-container" *ngIf="correctQuantity">
   <p>What interval quality is shown in the image above?</p>
   <div class="CorrectQuantity w3-xlarge">
     {{ currentQuantity }}
@@ -17,9 +17,14 @@
   </div>
 </div>
 
-<div class="w3-center w3-xlarge w3-section w3-center" *ngIf="correctQuality">
+
+<div class="w3-center w3-xlarge w3-container w3-center" *ngIf="correctQuality">
   <p class="CorrectAnswer w3-center w3-xlarge"> {{ currentQuality}} {{ currentQuantity }}</p>
   <img class="CorrectAnswer w3-image w3-margin w3-center" src="../../../../assets/img/checkmark.gif" alt="CorrectAnswer"
        *ngIf="checkMark"/>
 </div>
+<br>
+
+
+
 

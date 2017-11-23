@@ -30,6 +30,7 @@ export class IntervalConstructionQuizService {
     scaleTonics: string[];
     accidentals: string[]
   };
+  public quizTitle: string;
 
   constructor(public _noteNamesService: NoteNamesService,
               public _intervalConstructionQuizQuestionDisplayService: IntervalConstructionQuizQuestionDisplayService) {
@@ -46,15 +47,16 @@ export class IntervalConstructionQuizService {
   }
 
   getPerfectMajorIntervalConstructionQuizQuestion(): void {
+    this.quizTitle = 'Perfect & Major';
     this._intervalConstructionQuizQuestionDisplayService.pm = true;
     this._intervalConstructionQuizQuestionDisplayService.pmm = false;
     this._intervalConstructionQuizQuestionDisplayService.all = false;
     this._intervalConstructionQuizQuestionDisplayService.getIntervalConstructionQuizQuestion();
     this.getQuestionVariables();
-    console.log('running PM quiz from quiz service');
   }
 
   getPerfectMajorMinorIntervalConstructionQuizQuestion(): void {
+    this.quizTitle = 'Perfect, Major, & minor';
     this._intervalConstructionQuizQuestionDisplayService.pmm = true;
     this._intervalConstructionQuizQuestionDisplayService.pm = false;
     this._intervalConstructionQuizQuestionDisplayService.all = false;
@@ -63,6 +65,7 @@ export class IntervalConstructionQuizService {
   }
 
   getAllIntervalConstructionQuizQuestion(): void {
+    this.quizTitle = 'ALL';
     this._intervalConstructionQuizQuestionDisplayService.pmm = false;
     this._intervalConstructionQuizQuestionDisplayService.pm = false;
     this._intervalConstructionQuizQuestionDisplayService.all = true;
@@ -76,7 +79,6 @@ export class IntervalConstructionQuizService {
     this.answerNotesIncorrect = 0;
     this.intervalsAttempted = 0;
     this.total = 0;
-    console.log(this.total);
   }
 
   getAnswerOptions(): void {
@@ -92,9 +94,6 @@ export class IntervalConstructionQuizService {
     const target = event.currentTarget;
     const idAttr = target.attributes.id;
     const value = idAttr.nodeValue;
-
-    console.log('value = ' + value);
-    console.log(this.currentAnswerNote);
 
     if (value === this.currentAnswerNote) {
       this.correctAnswerNote = true;

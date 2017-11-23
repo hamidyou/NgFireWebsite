@@ -1,10 +1,10 @@
-<div class="PossibleQuantityAnswers w3-btn-bar w3-show-inline-block w3-center " *ngIf="hideAnswer">
+<div class="w3-container PossibleQuantityAnswers w3-btn-bar w3-show-inline-block w3-center " *ngIf="hideAnswer">
   <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" *ngFor="let quantity of intervalQuantities"
           (click)="checkQuantity($event)" id="{{ quantity }}"> {{ quantity }}
   </button>
 </div>
 
-<div class="PossibleQualityAnswers w3-btn-bar w3-show-inline-block w3-center "
+<div class="w3-container PossibleQualityAnswers w3-btn-bar w3-show-inline-block w3-center "
      *ngIf="correctQuantity">
   <button class="w3-btn w3-round w3-border w3-border-black w3-white w3-hover-black" *ngFor="let quality of intervalQualities"
           (click)="checkQuality($event)" id="{{ quality }}"> {{ quality }}

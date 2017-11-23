@@ -29,7 +29,6 @@ export class IntervalIdentificationQuizComponent {
     this._intervalIdentificationQuizzesService.getQuantityAnswerOptions();
     this._intervalIdentificationQuizzesService.setInitialQuizVariables();
     this.total = 0;
-    console.log('quiz = ' + this.quizTitle);
   }
 
   startAllIntervalIdentificationQuiz(): void {
@@ -39,6 +38,5 @@ export class IntervalIdentificationQuizComponent {
     this._intervalIdentificationQuizzesService.getQuantityAnswerOptions();
     this._intervalIdentificationQuizzesService.setInitialQuizVariables();
     this.total = 0;
-    console.log('quiz = ' + this.quizTitle);
   }
 }

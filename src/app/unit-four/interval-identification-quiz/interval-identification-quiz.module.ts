@@ -24,7 +24,6 @@ import {PerfectMajorMinorIntervalIdentificationQuizSubmitComponent} from './perf
 import {AllIntervalIdentificationQuizComponent} from './all-interval-identification-quiz/all-interval-identification-quiz.component';
 import {AllIntervalIdentificationQuizSubmitComponent} from './all-interval-identification-quiz/all-interval-identification-quiz-submit/all-interval-identification-quiz-submit.component';
 import {AllIntervalIdentificationQuizSubmitService} from './all-interval-identification-quiz/all-interval-identification-quiz-submit/all-interval-identification-quiz-submit.service';
-import {IntervalConstructionQuizQuestionDisplayComponent} from '../interval-construction-quiz/interval-construction-quiz-question-display/interval-construction-quiz-question-display.component';
 
 @NgModule({
   imports: [
@@ -66,7 +65,7 @@ import {IntervalConstructionQuizQuestionDisplayComponent} from '../interval-cons
     PerfectMajorIntervalIdentificationQuizSubmitService,
     PerfectMajorMinorIntervalIdentificationQuizSubmitService,
     AllIntervalIdentificationQuizSubmitService,
-    IntervalConstructionQuizQuestionDisplayComponent
+    IntervalIdentificationQuizComponent
   ]
 })
 export class IntervalIdentificationQuizModule {

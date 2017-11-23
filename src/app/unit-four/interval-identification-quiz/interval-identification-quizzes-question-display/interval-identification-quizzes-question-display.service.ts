@@ -29,7 +29,6 @@ export class IntervalIdentificationQuizzesQuestionDisplayService {
   }
 
   getPerfectMajorIntervalIdentificationQuizQuestion(): void {
-    console.log('get PMQuiz');
     this.bank = this.getPerfectMajorIntervalIdentificationQuizBank();
     this.usedBank = [];
     const rand = Math.floor(Math.random() * (this.bank.length));
@@ -49,7 +48,6 @@ export class IntervalIdentificationQuizzesQuestionDisplayService {
   }
 
   getPerfectMajorMinorIntervalIdentificationQuizQuestion(): void {
-    console.log('getPMm Quiz');
     this.bank = this.getPerfectMajorMinorIntervalIdentificationQuizBank();
     this.usedBank = [];
     const rand = Math.floor(Math.random() * (this.bank.length));
@@ -69,13 +67,10 @@ export class IntervalIdentificationQuizzesQuestionDisplayService {
   }
 
   getAllIntervalIdentificationQuizQuestion(): void {
-    console.log('getALLQuiz');
     this.bank = this.getAllIntervalIdentificationQuizBank();
-    console.log(this.bank);
     this.usedBank = [];
     const rand = Math.floor(Math.random() * (this.bank.length));
     this.quantityBank = this.bank[rand];
-    console.log(this.quantityBank);
     const randQuantity = Math.floor(Math.random() * (this.quantityBank.length));
     const randInterval = Math.floor(Math.random() * (this.quantityBank[randQuantity].intervals.length));
     this.current = this.quantityBank[randQuantity].intervals[randInterval];

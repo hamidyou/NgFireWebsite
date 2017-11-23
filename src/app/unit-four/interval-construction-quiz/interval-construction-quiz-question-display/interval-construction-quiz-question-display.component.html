@@ -4,14 +4,16 @@
 <img class="Interval w3-image" src="{{ current.answerImage }}" alt="{{ current.answerImage }}"
      *ngIf="correctAnswerNote"/>
 
-<p class="IntervalQuestion w3-center w3-xlarge w3-section" *ngIf="hideAnswer"> What note is a/an {{
+<div class="IntervalQuestion w3-center w3-xlarge w3-section" *ngIf="hideAnswer"> What note is a/an {{
   current.interval }} above the note shown in the image above?
   <img class="WrongAnswer w3-image w3-margin" src="../../../../assets/img/WrongAnswer.gif" alt="WrongAnswer"
        *ngIf="wrongAnswer"/>
-</p>
+</div>
 
-<p class="Correct w3-center w3-xlarge w3-section" *ngIf="correctAnswerNote">
+<div class="Correct w3-center w3-xlarge w3-section" *ngIf="correctAnswerNote">
   <img class="CorrectAnswer w3-image w3-margin" src="../../../../assets/img/checkmark.gif" alt="CorrectAnswer"
        *ngIf="checkMark"/>
-</p>
+  <audio autoplay src="{{ current.audio1 }}" type="audio/mpeg"></audio>
+  <audio autoplay src="{{ current.audio2 }}" type="audio/mpeg"></audio>
+</div>
 

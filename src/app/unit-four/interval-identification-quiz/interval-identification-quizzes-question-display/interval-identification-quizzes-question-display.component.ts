@@ -24,7 +24,7 @@ export class IntervalIdentificationQuizzesQuestionDisplayComponent implements On
   public usedBank: any;
 
   constructor(private _intervalIdentificationQuizzesService: IntervalIdentificationQuizzesService,
-              private _intervaldentificationQuizzesQuestionDisplayService: IntervalIdentificationQuizzesQuestionDisplayService) {
+              private _intervalIdentificationQuizzesQuestionDisplayService: IntervalIdentificationQuizzesQuestionDisplayService) {
   }
 
   checkVariables(): void {
@@ -38,9 +38,9 @@ export class IntervalIdentificationQuizzesQuestionDisplayComponent implements On
     this.currentQuality = this._intervalIdentificationQuizzesService.currentQuality;
     this.perfectMajor = this._intervalIdentificationQuizzesService.perfectMajor;
     this.perfectMajorMinor = this._intervalIdentificationQuizzesService.perfectMajorMinor;
-    this.bank = this._intervaldentificationQuizzesQuestionDisplayService.bank;
-    this.quantityBank = this._intervaldentificationQuizzesQuestionDisplayService.quantityBank;
-    this.usedBank = this._intervaldentificationQuizzesQuestionDisplayService.usedBank;
+    this.bank = this._intervalIdentificationQuizzesQuestionDisplayService.bank;
+    this.quantityBank = this._intervalIdentificationQuizzesQuestionDisplayService.quantityBank;
+    this.usedBank = this._intervalIdentificationQuizzesQuestionDisplayService.usedBank;
   }
 
   ngOnInit(): void {

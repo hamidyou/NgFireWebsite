@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 
 import {IntervalIdentificationQuizComponent} from '../interval-identification-quiz/interval-identification-quiz.component';
 import {IntervalConstructionQuizComponent} from '../interval-construction-quiz/interval-construction-quiz.component';
+import {IntervalConstructionQuizQuestionDisplayService} from '../interval-construction-quiz/interval-construction-quiz-question-display/interval-construction-quiz-question-display.service';
 
 @Component({
   selector: 'app-unit-four',
@@ -11,7 +12,8 @@ import {IntervalConstructionQuizComponent} from '../interval-construction-quiz/i
 })
 export class UnitFourComponent {
   constructor(public _intervalIdentificationQuizComponent: IntervalIdentificationQuizComponent,
-              public _intervalConstructionQuizComponent: IntervalConstructionQuizComponent) {
+              public _intervalConstructionQuizComponent: IntervalConstructionQuizComponent,
+              public _intervalConstructionQuizQuestionDisplayService: IntervalConstructionQuizQuestionDisplayService) {
   }
 
   startPerfectMajorIntervalIdentificationQuiz(): void {
@@ -27,12 +29,23 @@ export class UnitFourComponent {
   }
 
   startPerfectMajorIntervalConstructionQuiz(): void {
+    this._intervalConstructionQuizQuestionDisplayService.questionBank = [];
     this._intervalConstructionQuizComponent.pm = true;
-    this._intervalConstructionQuizComponent.startPerfectMajorIntervalConstructionQuiz();
+    this._intervalConstructionQuizComponent.perfectMajor();
+    this._intervalConstructionQuizComponent.startIntervalConstructionQuiz();
   }
 
   startPerfectMajorMinorIntervalConstructionQuiz(): void {
+    this._intervalConstructionQuizQuestionDisplayService.questionBank = [];
     this._intervalConstructionQuizComponent.pmm = true;
-    this._intervalConstructionQuizComponent.startPerfectMajorMinorIntervalConstructionQuiz();
+    this._intervalConstructionQuizComponent.perfectMajorMinor();
+    this._intervalConstructionQuizComponent.startIntervalConstructionQuiz();
+  }
+
+  startAllIntervalConstructionQuiz(): void {
+    this._intervalConstructionQuizQuestionDisplayService.questionBank = [];
+    this._intervalConstructionQuizComponent.all = true;
+    this._intervalConstructionQuizComponent.allQuiz();
+    this._intervalConstructionQuizComponent.startIntervalConstructionQuiz();
   }
 }

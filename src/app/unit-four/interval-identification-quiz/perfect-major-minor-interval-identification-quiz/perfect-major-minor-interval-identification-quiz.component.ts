@@ -22,6 +22,11 @@ export class PerfectMajorMinorIntervalIdentificationQuizComponent implements OnI
     this.total = 0;
   }
 
+  reset(): void {
+    this.startPerfectMajorMinorIntervalIdentificationQuiz();
+  }
+
+
   ngOnInit(): void {
     this.startPerfectMajorMinorIntervalIdentificationQuiz();
   }
