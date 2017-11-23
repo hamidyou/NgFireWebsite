@@ -26,6 +26,10 @@ export class PianoQuizComponent implements OnInit {
     this.total = 0;
   }
 
+  reset(): void {
+    this.startQuiz();
+  }
+
   ngOnInit(): void {
     this.startQuiz();
   }

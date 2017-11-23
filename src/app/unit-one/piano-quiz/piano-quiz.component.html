@@ -8,8 +8,11 @@
     <app-piano-quiz-scoring></app-piano-quiz-scoring>
     <app-piano-quiz-question-display></app-piano-quiz-question-display>
     <app-piano-quiz-answer-options></app-piano-quiz-answer-options>
-    <app-timer></app-timer>
-    <app-piano-quiz-submit></app-piano-quiz-submit>
+    <div class="w3-bar">
+      <div class="w3-btn w3-round w3-card-4 w3-margin" (click)="reset()">Reset</div>
+      <app-timer class="w3-btn"></app-timer>
+      <app-piano-quiz-submit class="w3-btn"></app-piano-quiz-submit>
+    </div>
 
   </div>
 

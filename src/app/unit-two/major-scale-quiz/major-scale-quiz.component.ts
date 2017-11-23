@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {MajorScaleQuizService} from './major-scale-quiz.service';
 
@@ -17,6 +17,10 @@ export class MajorScaleQuizComponent implements OnInit {
     this._majorScaleQuizService.getAnswerOptions();
     this._majorScaleQuizService.setInitialQuizVariables();
     this.total = 0;
+  }
+
+  reset(): void {
+    this.startQuiz();
   }
 
   ngOnInit(): void {

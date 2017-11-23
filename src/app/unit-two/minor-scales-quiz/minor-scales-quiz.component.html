@@ -4,9 +4,11 @@
     <app-minor-scales-quiz-scoring></app-minor-scales-quiz-scoring>
     <app-minor-scales-quiz-question-display></app-minor-scales-quiz-question-display>
     <app-minor-scales-quiz-answer-options></app-minor-scales-quiz-answer-options>
-    <app-timer></app-timer>
-    <app-minor-scales-quiz-submit></app-minor-scales-quiz-submit>
-
+    <div class="w3-bar">
+      <div class="w3-btn w3-round w3-card-4 w3-margin" (click)="reset()">Reset</div>
+      <app-timer class="w3-btn"></app-timer>
+      <app-minor-scales-quiz-submit class="w3-btn"></app-minor-scales-quiz-submit>
+    </div>
   </div>
 
   <hr class="hr">

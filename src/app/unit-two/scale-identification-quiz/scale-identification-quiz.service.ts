@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {ScaleIdentificationQuizQuestionDisplayService} from './scale-identification-quiz-question-display/scale-identification-quiz-question-display.service';
 import {NoteNamesService} from '../../note-names.service';
 
@@ -30,9 +30,6 @@ export class ScaleIdentificationQuizService {
     this.checkMark = this._scaleIdentificationQuizQuestionDisplayService.checkMark;
     this.hideAnswer = this._scaleIdentificationQuizQuestionDisplayService.hideAnswer;
     this.current = this._scaleIdentificationQuizQuestionDisplayService.current;
-    console.log('correctTonic = ' + this.correctTonic);
-    console.log('correctScale = ' + this.correctScale);
-    console.log('hideAnswer = ' + this.hideAnswer);
   }
 
   setInitialQuizVariables(): void {
@@ -56,10 +53,6 @@ export class ScaleIdentificationQuizService {
   }
 
   checkTonic(event): void {
-    console.log('correctTonic = ' + this.correctTonic);
-    console.log('correctScale = ' + this.correctScale);
-    console.log('hideAnswer = ' + this.hideAnswer);
-
     this.current = this._scaleIdentificationQuizQuestionDisplayService.current;
     const target = event.currentTarget;
     const idAttr = target.attributes.id;
@@ -78,9 +71,6 @@ export class ScaleIdentificationQuizService {
       this.tonicsIncorrect += 1;
     }
     this.totalPercentage();
-    console.log('correctTonic = ' + this.correctTonic);
-    console.log('correctScale = ' + this.correctScale);
-    console.log('hideAnswer = ' + this.hideAnswer);
   }
 
   checkScale(event): void {

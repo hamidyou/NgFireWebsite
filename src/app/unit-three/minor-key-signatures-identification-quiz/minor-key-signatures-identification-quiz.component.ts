@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MinorKeySignaturesIdentificationQuizService} from './minor-key-signatures-identification-quiz.service';
 
 @Component({
@@ -16,6 +16,10 @@ export class MinorKeySignaturesIdentificationQuizComponent implements OnInit {
     this._minorKeySignaturesIdentificationQuizService.getAnswerOptions();
     this._minorKeySignaturesIdentificationQuizService.setInitialQuizVariables();
     this.total = 0;
+  }
+
+  reset(): void {
+    this.startQuiz();
   }
 
   ngOnInit(): void {

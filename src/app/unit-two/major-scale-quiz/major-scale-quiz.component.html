@@ -4,8 +4,11 @@
     <app-major-scale-quiz-scoring></app-major-scale-quiz-scoring>
     <app-major-scale-quiz-question-display></app-major-scale-quiz-question-display>
     <app-major-scale-quiz-answer-options></app-major-scale-quiz-answer-options>
-    <app-timer></app-timer>
-    <app-major-scale-quiz-submit></app-major-scale-quiz-submit>
+    <div>
+      <div class="w3-btn w3-round w3-card-4 w3-margin" (click)="reset()">Reset</div>
+      <app-timer class="w3-btn"></app-timer>
+      <app-major-scale-quiz-submit class="w3-btn"></app-major-scale-quiz-submit>
+    </div>
 
   </div>
 

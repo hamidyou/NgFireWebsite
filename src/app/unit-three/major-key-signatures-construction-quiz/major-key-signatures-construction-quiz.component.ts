@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {MajorKeySignaturesConstructionQuizService} from './major-key-signatures-construction-quiz.service';
 
@@ -17,6 +17,10 @@ export class MajorKeySignaturesConstructionQuizComponent implements OnInit {
     this._majorKeySignaturesConstructionQuizService.getAnswerOptions();
     this._majorKeySignaturesConstructionQuizService.setInitialQuizVariables();
     this.total = 0;
+  }
+
+  reset(): void {
+    this.startQuiz();
   }
 
   ngOnInit(): void {

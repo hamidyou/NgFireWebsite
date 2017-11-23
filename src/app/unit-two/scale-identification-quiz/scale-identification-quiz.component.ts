@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ScaleIdentificationQuizService} from './scale-identification-quiz.service';
 
 @Component({
@@ -16,6 +16,10 @@ export class ScaleIdentificationQuizComponent implements OnInit {
     this._scaleIdentificationQuizService.getAnswerOptions();
     this._scaleIdentificationQuizService.setInitialQuizVariables();
     this.total = 0;
+  }
+
+  reset(): void {
+    this.startQuiz();
   }
 
   ngOnInit(): void {

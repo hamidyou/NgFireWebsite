@@ -33,8 +33,11 @@
     <app-note-quiz-scoring></app-note-quiz-scoring>
     <app-note-quiz-question-display></app-note-quiz-question-display>
     <app-note-quiz-answer-options></app-note-quiz-answer-options>
-    <app-timer></app-timer>
-    <app-note-quiz-submit></app-note-quiz-submit>
+    <div>
+      <div class="w3-btn w3-round w3-card-4 w3-margin" (click)="reset()">Reset</div>
+      <app-timer class="w3-btn"></app-timer>
+      <app-note-quiz-submit class="w3-btn"></app-note-quiz-submit>
+    </div>
 
   </div>
 

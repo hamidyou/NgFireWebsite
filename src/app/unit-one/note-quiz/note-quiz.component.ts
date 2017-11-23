@@ -22,13 +22,16 @@ export class NoteQuizComponent implements OnInit {
   constructor(private _noteQuizService: NoteQuizService, private _noteQuizQuestionsDisplayService: NoteQuizQuestionDisplayService) { }
 
   startQuiz(): void {
-    console.log('note-quiz-component');
     this._noteQuizService.getBankWithOptions();
     this._noteQuizService.getNoteQuizQuestion();
     this._noteQuizService.setInitialNoteQuizVariables();
     this._noteQuizService.getAnswerOptions();
     this.total = 0;
     this.inProgress = true;
+  }
+
+  reset(): void {
+    this.startQuiz();
   }
 
   ngOnInit(): void {

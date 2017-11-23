@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {MinorScalesQuizService} from './minor-scales-quiz.service';
 
@@ -17,6 +17,10 @@ export class MinorScalesQuizComponent implements OnInit {
     this._minorScalesQuizService.getAnswerOptions();
     this._minorScalesQuizService.setInitialQuizVariables();
     this.total = 0;
+  }
+
+  reset(): void {
+    this.startQuiz();
   }
 
   ngOnInit(): void {
