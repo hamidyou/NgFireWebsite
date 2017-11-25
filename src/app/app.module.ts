@@ -25,6 +25,7 @@ import {TimerModule} from './timer/timer.module';
 import {UnitTwoModule} from './unit-two/unit-two.module';
 import {UnitThreeModule} from './unit-three/unit-three.module';
 import {UnitFourModule} from './unit-four/unit-four.module';
+import {UnitFiveModule} from './unit-five/unit-five.module';
 
 @NgModule({
   declarations: [
@@ -32,8 +33,7 @@ import {UnitFourModule} from './unit-four/unit-four.module';
     HeaderComponent,
     UserRegistrationComponent,
     HomePageComponent,
-    UserProgressComponent,
-
+    UserProgressComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +46,8 @@ import {UnitFourModule} from './unit-four/unit-four.module';
     UnitOneModule,
     UnitTwoModule,
     UnitThreeModule,
-    UnitFourModule
+    UnitFourModule,
+    UnitFiveModule
   ],
   providers: [AuthenticationService, CheckUserService, RegistrationService, UnitInfoService, OctaveClassService, NoteNamesService, ClefsService, UserProgressService],
   bootstrap: [AppComponent]

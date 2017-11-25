@@ -31,6 +31,8 @@ import {PerfectMajorIntervalIdentificationQuizComponent} from './unit-four/inter
 import {PerfectMajorMinorIntervalIdentificationQuizComponent} from './unit-four/interval-identification-quiz/perfect-major-minor-interval-identification-quiz/perfect-major-minor-interval-identification-quiz.component';
 import {AllIntervalIdentificationQuizComponent} from './unit-four/interval-identification-quiz/all-interval-identification-quiz/all-interval-identification-quiz.component';
 import {IntervalConstructionQuizComponent,} from './unit-four/interval-construction-quiz/interval-construction-quiz.component';
+import {UnitFiveComponent} from './unit-five/unit-five/unit-five.component';
+import {RootPositionTriadsLessonComponent} from './unit-five/root-position-triads-lesson/root-position-triads-lesson.component';
 
 const routes: Routes = [
   {
@@ -152,6 +154,14 @@ const routes: Routes = [
   {
     path: 'unit-four/interval-construction-quiz',
     component: IntervalConstructionQuizComponent
+  },
+  {
+    path: 'unit-five',
+    component: UnitFiveComponent
+  },
+  {
+    path: 'unit-five/root-position-triads-lesson',
+    component: RootPositionTriadsLessonComponent
   }
 ];
 
