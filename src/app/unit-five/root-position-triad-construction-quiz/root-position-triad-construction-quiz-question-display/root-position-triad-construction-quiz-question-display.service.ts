@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
-import {RootPositionTriadQuizBank} from '../../root-position-triad-quiz-bank';
 
 @Injectable()
-export class RootPositionTriadIdentificationQuizQuestionDisplayService {
+export class RootPositionTriadConstructionQuizQuestionDisplayService {
   Mm: boolean;
   MA: boolean;
   md: boolean;
@@ -12,10 +11,14 @@ export class RootPositionTriadIdentificationQuizQuestionDisplayService {
   private usedBank: any;
   current: any;
   currentQuality: any;
-  currentOctave: any;
+  octave: any;
   quality: string;
   root: string;
-  correctTriad: any;
+  third: string;
+  fifth: string;
+  private correctRoot: boolean;
+  private correctThird: boolean;
+  private correctFifth: boolean;
   wrongAnswer: boolean;
   checkMark: boolean;
   hideAnswer: boolean;
@@ -62,12 +65,16 @@ export class RootPositionTriadIdentificationQuizQuestionDisplayService {
     const randQuality = Math.floor(Math.random() * (this.current.triads.length));
     this.currentQuality = this.current.triads[randQuality];
     const randOctave = Math.floor((Math.random() * (this.currentQuality.octaves.length)));
-    this.currentOctave = this.currentQuality.octaves[randOctave];
+    this.octave = this.currentQuality.octaves[randOctave];
     this.quality = this.currentQuality.quality;
     this.root = this.current.root;
-    this.usedBank.push(this.currentOctave);
-    this.bank.splice(this.currentOctave, 1);
-    this.correctTriad = false;
+    this.third = this.octave.third;
+    this.fifth = this.octave.fifth;
+    this.usedBank.push(this.octave);
+    this.questionBank.splice(this.questionBank[rand], 1);
+    this.correctRoot = false;
+    this.correctThird = false;
+    this.correctFifth = false;
     this.wrongAnswer = false;
     this.checkMark = false;
     this.hideAnswer = true;
@@ -79,16 +86,18 @@ export class RootPositionTriadIdentificationQuizQuestionDisplayService {
     const randQuality = Math.floor(Math.random() * (this.current.triads.length));
     this.currentQuality = this.current.triads[randQuality];
     const randOctave = Math.floor((Math.random() * (this.currentQuality.octaves.length)));
-    this.currentOctave = this.currentQuality.octaves[randOctave];
+    this.octave = this.currentQuality.octaves[randOctave];
     this.quality = this.currentQuality.quality;
     this.root = this.current.root;
-    this.usedBank.push(this.currentOctave);
-    this.bank.splice(this.questionBank[rand], 1);
-    this.correctTriad = false;
+    this.third = this.octave.third;
+    this.fifth = this.octave.fifth;
+    this.usedBank.push(this.octave);
+    this.questionBank.splice(this.questionBank[rand], 1);
+    this.correctRoot = false;
+    this.correctThird = false;
+    this.correctFifth = false;
     this.wrongAnswer = false;
     this.checkMark = false;
     this.hideAnswer = true;
   }
 }
-
-

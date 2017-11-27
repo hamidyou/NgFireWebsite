@@ -1,3 +1,15 @@
-<p>
-  root-position-triad-identification-quiz-question-display works!
-</p>
+<div class="w3-center w3-container">
+
+  <div class="TriadIdQuestion w3-center w3-xlarge w3-section" *ngIf="hideAnswer">
+    <p>What triad quality is shown in the image above?</p>
+    <img class="WrongAnswer w3-image w3-margin" src="../../../../assets/img/WrongAnswer.gif" alt="WrongAnswer"
+         *ngIf="wrongAnswer"/>
+  </div>
+
+  <div class="CorrectAnswer w3-center w3-xlarge w3-section" *ngIf="correctFifth">
+    <p> {{ quality }} </p>
+    <img class="CorrectAnswer w3-image w3-margin" src="../../../../assets/img/checkmark.gif" alt="CorrectAnswer"
+         *ngIf="checkMark"/>
+  </div>
+
+</div>

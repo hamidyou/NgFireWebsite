@@ -1,4 +1,4 @@
-import { PianoLesson } from './piano-lesson';
+import {PianoLesson} from './piano-lesson';
 
 export const PianoLessonInfo: PianoLesson[] = [
   {
@@ -93,7 +93,7 @@ export const PianoLessonInfo: PianoLesson[] = [
     image: '../../assets/img/addB3D4.gif',
     text: [
       {
-        line: 'When identifying the octave number of the notes, C is always the first note in a given octave.'
+        line: 'When identifying the currentOctave number of the notes, C is always the first note in a given currentOctave.'
       },
       {
         line: 'So, the B that is a half step below C4 is called B3. The D that is a whole step above C4 is called D4.'

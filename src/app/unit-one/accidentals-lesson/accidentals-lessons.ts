@@ -69,7 +69,7 @@ export const AccidentalsLessons: Lesson[] = [
         line: 'As you can see, each black key has two different note names. In the next Unit, Scales, you will learn when and why to use which note.'
       },
       {
-        line: 'The octave class for these notes is the same as the octave class for the natural note of the same name. For example, C#4 is a half step above C4.'
+        line: 'The currentOctave class for these notes is the same as the currentOctave class for the natural note of the same name. For example, C#4 is a half step above C4.'
       }
     ],
     audio: ''
