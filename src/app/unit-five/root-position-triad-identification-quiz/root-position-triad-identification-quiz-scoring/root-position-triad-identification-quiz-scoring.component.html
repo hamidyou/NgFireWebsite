@@ -1,0 +1,15 @@
+<table class="w3-table w3-responsive w3-centered ">
+  <tr>
+    <th class="w3-quarter">Triads Correct</th>
+    <th class="w3-quarter">Triads Incorrect</th>
+    <th class="w3-quarter">Triads Attempted</th>
+    <th class="w3-quarter">Total Percentage</th>
+  </tr>
+  <tr>
+    <td class="w3-quarter">{{ triadsCorrect }}</td>
+    <td class="w3-quarter">{{ triadsIncorrect }}</td>
+    <td class="w3-quarter">{{ triadsAttempted }}</td>
+    <td class="w3-quarter">{{ total | percent: '1.0-0' }}
+    </td>
+  </tr>
+</table>

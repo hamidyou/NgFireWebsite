@@ -11,6 +11,8 @@ import {RootPositionTriadIdentificationQuizComponent} from './root-position-tria
 import {RootPositionTriadIdentificationQuizQuestionDisplayComponent} from './root-position-triad-identification-quiz-question-display/root-position-triad-identification-quiz-question-display.component';
 import {RootPositionTriadIdentificationQuizService} from './root-position-triad-identification-quiz.service';
 import {RootPositionTriadIdentificationQuizQuestionDisplayService} from './root-position-triad-identification-quiz-question-display/root-position-triad-identification-quiz-question-display.service';
+import {RootPositionTriadIdentificationQuizAnswerOptionsComponent} from './root-position-triad-identification-quiz-answer-options/root-position-triad-identification-quiz-answer-options.component';
+import {RootPositionTriadIdentificationQuizScoringComponent} from './root-position-triad-identification-quiz-scoring/root-position-triad-identification-quiz-scoring.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import {RootPositionTriadIdentificationQuizQuestionDisplayService} from './root-
   ],
   declarations: [
     RootPositionTriadIdentificationQuizComponent,
-    RootPositionTriadIdentificationQuizQuestionDisplayComponent
+    RootPositionTriadIdentificationQuizQuestionDisplayComponent,
+    RootPositionTriadIdentificationQuizAnswerOptionsComponent,
+    RootPositionTriadIdentificationQuizScoringComponent
   ],
   exports: [
     RootPositionTriadIdentificationQuizComponent,

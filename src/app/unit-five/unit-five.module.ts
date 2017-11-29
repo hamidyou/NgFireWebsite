@@ -12,7 +12,7 @@ import {UnitFiveComponent} from './unit-five/unit-five.component';
 import {RootPositionTriadsLessonComponent} from './root-position-triads-lesson/root-position-triads-lesson.component';
 import {RootPositionTriadsLessonService} from './root-position-triads-lesson/root-position-triads-lesson.service';
 import {RootPositionTriadIdentificationQuizModule} from './root-position-triad-identification-quiz/root-position-triad-identification-quiz.module';
-import {RootPositionTriadConstructionQuizModule} from './root-position-triad-construction-quiz/root-position-triad-construction-quiz.module';
+import {RootPositionTriadIdentificationQuizComponent} from './root-position-triad-identification-quiz/root-position-triad-identification-quiz.component';
 
 @NgModule({
   imports: [
@@ -23,8 +23,7 @@ import {RootPositionTriadConstructionQuizModule} from './root-position-triad-con
     AngularFireDatabaseModule,
     TimerModule,
     FormsModule,
-    RootPositionTriadIdentificationQuizModule,
-    RootPositionTriadConstructionQuizModule
+    RootPositionTriadIdentificationQuizModule
   ],
   declarations: [
     UnitFiveComponent,
@@ -35,7 +34,8 @@ import {RootPositionTriadConstructionQuizModule} from './root-position-triad-con
     RootPositionTriadsLessonComponent,
   ],
   providers: [
-    RootPositionTriadsLessonService
+    RootPositionTriadsLessonService,
+    RootPositionTriadIdentificationQuizComponent
   ]
 })
 export class UnitFiveModule {

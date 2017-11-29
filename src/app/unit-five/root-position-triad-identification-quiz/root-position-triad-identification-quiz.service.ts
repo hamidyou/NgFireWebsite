@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+
 import {NoteNamesService} from '../../note-names.service';
 import {RootPositionTriadIdentificationQuizQuestionDisplayService} from './root-position-triad-identification-quiz-question-display/root-position-triad-identification-quiz-question-display.service';
 
@@ -18,7 +19,7 @@ export class RootPositionTriadIdentificationQuizService {
   private quality: string;
   private current: any;
   private currentQuality: any;
-  private octave: any;
+  public octave: any;
   public qualities: any;
 
   constructor(private _noteNamesService: NoteNamesService,

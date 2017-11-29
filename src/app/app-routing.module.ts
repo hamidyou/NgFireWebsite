@@ -33,6 +33,7 @@ import {AllIntervalIdentificationQuizComponent} from './unit-four/interval-ident
 import {IntervalConstructionQuizComponent,} from './unit-four/interval-construction-quiz/interval-construction-quiz.component';
 import {UnitFiveComponent} from './unit-five/unit-five/unit-five.component';
 import {RootPositionTriadsLessonComponent} from './unit-five/root-position-triads-lesson/root-position-triads-lesson.component';
+import {RootPositionTriadIdentificationQuizComponent} from './unit-five/root-position-triad-identification-quiz/root-position-triad-identification-quiz.component';
 
 const routes: Routes = [
   {
@@ -162,6 +163,10 @@ const routes: Routes = [
   {
     path: 'unit-five/root-position-triads-lesson',
     component: RootPositionTriadsLessonComponent
+  },
+  {
+    path: 'unit-five/root-position-triad-identification-quiz',
+    component: RootPositionTriadIdentificationQuizComponent
   }
 ];
 

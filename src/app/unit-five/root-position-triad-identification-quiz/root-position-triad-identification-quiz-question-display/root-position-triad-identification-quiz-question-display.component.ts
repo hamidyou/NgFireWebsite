@@ -12,6 +12,7 @@ export class RootPositionTriadIdentificationQuizQuestionDisplayComponent impleme
   public checkMark: boolean;
   public hideAnswer: boolean;
   public quality: any;
+  public octave: any;
 
   constructor(public _rootPositionTriadIdentificationQuizQuestionDisplayService: RootPositionTriadIdentificationQuizQuestionDisplayService,
               public _rootPositionTriadIdentificationQuizService: RootPositionTriadIdentificationQuizService) {
@@ -22,6 +23,7 @@ export class RootPositionTriadIdentificationQuizQuestionDisplayComponent impleme
     this.checkMark = this._rootPositionTriadIdentificationQuizService.checkMark;
     this.wrongAnswer = this._rootPositionTriadIdentificationQuizService.wrongAnswer;
     this.hideAnswer = this._rootPositionTriadIdentificationQuizService.hideAnswer;
+    this.octave = this._rootPositionTriadIdentificationQuizService.octave;
   }
 
   ngOnInit(): void {
